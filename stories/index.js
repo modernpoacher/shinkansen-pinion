@@ -27,7 +27,7 @@ const definition = {
   ]
 }
 
-storiesOf('CheckboxCog', module)
+storiesOf('Pinion', module)
   .add('Required and default props', () => (
     <ToZashiki definition={definition} />
   ))
