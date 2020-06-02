@@ -19,8 +19,17 @@ import NUMBER_NUMBER_ALL_OF from 'stories/definitions/number-number-all-of'
 import OBJECT_OBJECT_STRING from 'stories/definitions/object-object-string'
 import OBJECT_OBJECT_NUMBER from 'stories/definitions/object-object-number'
 import OBJECT_OBJECT_OBJECT from 'stories/definitions/object-object-object'
-import OBJECT_OBJECT_ARRAY_OBJECT from 'stories/definitions/object-object-array-object'
-import OBJECT_OBJECT_ARRAY_ARRAY from 'stories/definitions/object-object-array-array'
+
+import OBJECT_OBJECT_ARRAY_OBJECT_STRING from 'stories/definitions/object-object-array-object-string'
+import OBJECT_OBJECT_ARRAY_OBJECT_NUMBER from 'stories/definitions/object-object-array-object-number'
+import OBJECT_OBJECT_ARRAY_OBJECT_BOOLEAN from 'stories/definitions/object-object-array-object-boolean'
+import OBJECT_OBJECT_ARRAY_OBJECT_NULL from 'stories/definitions/object-object-array-object-null'
+
+import OBJECT_OBJECT_ARRAY_ARRAY_STRING from 'stories/definitions/object-object-array-array-string'
+import OBJECT_OBJECT_ARRAY_ARRAY_NUMBER from 'stories/definitions/object-object-array-array-number'
+import OBJECT_OBJECT_ARRAY_ARRAY_BOOLEAN from 'stories/definitions/object-object-array-array-boolean'
+import OBJECT_OBJECT_ARRAY_ARRAY_NULL from 'stories/definitions/object-object-array-array-null'
+
 import OBJECT_OBJECT_BOOLEAN from 'stories/definitions/object-object-boolean'
 import OBJECT_OBJECT_NULL from 'stories/definitions/object-object-null'
 
@@ -87,8 +96,14 @@ storiesOf('Check Answers', module)
   .add('Object - String', () => toCheckAnswers('Object - String', OBJECT_OBJECT_STRING, { string: 'string' }, RESOURCE))
   .add('Object - Number', () => toCheckAnswers('Object - Number', OBJECT_OBJECT_NUMBER, { number: 1 }, RESOURCE))
   .add('Object - Object', () => toCheckAnswers('Object - Object', OBJECT_OBJECT_OBJECT, { string: 'string', number: 1, boolean: true, null: null }, RESOURCE))
-  .add('Object - Array (Items is an object)', () => toCheckAnswers('Object - Array (Items is an object)', OBJECT_OBJECT_ARRAY_OBJECT, { array: ['string (1)', 'string (2)', 'string (3)'] }, RESOURCE))
-  .add('Object - Array (Items is an array)', () => toCheckAnswers('Object - Array (Items is an array)', OBJECT_OBJECT_ARRAY_ARRAY, { array: ['string', 1, true, null] }, RESOURCE))
+  .add('Object - Array (Items is an object) - String', () => toCheckAnswers('Object - Array (Items is an object)', OBJECT_OBJECT_ARRAY_OBJECT_STRING, { array: ['string'] }, RESOURCE))
+  .add('Object - Array (Items is an object) - Number', () => toCheckAnswers('Object - Array (Items is an object)', OBJECT_OBJECT_ARRAY_OBJECT_NUMBER, { array: [1] }, RESOURCE))
+  .add('Object - Array (Items is an object) - Boolean', () => toCheckAnswers('Object - Array (Items is an object)', OBJECT_OBJECT_ARRAY_OBJECT_BOOLEAN, { array: [true] }, RESOURCE))
+  .add('Object - Array (Items is an object) - Null', () => toCheckAnswers('Object - Array (Items is an object)', OBJECT_OBJECT_ARRAY_OBJECT_NULL, { array: [null] }, RESOURCE))
+  .add('Object - Array (Items is an array) - String', () => toCheckAnswers('Object - Array (Items is an array)', OBJECT_OBJECT_ARRAY_ARRAY_STRING, { array: ['string'] }, RESOURCE))
+  .add('Object - Array (Items is an array) - Number', () => toCheckAnswers('Object - Array (Items is an array)', OBJECT_OBJECT_ARRAY_ARRAY_NUMBER, { array: [1] }, RESOURCE))
+  .add('Object - Array (Items is an array) - Boolean', () => toCheckAnswers('Object - Array (Items is an array)', OBJECT_OBJECT_ARRAY_ARRAY_BOOLEAN, { array: [true] }, RESOURCE))
+  .add('Object - Array (Items is an array) - Null', () => toCheckAnswers('Object - Array (Items is an array)', OBJECT_OBJECT_ARRAY_ARRAY_NULL, { array: [null] }, RESOURCE))
   .add('Object - Boolean', () => toCheckAnswers('Object - Boolean', OBJECT_OBJECT_BOOLEAN, { boolean: true }, RESOURCE))
   .add('Object - Null', () => toCheckAnswers('Object - Null', OBJECT_OBJECT_NULL, { null: null }, RESOURCE))
 

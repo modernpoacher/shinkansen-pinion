@@ -19,8 +19,17 @@ import NUMBER_NUMBER_ALL_OF from 'stories/definitions/number-number-all-of'
 import OBJECT_OBJECT_STRING from 'stories/definitions/object-object-string'
 import OBJECT_OBJECT_NUMBER from 'stories/definitions/object-object-number'
 import OBJECT_OBJECT_OBJECT from 'stories/definitions/object-object-object'
-import OBJECT_OBJECT_ARRAY_OBJECT from 'stories/definitions/object-object-array-object'
-import OBJECT_OBJECT_ARRAY_ARRAY from 'stories/definitions/object-object-array-array'
+
+import OBJECT_OBJECT_ARRAY_OBJECT_STRING from 'stories/definitions/object-object-array-object-string'
+import OBJECT_OBJECT_ARRAY_OBJECT_NUMBER from 'stories/definitions/object-object-array-object-number'
+import OBJECT_OBJECT_ARRAY_OBJECT_BOOLEAN from 'stories/definitions/object-object-array-object-boolean'
+import OBJECT_OBJECT_ARRAY_OBJECT_NULL from 'stories/definitions/object-object-array-object-null'
+
+import OBJECT_OBJECT_ARRAY_ARRAY_STRING from 'stories/definitions/object-object-array-array-string'
+import OBJECT_OBJECT_ARRAY_ARRAY_NUMBER from 'stories/definitions/object-object-array-array-number'
+import OBJECT_OBJECT_ARRAY_ARRAY_BOOLEAN from 'stories/definitions/object-object-array-array-boolean'
+import OBJECT_OBJECT_ARRAY_ARRAY_NULL from 'stories/definitions/object-object-array-array-null'
+
 import OBJECT_OBJECT_BOOLEAN from 'stories/definitions/object-object-boolean'
 import OBJECT_OBJECT_NULL from 'stories/definitions/object-object-null'
 
@@ -82,8 +91,17 @@ storiesOf('Pinion', module)
   .add('Object - String', () => toPinion(OBJECT_OBJECT_STRING, { string: 'string' }))
   .add('Object - Number', () => toPinion(OBJECT_OBJECT_NUMBER, { number: 1 }))
   .add('Object - Object', () => toPinion(OBJECT_OBJECT_OBJECT, { string: 'string', number: 1, boolean: true, null: null }))
-  .add('Object - Array (Items is an object)', () => toPinion(OBJECT_OBJECT_ARRAY_OBJECT, { array: ['string (1)', 'string (2)', 'string (3)'] }))
-  .add('Object - Array (Items is an array)', () => toPinion(OBJECT_OBJECT_ARRAY_ARRAY, { array: ['string', 1, true, null] }))
+
+  .add('Object - Array (Items is an object) - String', () => toPinion(OBJECT_OBJECT_ARRAY_OBJECT_STRING, { array: ['string'] }))
+  .add('Object - Array (Items is an object) - Number', () => toPinion(OBJECT_OBJECT_ARRAY_OBJECT_NUMBER, { array: [1] }))
+  .add('Object - Array (Items is an object) - Boolean', () => toPinion(OBJECT_OBJECT_ARRAY_OBJECT_BOOLEAN, { array: [true] }))
+  .add('Object - Array (Items is an object) - Null', () => toPinion(OBJECT_OBJECT_ARRAY_OBJECT_NULL, { array: [null] }))
+
+  .add('Object - Array (Items is an array) - String', () => toPinion(OBJECT_OBJECT_ARRAY_ARRAY_STRING, { array: ['string'] }))
+  .add('Object - Array (Items is an array) - Number', () => toPinion(OBJECT_OBJECT_ARRAY_ARRAY_NUMBER, { array: [1] }))
+  .add('Object - Array (Items is an array) - Boolean', () => toPinion(OBJECT_OBJECT_ARRAY_ARRAY_BOOLEAN, { array: [true] }))
+  .add('Object - Array (Items is an array) - Null', () => toPinion(OBJECT_OBJECT_ARRAY_ARRAY_NULL, { array: [null] }))
+
   .add('Object - Boolean', () => toPinion(OBJECT_OBJECT_BOOLEAN, { boolean: true }))
   .add('Object - Null', () => toPinion(OBJECT_OBJECT_NULL, { null: null }))
 
