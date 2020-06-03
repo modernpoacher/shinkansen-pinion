@@ -1,5 +1,4 @@
 import debug from 'debug'
-import Boom from '@hapi/boom'
 
 import {
   Rails
@@ -10,8 +9,6 @@ import {
 } from 'shinkansen-signals'
 
 const log = debug('shinkansen:pinion:transformers:check-answers')
-
-const NOT_FOUND = 'https://tools.ietf.org/html/rfc7231#section-6.5.4'
 
 export default function getResourceUrl (resource = {}) {
   log('getResourceUrl')
@@ -36,5 +33,5 @@ export default function getResourceUrl (resource = {}) {
     }
   }
 
-  throw Boom.notFound(NOT_FOUND)
+  throw new Error('Incompatible with Shinkansen')
 }

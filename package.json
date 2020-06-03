@@ -34,6 +34,8 @@
   },
   "dependencies": {
     "shinkansen-cogs": "1.0.7",
+    "shinkansen-rails": "1.0.7",
+    "shinkansen-signals": "1.0.7",
     "shinkansen-sprockets": "0.0.6",
     "shinkansen-transmission": "2.1.3"
   },
