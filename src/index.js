@@ -10,7 +10,7 @@ const log = debug('shinkansen:pinion')
 
 log('`pinion` is awake')
 
-export default (definition = {}, response, components = {}, errors = [], onChange) => {
+export default function toPinion (definition = {}, response, components = {}, errors = [], onChange) {
   log('toPinion')
 
   return (

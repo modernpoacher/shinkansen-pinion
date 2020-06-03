@@ -1,0 +1,2365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_ARRAY\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="sprocket fieldset"
+    >
+      <fieldset
+        className="group fieldset"
+        onChange={[Function]}
+      >
+        <legend
+          className="label fieldset"
+        >
+          <span
+            className="text-content"
+          >
+            Fieldset Sprocket
+          </span>
+        </legend>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/0/0"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/0/0"
+            name="#/0/0"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="string"
+          />
+        </div>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/0/1"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/0/1"
+            name="#/0/1"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="1"
+          />
+        </div>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/0/2"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/0/2"
+            name="#/0/2"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="true"
+          />
+        </div>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/0/3"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/0/3"
+            name="#/0/3"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="null"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_BOOLEAN\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog text"
+    >
+      <label
+        className="label text"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Text Cog
+        </span>
+      </label>
+      <input
+        className="input text"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        readOnly={false}
+        required={false}
+        type="text"
+        value="true"
+      />
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_NULL\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog text"
+    >
+      <label
+        className="label text"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Text Cog
+        </span>
+      </label>
+      <input
+        className="input text"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        readOnly={false}
+        required={false}
+        type="text"
+        value="null"
+      />
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_NUMBER_ANY_OF\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="0"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="1"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="2"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_NUMBER_ENUM\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="0"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="1"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="2"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_NUMBER_ONE_OF\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="0"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="1"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="2"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_NUMBER\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog text"
+    >
+      <label
+        className="label text"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Text Cog
+        </span>
+      </label>
+      <input
+        className="input text"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        readOnly={false}
+        required={false}
+        type="text"
+        value="1"
+      />
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_OBJECT\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="sprocket fieldset"
+    >
+      <fieldset
+        className="group fieldset"
+        onChange={[Function]}
+      >
+        <legend
+          className="label fieldset"
+        >
+          <span
+            className="text-content"
+          >
+            Fieldset Sprocket
+          </span>
+        </legend>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/0/string"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/0/string"
+            name="#/0/string"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="string"
+          />
+        </div>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/0/number"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/0/number"
+            name="#/0/number"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="1"
+          />
+        </div>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/0/boolean"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/0/boolean"
+            name="#/0/boolean"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="true"
+          />
+        </div>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/0/null"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/0/null"
+            name="#/0/null"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="null"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_STRING_ANY_OF\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="0"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="1"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="2"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_STRING_ENUM\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="0"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="1"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="2"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_STRING_ONE_OF\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="0"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="1"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+    <div
+      className="cog radio"
+    >
+      <input
+        checked={false}
+        className="input radio"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        onClick={[Function]}
+        readOnly={false}
+        required={false}
+        type="radio"
+        value="2"
+      />
+      <label
+        className="label radio"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Radio Cog
+        </span>
+      </label>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`ARRAY_ARRAY_STRING\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="cog text"
+    >
+      <label
+        className="label text"
+        htmlFor="#/0"
+      >
+        <span
+          className="text-content"
+        >
+          Text Cog
+        </span>
+      </label>
+      <input
+        className="input text"
+        disabled={false}
+        id="#/0"
+        name="#/0"
+        onChange={[Function]}
+        readOnly={false}
+        required={false}
+        type="text"
+        value="string"
+      />
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`BOOLEAN_BOOLEAN_ALL_OF\` 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+    value="true"
+  />
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`BOOLEAN_BOOLEAN_ANY_OF\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`BOOLEAN_BOOLEAN_ENUM\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`BOOLEAN_BOOLEAN_ONE_OF\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`BOOLEAN_BOOLEAN\` 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+    value="true"
+  />
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NULL_NULL_ALL_OF\` 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+    value="null"
+  />
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NULL_NULL_ANY_OF\` 1`] = `
+<div
+  className="cog radio"
+>
+  <input
+    checked={false}
+    className="input radio"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    onClick={[Function]}
+    readOnly={false}
+    required={false}
+    type="radio"
+    value="0"
+  />
+  <label
+    className="label radio"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Radio Cog
+    </span>
+  </label>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NULL_NULL_ENUM\` 1`] = `
+<div
+  className="cog radio"
+>
+  <input
+    checked={false}
+    className="input radio"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    onClick={[Function]}
+    readOnly={false}
+    required={false}
+    type="radio"
+    value="0"
+  />
+  <label
+    className="label radio"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Radio Cog
+    </span>
+  </label>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NULL_NULL_ONE_OF\` 1`] = `
+<div
+  className="cog radio"
+>
+  <input
+    checked={false}
+    className="input radio"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    onClick={[Function]}
+    readOnly={false}
+    required={false}
+    type="radio"
+    value="0"
+  />
+  <label
+    className="label radio"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Radio Cog
+    </span>
+  </label>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NULL_NULL\` 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+    value="null"
+  />
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NUMBER_NUMBER_ALL_OF\` 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+    value="1"
+  />
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NUMBER_NUMBER_ANY_OF\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="2"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NUMBER_NUMBER_ENUM\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="2"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NUMBER_NUMBER_ONE_OF\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="2"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`NUMBER_NUMBER\` 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+    value="1"
+  />
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`OBJECT_ARRAY_BOOLEAN\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="sprocket fieldset"
+    >
+      <fieldset
+        className="group fieldset"
+        onChange={[Function]}
+      >
+        <legend
+          className="label fieldset"
+        >
+          <span
+            className="text-content"
+          >
+            Fieldset Sprocket
+          </span>
+        </legend>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/array/0"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/array/0"
+            name="#/array/0"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="true"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`OBJECT_ARRAY_NULL\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="sprocket fieldset"
+    >
+      <fieldset
+        className="group fieldset"
+        onChange={[Function]}
+      >
+        <legend
+          className="label fieldset"
+        >
+          <span
+            className="text-content"
+          >
+            Fieldset Sprocket
+          </span>
+        </legend>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/array/0"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/array/0"
+            name="#/array/0"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="null"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`OBJECT_ARRAY_NUMBER\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="sprocket fieldset"
+    >
+      <fieldset
+        className="group fieldset"
+        onChange={[Function]}
+      >
+        <legend
+          className="label fieldset"
+        >
+          <span
+            className="text-content"
+          >
+            Fieldset Sprocket
+          </span>
+        </legend>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/array/0"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/array/0"
+            name="#/array/0"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="1"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`OBJECT_ARRAY_STRING\` 1`] = `
+<div
+  className="sprocket fieldset"
+>
+  <fieldset
+    className="group fieldset"
+    onChange={[Function]}
+  >
+    <legend
+      className="label fieldset"
+    >
+      <span
+        className="text-content"
+      >
+        Fieldset Sprocket
+      </span>
+    </legend>
+    <div
+      className="sprocket fieldset"
+    >
+      <fieldset
+        className="group fieldset"
+        onChange={[Function]}
+      >
+        <legend
+          className="label fieldset"
+        >
+          <span
+            className="text-content"
+          >
+            Fieldset Sprocket
+          </span>
+        </legend>
+        <div
+          className="cog text"
+        >
+          <label
+            className="label text"
+            htmlFor="#/array/0"
+          >
+            <span
+              className="text-content"
+            >
+              Text Cog
+            </span>
+          </label>
+          <input
+            className="input text"
+            disabled={false}
+            id="#/array/0"
+            name="#/array/0"
+            onChange={[Function]}
+            readOnly={false}
+            required={false}
+            type="text"
+            value="string"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`STRING_STRING_ALL_OF\` 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+    value="string"
+  />
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`STRING_STRING_ANY_OF\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="2"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`STRING_STRING_ENUM\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="2"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`STRING_STRING_ONE_OF\` 1`] = `
+Array [
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="0"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="1"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+  <div
+    className="cog radio"
+  >
+    <input
+      checked={false}
+      className="input radio"
+      disabled={false}
+      id="#/"
+      name="#/"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="radio"
+      value="2"
+    />
+    <label
+      className="label radio"
+      htmlFor="#/"
+    >
+      <span
+        className="text-content"
+      >
+        Radio Cog
+      </span>
+    </label>
+  </div>,
+]
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With additional props renders \`STRING_STRING\` 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="#/"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="#/"
+    name="#/"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+    value="string"
+  />
+</div>
+`;
+
+exports[`shinkansen-pinion/components/pinion <Component /> With required props renders 1`] = `
+<div
+  className="cog text"
+>
+  <label
+    className="label text"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      Text Cog
+    </span>
+  </label>
+  <input
+    className="input text"
+    disabled={false}
+    id="MOCK ID"
+    name="MOCK ID"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    type="text"
+  />
+</div>
+`;
