@@ -9,12 +9,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
@@ -25,27 +25,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         onChange={[Function]}
       >
         <legend
-          className="label fieldset"
+          className="title fieldset"
         >
           <span
             className="text-content"
           >
-            Fieldset Sprocket
+            Array (Items is an array)
           </span>
         </legend>
         <div
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/0/0"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              String
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A string schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -62,15 +71,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/0/1"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Number
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A number schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -87,15 +105,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/0/2"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Boolean
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A boolean schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -112,15 +139,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/0/3"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Null
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A null schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -148,27 +184,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
       className="cog text"
     >
       <label
-        className="label text"
+        className="title text"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Text Cog
+          Boolean
         </span>
       </label>
+      <span
+        className="description text"
+      >
+        <span
+          className="text-content"
+        >
+          A boolean schema
+        </span>
+      </span>
       <input
         className="input text"
         disabled={false}
@@ -194,27 +239,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
       className="cog text"
     >
       <label
-        className="label text"
+        className="title text"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Text Cog
+          Null
         </span>
       </label>
+      <span
+        className="description text"
+      >
+        <span
+          className="text-content"
+        >
+          A null schema
+        </span>
+      </span>
       <input
         className="input text"
         disabled={false}
@@ -240,12 +294,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
@@ -265,15 +319,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="0"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          One
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "1"
+        </span>
+      </span>
     </div>
     <div
       className="cog radio"
@@ -292,15 +355,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="1"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Two
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "2"
+        </span>
+      </span>
     </div>
     <div
       className="cog radio"
@@ -319,15 +391,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="2"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Three
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "3"
+        </span>
+      </span>
     </div>
   </fieldset>
 </div>
@@ -342,12 +423,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
@@ -367,13 +448,13 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="0"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          1
         </span>
       </label>
     </div>
@@ -394,13 +475,13 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="1"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          2
         </span>
       </label>
     </div>
@@ -421,13 +502,13 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="2"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          3
         </span>
       </label>
     </div>
@@ -444,12 +525,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
@@ -469,15 +550,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="0"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          One
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "1"
+        </span>
+      </span>
     </div>
     <div
       className="cog radio"
@@ -496,15 +586,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="1"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Two
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "2"
+        </span>
+      </span>
     </div>
     <div
       className="cog radio"
@@ -523,15 +622,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="2"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Three
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "3"
+        </span>
+      </span>
     </div>
   </fieldset>
 </div>
@@ -546,27 +654,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
       className="cog text"
     >
       <label
-        className="label text"
+        className="title text"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Text Cog
+          Number
         </span>
       </label>
+      <span
+        className="description text"
+      >
+        <span
+          className="text-content"
+        >
+          A number schema
+        </span>
+      </span>
       <input
         className="input text"
         disabled={false}
@@ -592,12 +709,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
@@ -608,27 +725,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         onChange={[Function]}
       >
         <legend
-          className="label fieldset"
+          className="title fieldset"
         >
           <span
             className="text-content"
           >
-            Fieldset Sprocket
+            Object
           </span>
         </legend>
         <div
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/0/string"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              String
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A string schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -645,15 +771,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/0/number"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Number
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A number schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -670,15 +805,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/0/boolean"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Boolean
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A boolean schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -695,15 +839,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/0/null"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Null
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A null schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -731,12 +884,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
@@ -756,15 +909,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="0"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          One
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "one"
+        </span>
+      </span>
     </div>
     <div
       className="cog radio"
@@ -783,15 +945,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="1"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Two
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "two"
+        </span>
+      </span>
     </div>
     <div
       className="cog radio"
@@ -810,15 +981,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="2"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Three
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "three"
+        </span>
+      </span>
     </div>
   </fieldset>
 </div>
@@ -833,12 +1013,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
@@ -858,13 +1038,13 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="0"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          One
         </span>
       </label>
     </div>
@@ -885,13 +1065,13 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="1"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Two
         </span>
       </label>
     </div>
@@ -912,13 +1092,13 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="2"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Three
         </span>
       </label>
     </div>
@@ -935,12 +1115,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an object)
       </span>
     </legend>
     <div
@@ -960,15 +1140,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="0"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          One
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "one"
+        </span>
+      </span>
     </div>
     <div
       className="cog radio"
@@ -987,15 +1176,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="1"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Two
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "two"
+        </span>
+      </span>
     </div>
     <div
       className="cog radio"
@@ -1014,15 +1212,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         value="2"
       />
       <label
-        className="label radio"
+        className="title radio"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Radio Cog
+          Three
         </span>
       </label>
+      <span
+        className="description radio"
+      >
+        <span
+          className="text-content"
+        >
+          The value "three"
+        </span>
+      </span>
     </div>
   </fieldset>
 </div>
@@ -1037,27 +1244,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Array (Items is an array)
       </span>
     </legend>
     <div
       className="cog text"
     >
       <label
-        className="label text"
+        className="title text"
         htmlFor="#/0"
       >
         <span
           className="text-content"
         >
-          Text Cog
+          String
         </span>
       </label>
+      <span
+        className="description text"
+      >
+        <span
+          className="text-content"
+        >
+          A string schema
+        </span>
+      </span>
       <input
         className="input text"
         disabled={false}
@@ -1079,15 +1295,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      Boolean
     </span>
   </label>
+  <span
+    className="description text"
+  >
+    <span
+      className="text-content"
+    >
+      A "boolean" value
+    </span>
+  </span>
   <input
     className="input text"
     disabled={false}
@@ -1121,15 +1346,24 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        True
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "true"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -1148,15 +1382,24 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        False
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "false"
+      </span>
+    </span>
   </div>,
 ]
 `;
@@ -1180,13 +1423,13 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        true
       </span>
     </label>
   </div>,
@@ -1207,13 +1450,13 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        false
       </span>
     </label>
   </div>,
@@ -1239,15 +1482,24 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        True
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "true"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -1266,15 +1518,24 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        False
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "false"
+      </span>
+    </span>
   </div>,
 ]
 `;
@@ -1284,15 +1545,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      Boolean
     </span>
   </label>
+  <span
+    className="description text"
+  >
+    <span
+      className="text-content"
+    >
+      A boolean schema
+    </span>
+  </span>
   <input
     className="input text"
     disabled={false}
@@ -1312,15 +1582,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      Null
     </span>
   </label>
+  <span
+    className="description text"
+  >
+    <span
+      className="text-content"
+    >
+      A "null" value
+    </span>
+  </span>
   <input
     className="input text"
     disabled={false}
@@ -1353,15 +1632,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     value="0"
   />
   <label
-    className="label radio"
+    className="title radio"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Radio Cog
+      Null
     </span>
   </label>
+  <span
+    className="description radio"
+  >
+    <span
+      className="text-content"
+    >
+      The value "null"
+    </span>
+  </span>
 </div>
 `;
 
@@ -1383,13 +1671,13 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     value="0"
   />
   <label
-    className="label radio"
+    className="title radio"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Radio Cog
+      null
     </span>
   </label>
 </div>
@@ -1413,15 +1701,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     value="0"
   />
   <label
-    className="label radio"
+    className="title radio"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Radio Cog
+      Null
     </span>
   </label>
+  <span
+    className="description radio"
+  >
+    <span
+      className="text-content"
+    >
+      The value "null"
+    </span>
+  </span>
 </div>
 `;
 
@@ -1430,15 +1727,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      Null
     </span>
   </label>
+  <span
+    className="description text"
+  >
+    <span
+      className="text-content"
+    >
+      A null schema
+    </span>
+  </span>
   <input
     className="input text"
     disabled={false}
@@ -1458,15 +1764,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      Number
     </span>
   </label>
+  <span
+    className="description text"
+  >
+    <span
+      className="text-content"
+    >
+      A "number" value
+    </span>
+  </span>
   <input
     className="input text"
     disabled={false}
@@ -1500,15 +1815,24 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        One
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "1"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -1527,15 +1851,24 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Two
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "2"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -1554,15 +1887,24 @@ Array [
       value="2"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Three
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "3"
+      </span>
+    </span>
   </div>,
 ]
 `;
@@ -1586,13 +1928,13 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        1
       </span>
     </label>
   </div>,
@@ -1613,13 +1955,13 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        2
       </span>
     </label>
   </div>,
@@ -1640,13 +1982,13 @@ Array [
       value="2"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        3
       </span>
     </label>
   </div>,
@@ -1672,15 +2014,24 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        One
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "1"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -1699,15 +2050,24 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Two
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "2"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -1726,15 +2086,24 @@ Array [
       value="2"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Three
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "3"
+      </span>
+    </span>
   </div>,
 ]
 `;
@@ -1744,15 +2113,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      Number
     </span>
   </label>
+  <span
+    className="description text"
+  >
+    <span
+      className="text-content"
+    >
+      A number schema
+    </span>
+  </span>
   <input
     className="input text"
     disabled={false}
@@ -1776,12 +2154,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Object
       </span>
     </legend>
     <div
@@ -1792,27 +2170,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         onChange={[Function]}
       >
         <legend
-          className="label fieldset"
+          className="title fieldset"
         >
           <span
             className="text-content"
           >
-            Fieldset Sprocket
+            Array (Items is an object)
           </span>
         </legend>
         <div
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/array/0"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Boolean
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A boolean schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -1840,12 +2227,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Object
       </span>
     </legend>
     <div
@@ -1856,27 +2243,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         onChange={[Function]}
       >
         <legend
-          className="label fieldset"
+          className="title fieldset"
         >
           <span
             className="text-content"
           >
-            Fieldset Sprocket
+            Array (Items is an array)
           </span>
         </legend>
         <div
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/array/0"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Null
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A null schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -1904,12 +2300,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Object
       </span>
     </legend>
     <div
@@ -1920,27 +2316,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         onChange={[Function]}
       >
         <legend
-          className="label fieldset"
+          className="title fieldset"
         >
           <span
             className="text-content"
           >
-            Fieldset Sprocket
+            Array (Items is an array)
           </span>
         </legend>
         <div
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/array/0"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              Number
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A number schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -1968,12 +2373,12 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
     onChange={[Function]}
   >
     <legend
-      className="label fieldset"
+      className="title fieldset"
     >
       <span
         className="text-content"
       >
-        Fieldset Sprocket
+        Object
       </span>
     </legend>
     <div
@@ -1984,27 +2389,36 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
         onChange={[Function]}
       >
         <legend
-          className="label fieldset"
+          className="title fieldset"
         >
           <span
             className="text-content"
           >
-            Fieldset Sprocket
+            Array (Items is an array)
           </span>
         </legend>
         <div
           className="cog text"
         >
           <label
-            className="label text"
+            className="title text"
             htmlFor="#/array/0"
           >
             <span
               className="text-content"
             >
-              Text Cog
+              String
             </span>
           </label>
+          <span
+            className="description text"
+          >
+            <span
+              className="text-content"
+            >
+              A string schema
+            </span>
+          </span>
           <input
             className="input text"
             disabled={false}
@@ -2028,15 +2442,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      String
     </span>
   </label>
+  <span
+    className="description text"
+  >
+    <span
+      className="text-content"
+    >
+      A "string" value
+    </span>
+  </span>
   <input
     className="input text"
     disabled={false}
@@ -2070,15 +2493,24 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        One
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "one"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -2097,15 +2529,24 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Two
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "two"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -2124,15 +2565,24 @@ Array [
       value="2"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Three
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "three"
+      </span>
+    </span>
   </div>,
 ]
 `;
@@ -2156,13 +2606,13 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        One
       </span>
     </label>
   </div>,
@@ -2183,13 +2633,13 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Two
       </span>
     </label>
   </div>,
@@ -2210,13 +2660,13 @@ Array [
       value="2"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Three
       </span>
     </label>
   </div>,
@@ -2242,15 +2692,24 @@ Array [
       value="0"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        One
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "one"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -2269,15 +2728,24 @@ Array [
       value="1"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Two
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "two"
+      </span>
+    </span>
   </div>,
   <div
     className="cog radio"
@@ -2296,15 +2764,24 @@ Array [
       value="2"
     />
     <label
-      className="label radio"
+      className="title radio"
       htmlFor="#/"
     >
       <span
         className="text-content"
       >
-        Radio Cog
+        Three
       </span>
     </label>
+    <span
+      className="description radio"
+    >
+      <span
+        className="text-content"
+      >
+        The value "three"
+      </span>
+    </span>
   </div>,
 ]
 `;
@@ -2314,15 +2791,24 @@ exports[`shinkansen-pinion/components/pinion <Component /> With additional props
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="#/"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      String
     </span>
   </label>
+  <span
+    className="description text"
+  >
+    <span
+      className="text-content"
+    >
+      A string schema
+    </span>
+  </span>
   <input
     className="input text"
     disabled={false}
@@ -2342,13 +2828,13 @@ exports[`shinkansen-pinion/components/pinion <Component /> With required props r
   className="cog text"
 >
   <label
-    className="label text"
+    className="title text"
     htmlFor="MOCK ID"
   >
     <span
       className="text-content"
     >
-      Text Cog
+      MOCK TITLE
     </span>
   </label>
   <input
