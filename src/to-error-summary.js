@@ -1,23 +1,19 @@
 import React from 'react'
 import debug from 'debug'
 
-import {
-  ErrorSummarySprocket
-} from 'shinkansen-sprockets'
+import ErrorSummary from './components/error-summary'
 
 const log = debug('shinkansen:pinion:to-error-summary')
 
 log('`pinion` is awake')
 
-export {
-  ErrorSummarySprocket as ErrorSummary
-}
+export ErrorSummary from './components/error-summary'
 
 export default function toErrorSummary (description = 'There is a problem', definitions = []) {
   log('toErrorSummary')
 
   return (
-    <ErrorSummarySprocket
+    <ErrorSummary
       title={description}
       errorSummary={definitions}
     />
