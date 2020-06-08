@@ -325,10 +325,11 @@ Pinion.propTypes = {
   params: PropTypes.shape({
     components: PropTypes.shape(),
     errors: PropTypes.array
-  }).isRequired,
+  }),
   onChange: PropTypes.func
 }
 
 Pinion.defaultProps = {
+  params: {},
   onChange
 }

@@ -14,6 +14,10 @@ const log = debug('shinkansen:pinion:to-check-answers')
 
 log('`pinion` is awake')
 
+export {
+  CheckAnswersSprocket as CheckAnswers
+}
+
 export default function toCheckAnswers (description, definition = {}, response, resource = {}) {
   log('toCheckAnswers')
 

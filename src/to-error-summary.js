@@ -9,6 +9,10 @@ const log = debug('shinkansen:pinion:to-error-summary')
 
 log('`pinion` is awake')
 
+export {
+  ErrorSummarySprocket as ErrorSummary
+}
+
 export default function toErrorSummary (description = 'There is a problem', definitions = []) {
   log('toErrorSummary')
 
