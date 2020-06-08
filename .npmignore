@@ -6,7 +6,14 @@
 .editorconfig
 .eslintignore
 .eslintrc
+.json
+
+json.js
+jest.config.js
 
 # NPM
 .npmignore
 .npmrc
+
+# Storybook
+stories
