@@ -33,10 +33,10 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "shinkansen-cogs": "1.5.2",
+    "shinkansen-cogs": "1.5.3",
     "shinkansen-rails": "1.0.8",
     "shinkansen-signals": "1.0.8",
-    "shinkansen-sprockets": "1.0.2",
+    "shinkansen-sprockets": "1.0.3",
     "shinkansen-transmission": "2.1.5"
   },
   "devDependencies": {
