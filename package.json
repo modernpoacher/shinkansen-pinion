@@ -32,12 +32,7 @@
     "pre-commit": "npm run lint && npm test && npm run babel && git add lib"
   },
   "dependencies": {
-    "debug": "^4.1.1",
-    "shinkansen-cogs": "1.5.3",
-    "shinkansen-rails": "1.0.8",
-    "shinkansen-signals": "1.0.8",
-    "shinkansen-sprockets": "1.0.3",
-    "shinkansen-transmission": "2.1.5"
+    "debug": "^4.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
@@ -70,12 +65,22 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "shinkansen-cogs": "1.5.3",
+    "shinkansen-rails": "1.0.8",
+    "shinkansen-signals": "1.0.8",
+    "shinkansen-sprockets": "1.0.3",
+    "shinkansen-transmission": "2.1.5"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "shinkansen-cogs": "1.5.3",
+    "shinkansen-rails": "1.0.8",
+    "shinkansen-signals": "1.0.8",
+    "shinkansen-sprockets": "1.0.3",
+    "shinkansen-transmission": "2.1.5"
   },
   "husky": {
     "hooks": {
