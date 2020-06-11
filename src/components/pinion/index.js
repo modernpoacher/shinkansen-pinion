@@ -29,63 +29,81 @@ function onChange () {
 const getKey = (value, index) => `${value}-${index}`
 
 /* eslint-disable-next-line react/prop-types */
-export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { enum: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToRadiosForEnum')
 
-  return items.map((value, index) => {
-    const key = getKey(uri, index)
+  return (
+    <FieldsetSprocket
+      title={title}
+      description={description}>
+      {items.map((value, index) => {
+        const key = getKey(uri, index)
 
-    return (
-      <RadioCog
-        key={key}
-        title={String(value)}
-        value={String(index)}
-        id={key}
-        name={name}
-        onChange={onChange}
-        required={isRequired}
-        checked={selectedItems.includes(index)}
-      />
-    )
-  })
+        return (
+          <RadioCog
+            key={key}
+            title={String(value)}
+            value={String(index)}
+            id={key}
+            name={name}
+            onChange={onChange}
+            required={isRequired}
+            checked={selectedItems.includes(index)}
+          />
+        )
+      })}
+    </FieldsetSprocket>
+  )
 }
 
 /* eslint-disable-next-line react/prop-types */
-export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToRadiosForAnyOf')
 
-  return items.map(({ meta: { uri }, elements: { title, description, field: { id } } }, index) => (
-    <RadioCog
-      key={uri}
+  return (
+    <FieldsetSprocket
       title={title}
-      description={description}
-      value={String(index)}
-      id={id}
-      name={name}
-      onChange={onChange}
-      required={isRequired}
-      checked={selectedItems.includes(index)}
-    />
-  ))
+      description={description}>
+      {items.map(({ meta: { uri }, elements: { title, description, field: { id } } }, index) => (
+        <RadioCog
+          key={uri}
+          title={title}
+          description={description}
+          value={String(index)}
+          id={id}
+          name={name}
+          onChange={onChange}
+          required={isRequired}
+          checked={selectedItems.includes(index)}
+        />
+      ))}
+    </FieldsetSprocket>
+  )
 }
 
 /* eslint-disable-next-line react/prop-types */
-export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToRadiosForOneOf')
 
-  return items.map(({ meta: { uri }, elements: { title, description, field: { id } } }, index) => (
-    <RadioCog
-      key={uri}
+  return (
+    <FieldsetSprocket
       title={title}
-      description={description}
-      value={String(index)}
-      id={id}
-      name={name}
-      onChange={onChange}
-      required={isRequired}
-      checked={selectedItems.includes(index)}
-    />
-  ))
+      description={description}>
+      {items.map(({ meta: { uri }, elements: { title, description, field: { id } } }, index) => (
+        <RadioCog
+          key={uri}
+          title={title}
+          description={description}
+          value={String(index)}
+          id={id}
+          name={name}
+          onChange={onChange}
+          required={isRequired}
+          checked={selectedItems.includes(index)}
+        />
+      ))}
+    </FieldsetSprocket>
+  )
 }
 
 /* eslint-disable-next-line react/prop-types */
