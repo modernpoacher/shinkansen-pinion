@@ -27,6 +27,8 @@ function onChange () {
 }
 
 const getKey = (value, index) => `${value}-${index}`
+const getDefaultValue = (field) => Reflect.has(field, 'defaultValue') ? Reflect.get(field, 'defaultValue') : ''
+const getValue = (field) => Reflect.has(field, 'value') ? Reflect.get(field, 'value') : getDefaultValue(field)
 
 /* eslint-disable-next-line react/prop-types */
 export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
@@ -183,19 +185,19 @@ export function renderToField (meta, elements, params, onChange) {
     description,
     field: {
       id,
-      value,
-      defaultValue,
-      isRequired = false
+      isRequired = false,
+      ...field
     } = {}
   } = elements
+
+  log({ value: getValue(field), defaultValue: getDefaultValue(field), onChange })
 
   return (
     <TextCog
       title={title}
       description={description}
       name={id}
-      value={value}
-      defaultValue={defaultValue}
+      value={getValue(field)}
       required={isRequired}
       onChange={onChange}
     />

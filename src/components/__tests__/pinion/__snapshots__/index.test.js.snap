@@ -3152,6 +3152,7 @@ exports[`shinkansen-pinion/components/pinion <Component /> With required props r
     readOnly={false}
     required={false}
     type="text"
+    value=""
   />
 </div>
 `;
