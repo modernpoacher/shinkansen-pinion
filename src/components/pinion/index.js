@@ -190,8 +190,6 @@ export function renderToField (meta, elements, params, onChange) {
     } = {}
   } = elements
 
-  log({ value: getValue(field), defaultValue: getDefaultValue(field), onChange })
-
   return (
     <TextCog
       title={title}
