@@ -1,6 +1,7 @@
 // import React from 'react'
 
 import { storiesOf } from '@storybook/react'
+import StorybookReactRouter from 'storybook-react-router'
 
 import toCheckAnswers from 'shinkansen-pinion/to-check-answers'
 
@@ -81,6 +82,7 @@ const RESOURCE = {
 }
 
 storiesOf('Check Answers', module)
+  .addDecorator(StorybookReactRouter())
   .add('String - String', () => toCheckAnswers('String - String', STRING_STRING, 'string', RESOURCE))
   .add('String - String - Enum', () => toCheckAnswers('String - String - Enum', STRING_STRING_ENUM, 'Three', RESOURCE))
   .add('String - String - Any Of', () => toCheckAnswers('String - String - Any Of', STRING_STRING_ANY_OF, 'three', RESOURCE))
