@@ -71,7 +71,7 @@
     "shinkansen-cogs": "1.5.3",
     "shinkansen-rails": "1.0.8",
     "shinkansen-signals": "1.0.8",
-    "shinkansen-sprockets": "1.0.4",
+    "shinkansen-sprockets": "1.0.5",
     "shinkansen-transmission": "2.1.7",
     "storybook-react-router": "^1.0.8"
   },
@@ -84,7 +84,7 @@
     "shinkansen-cogs": "1.5.3",
     "shinkansen-rails": "1.0.8",
     "shinkansen-signals": "1.0.8",
-    "shinkansen-sprockets": "1.0.4",
+    "shinkansen-sprockets": "1.0.5",
     "shinkansen-transmission": "2.1.7"
   },
   "husky": {
