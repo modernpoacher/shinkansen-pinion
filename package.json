@@ -82,10 +82,10 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "shinkansen-cogs": "1.5.5",
+    "shinkansen-cogs": "1.5.6",
     "shinkansen-rails": "1.0.9",
     "shinkansen-signals": "1.0.9",
-    "shinkansen-sprockets": "1.0.8",
+    "shinkansen-sprockets": "1.0.9",
     "shinkansen-transmission": "2.1.8"
   },
   "husky": {
