@@ -31,6 +31,7 @@ module.exports = {
         cwd: 'babelrc',
         alias: {
           'shinkansen-pinion': './src',
+          build: './build',
           stories: './stories'
         }
       }
