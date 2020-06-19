@@ -1,6 +1,6 @@
 {
   "name": "shinkansen-pinion",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Shinkansen Pinion",
   "main": "./index.js",
   "keywords": [
