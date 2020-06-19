@@ -35,37 +35,6 @@ import ERROR_ONE_OF from 'stories/definitions/error-one-of'
 import ERROR_UNKNOWN from 'stories/definitions/error-unknown'
 
 storiesOf('Error Summary', module)
-  .add('Errors', () => toErrorSummary('Errors', [
-    ERROR_MAX_ITEMS,
-    ERROR_MIN_ITEMS,
-    ERROR_MAX_LENGTH,
-    ERROR_MIN_LENGTH,
-    ERROR_MAX_PROPERTIES,
-    ERROR_MIN_PROPERTIES,
-    ERROR_ADDITIONAL_ITEMS,
-    ERROR_MAXIMUM,
-    ERROR_MINIMUM,
-    ERROR_FORMAT,
-    ERROR_ADDITIONAL_PROPERTIES,
-    ERROR_DEPENDENCIES,
-    ERROR_UNIQUE_ITEMS,
-    ERROR_PROPERTY_REQUIRED,
-    ERROR_PROPERTY_NAMES,
-    ERROR_PATTERN_REQUIRED,
-    ERROR_TYPE_INVALID_EXPECTED_TYPE_STRING,
-    ERROR_TYPE_INVALID_EXPECTED_TYPE_NUMBER,
-    ERROR_TYPE_INVALID_EXPECTED_TYPE_OBJECT,
-    ERROR_TYPE_INVALID_EXPECTED_TYPE_ARRAY,
-    ERROR_TYPE_INVALID_EXPECTED_TYPE_BOOLEAN,
-    ERROR_TYPE_INVALID_EXPECTED_TYPE_NULL,
-    ERROR_MULTIPLE_OF,
-    ERROR_PATTERN,
-    ERROR_CONST,
-    ERROR_ENUM,
-    ERROR_$REF,
-    ERROR_ONE_OF,
-    ERROR_UNKNOWN
-  ]))
   .add('Error - Max Items', () => toErrorSummary('Error - Max Items', [ERROR_MAX_ITEMS]))
   .add('Error - Min Items', () => toErrorSummary('Error - Min Items', [ERROR_MIN_ITEMS]))
   .add('Error - Max Length', () => toErrorSummary('Error - Max Length', [ERROR_MAX_LENGTH]))
