@@ -1,6 +1,7 @@
 // import React from 'react'
 
 import { storiesOf } from '@storybook/react'
+import StorybookReactRouter from 'storybook-react-router'
 
 import toErrorSummary from 'shinkansen-pinion/to-error-summary'
 
@@ -35,6 +36,8 @@ import ERROR_ONE_OF from 'stories/definitions/error-one-of'
 import ERROR_UNKNOWN from 'stories/definitions/error-unknown'
 
 storiesOf('Error Summary', module)
+  .addDecorator(StorybookReactRouter())
+
   .add('Error - Max Items', () => toErrorSummary('Error - Max Items', [ERROR_MAX_ITEMS]))
   .add('Error - Min Items', () => toErrorSummary('Error - Min Items', [ERROR_MIN_ITEMS]))
   .add('Error - Max Length', () => toErrorSummary('Error - Max Length', [ERROR_MAX_LENGTH]))

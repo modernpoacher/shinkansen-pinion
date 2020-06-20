@@ -17,6 +17,9 @@ import hasAnyOf from 'shinkansen-pinion/transformers/common/has-any-of'
 import hasOneOf from 'shinkansen-pinion/transformers/common/has-one-of'
 import hasComponent from 'shinkansen-pinion/transformers/common/has-component'
 import getComponent from 'shinkansen-pinion/transformers/common/get-component'
+import {
+  getError
+} from 'shinkansen-pinion/transformers/error-message'
 
 const log = debug('shinkansen:pinion')
 
@@ -37,7 +40,8 @@ export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, 
   return (
     <FieldsetSprocket
       title={title}
-      description={description}>
+      description={description}
+      errorMessage={getError(errors, uri)}>
       {items.map((value, index) => {
         const key = getKey(uri, index)
 
@@ -65,7 +69,8 @@ export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri },
   return (
     <FieldsetSprocket
       title={title}
-      description={description}>
+      description={description}
+      errorMessage={getError(errors, uri)}>
       {items.map(({ meta: { uri }, elements: { title, description, field: { id } } }, index) => (
         <RadioCog
           key={uri}
@@ -90,7 +95,8 @@ export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri },
   return (
     <FieldsetSprocket
       title={title}
-      description={description}>
+      description={description}
+      errorMessage={getError(errors, uri)}>
       {items.map(({ meta: { uri }, elements: { title, description, field: { id } } }, index) => (
         <RadioCog
           key={uri}
@@ -116,6 +122,7 @@ export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, 
     <SelectCog
       title={title}
       description={description}
+      errorMessage={getError(errors, uri)}
       name={name}
       onChange={onChange}
       required={isRequired}>
@@ -139,6 +146,7 @@ export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri },
     <SelectCog
       title={title}
       description={description}
+      errorMessage={getError(errors, uri)}
       name={name}
       onChange={onChange}
       required={isRequired}>
@@ -162,6 +170,7 @@ export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri },
     <SelectCog
       title={title}
       description={description}
+      errorMessage={getError(errors, uri)}
       name={name}
       onChange={onChange}
       required={isRequired}>
@@ -181,6 +190,10 @@ export function renderToField (meta, elements, params, onChange) {
   log('renderToField')
 
   const {
+    uri
+  } = meta
+
+  const {
     title,
     description,
     field: {
@@ -190,12 +203,17 @@ export function renderToField (meta, elements, params, onChange) {
     } = {}
   } = elements
 
+  const {
+    errors
+  } = params
+
   return (
     <TextCog
       title={title}
       description={description}
       name={id}
       value={getValue(field)}
+      errorMessage={getError(errors, uri)}
       required={isRequired}
       onChange={onChange}
     />
@@ -214,12 +232,24 @@ export function Group ({ meta, elements, params, onChange }) {
   log('Group')
 
   const {
+    uri
+  } = meta
+
+  const {
     title,
+    description,
     fields = []
   } = elements
 
+  const {
+    errors
+  } = params
+
   return (
-    <FieldsetSprocket title={title}>
+    <FieldsetSprocket
+      title={title}
+      description={description}
+      errorMessage={getError(errors, uri)}>
       {fields.map((pinion) => {
         const {
           meta: {
