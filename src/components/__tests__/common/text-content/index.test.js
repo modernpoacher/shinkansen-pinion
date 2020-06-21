@@ -7,7 +7,13 @@ describe('shinkansen-pinion/components/common/text-content', () => {
   describe('<Component />', () => {
     describe('With required props', () => {
       it('renders', () => {
-        expect(renderer.create(<Component textContent='MOCK TEXT CONTENT' />).toJSON())
+        const component = (
+          <Component
+            textContent='MOCK TEXT CONTENT'
+          />
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })

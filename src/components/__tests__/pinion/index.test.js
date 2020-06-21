@@ -51,411 +51,485 @@ describe('shinkansen-pinion/components/pinion', () => {
   describe('<Component />', () => {
     describe('With required props', () => {
       it('renders', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={{ meta: {}, elements: { title: 'MOCK TITLE', field: { id: 'MOCK ID' } } }}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
 
     describe('With additional props', () => {
       it('renders `STRING_STRING`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={STRING_STRING}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `STRING_STRING_ENUM`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={STRING_STRING_ENUM}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `STRING_STRING_ANY_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={STRING_STRING_ANY_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `STRING_STRING_ONE_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={STRING_STRING_ONE_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `STRING_STRING_ALL_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={STRING_STRING_ALL_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NUMBER_NUMBER`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NUMBER_NUMBER}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NUMBER_NUMBER_ENUM`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NUMBER_NUMBER_ENUM}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NUMBER_NUMBER_ANY_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NUMBER_NUMBER_ANY_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NUMBER_NUMBER_ONE_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NUMBER_NUMBER_ONE_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NUMBER_NUMBER_ALL_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NUMBER_NUMBER_ALL_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `OBJECT_ARRAY_STRING`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={OBJECT_ARRAY_STRING}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `OBJECT_ARRAY_NUMBER`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={OBJECT_ARRAY_NUMBER}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `OBJECT_ARRAY_BOOLEAN`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={OBJECT_ARRAY_BOOLEAN}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `OBJECT_ARRAY_NULL`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={OBJECT_ARRAY_NULL}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_STRING`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_STRING}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_STRING_ENUM`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_STRING_ENUM}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_STRING_ANY_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_STRING_ANY_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_STRING_ONE_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_STRING_ONE_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_NUMBER`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_NUMBER}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_NUMBER_ENUM`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_NUMBER_ENUM}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_NUMBER_ANY_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_NUMBER_ANY_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_NUMBER_ONE_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_NUMBER_ONE_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_OBJECT`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_OBJECT}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_ARRAY`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_ARRAY}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_BOOLEAN`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_BOOLEAN}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `ARRAY_ARRAY_NULL`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={ARRAY_ARRAY_NULL}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `BOOLEAN_BOOLEAN`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={BOOLEAN_BOOLEAN}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `BOOLEAN_BOOLEAN_ENUM`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={BOOLEAN_BOOLEAN_ENUM}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `BOOLEAN_BOOLEAN_ANY_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={BOOLEAN_BOOLEAN_ANY_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `BOOLEAN_BOOLEAN_ONE_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={BOOLEAN_BOOLEAN_ONE_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `BOOLEAN_BOOLEAN_ALL_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={BOOLEAN_BOOLEAN_ALL_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NULL_NULL`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NULL_NULL}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NULL_NULL_ENUM`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NULL_NULL_ENUM}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NULL_NULL_ANY_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NULL_NULL_ANY_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NULL_NULL_ONE_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NULL_NULL_ONE_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       it('renders `NULL_NULL_ALL_OF`', () => {
-        expect(renderer.create((
+        const component = (
           <Component
             pinion={NULL_NULL_ALL_OF}
             params={{}}
             onChange={jest.fn()}
           />
-        )).toJSON())
+        )
+
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
