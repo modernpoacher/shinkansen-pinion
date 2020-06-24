@@ -2,7 +2,6 @@
   "name": "shinkansen-pinion",
   "version": "1.0.21",
   "description": "Shinkansen Pinion",
-  "main": "./index.js",
   "keywords": [
     "Shinkansen",
     "Pinion",
@@ -11,12 +10,13 @@
     "Karakuri",
     "React"
   ],
+  "main": "./index.js",
+  "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com/modernpoacher/shinkansen-pinion.git"
   },
-  "author": "Jonathan Perry for Modern Poacher Limited",
-  "license": "MIT",
   "scripts": {
     "prepublishOnly": "npm run lint:fix && npm run babel",
     "prebuild": "npm run clean",
