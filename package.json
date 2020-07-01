@@ -71,7 +71,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.20.2",
+    "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-standard": "^4.0.1",
     "glob-all": "^3.2.1",
     "gulp": "^4.0.2",
@@ -101,7 +101,6 @@
     "shinkansen-rails": "1.0.12",
     "shinkansen-signals": "1.0.12",
     "shinkansen-sprockets": "1.0.19",
-    "shinkansen-transmission": "2.1.11",
     "storybook-react-router": "^1.0.8",
     "vinyl-paths": "^3.0.1"
   },

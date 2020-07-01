@@ -5,9 +5,6 @@ import StorybookReactRouter from 'storybook-react-router'
 
 import Pinion from 'shinkansen-pinion/components/pinion'
 
-import toZashiki from 'shinkansen-transmission/lib/transmission/to-zashiki'
-import fromDocumentToHash from 'shinkansen-transmission/lib/transmission/from-document-to-hash'
-
 import STRING_STRING from 'stories/definitions/pinion/string-string'
 import STRING_STRING_ENUM from 'stories/definitions/pinion/string-string-enum'
 import STRING_STRING_ANY_OF from 'stories/definitions/pinion/string-string-any-of'
@@ -84,702 +81,702 @@ storiesOf('Pinion', module)
 
   .add('String - String', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING, fromDocumentToHash('string'))}
+      pinion={STRING_STRING}
       params={{}}
     />
   ))
   .add('String - String (Error)', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING, fromDocumentToHash('string'))}
+      pinion={STRING_STRING}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('String - String - Enum', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING_ENUM, fromDocumentToHash('Three'))}
+      pinion={STRING_STRING_ENUM}
       params={{}}
     />
   ))
   .add('String - String - Enum (Error)', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING_ENUM, fromDocumentToHash('Three'))}
+      pinion={STRING_STRING_ENUM}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('String - String - Any Of', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING_ANY_OF, fromDocumentToHash('three'))}
+      pinion={STRING_STRING_ANY_OF}
       params={{}}
     />
   ))
   .add('String - String - Any Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING_ANY_OF, fromDocumentToHash('three'))}
+      pinion={STRING_STRING_ANY_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('String - String - One Of', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING_ONE_OF, fromDocumentToHash('three'))}
+      pinion={STRING_STRING_ONE_OF}
       params={{}}
     />
   ))
   .add('String - String - One Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING_ONE_OF, fromDocumentToHash('three'))}
+      pinion={STRING_STRING_ONE_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('String - String - All Of', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING_ALL_OF, fromDocumentToHash('string'))}
+      pinion={STRING_STRING_ALL_OF}
       params={{}}
     />
   ))
   .add('String - String - All Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(STRING_STRING_ALL_OF, fromDocumentToHash('string'))}
+      pinion={STRING_STRING_ALL_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
 
   .add('Number - Number', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER, fromDocumentToHash(1))}
+      pinion={NUMBER_NUMBER}
       params={{}}
     />
   ))
   .add('Number - Number (Error)', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER, fromDocumentToHash(1))}
+      pinion={NUMBER_NUMBER}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Number - Number - Enum', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER_ENUM, fromDocumentToHash(3))}
+      pinion={NUMBER_NUMBER_ENUM}
       params={{}}
     />
   ))
   .add('Number - Number - Enum (Error)', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER_ENUM, fromDocumentToHash(3))}
+      pinion={NUMBER_NUMBER_ENUM}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Number - Number - Any Of', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER_ANY_OF, fromDocumentToHash(3))}
+      pinion={NUMBER_NUMBER_ANY_OF}
       params={{}}
     />
   ))
   .add('Number - Number - Any Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER_ANY_OF, fromDocumentToHash(3))}
+      pinion={NUMBER_NUMBER_ANY_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Number - Number - One Of', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER_ONE_OF, fromDocumentToHash(3))}
+      pinion={NUMBER_NUMBER_ONE_OF}
       params={{}}
     />
   ))
   .add('Number - Number - One Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER_ONE_OF, fromDocumentToHash(3))}
+      pinion={NUMBER_NUMBER_ONE_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Number - Number - All Of', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER_ALL_OF, fromDocumentToHash(1))}
+      pinion={NUMBER_NUMBER_ALL_OF}
       params={{}}
     />
   ))
   .add('Number - Number - All Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(NUMBER_NUMBER_ALL_OF, fromDocumentToHash(1))}
+      pinion={NUMBER_NUMBER_ALL_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
 
   .add('Object - String', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_STRING, fromDocumentToHash({ string: 'string' }))}
+      pinion={OBJECT_OBJECT_STRING}
       params={{}}
     />
   ))
   .add('Object - String (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_STRING, fromDocumentToHash({ string: 'string' }))}
+      pinion={OBJECT_OBJECT_STRING}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/string' }] }}
     />
   ))
 
   .add('Object - Number', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_NUMBER, fromDocumentToHash({ number: 1 }))}
+      pinion={OBJECT_OBJECT_NUMBER}
       params={{}}
     />
   ))
   .add('Object - Number (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_NUMBER, fromDocumentToHash({ number: 1 }))}
+      pinion={OBJECT_OBJECT_NUMBER}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/number' }] }}
     />
   ))
 
   .add('Object - Object', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_OBJECT, fromDocumentToHash({ string: 'string', number: 1, boolean: true, null: null }))}
+      pinion={OBJECT_OBJECT_OBJECT}
     />
   ))
   .add('Object - Object (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_OBJECT, fromDocumentToHash({ string: 'string', number: 1, boolean: true, null: null }))}
+      pinion={OBJECT_OBJECT_OBJECT}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/object/string' }, { type: 'UNKNOWN', params: {}, uri: '#/object/number' }, { type: 'UNKNOWN', params: {}, uri: '#/object/boolean' }, { type: 'UNKNOWN', params: {}, uri: '#/object/null' }] }}
     />
   ))
 
   .add('Object - Array (Items is an object) - String', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_OBJECT_STRING, fromDocumentToHash({ array: ['string'] }))}
+      pinion={OBJECT_OBJECT_ARRAY_OBJECT_STRING}
       params={{}}
     />
   ))
   .add('Object - Array (Items is an object) - String (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_OBJECT_STRING, fromDocumentToHash({ array: ['string'] }))}
+      pinion={OBJECT_OBJECT_ARRAY_OBJECT_STRING}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }}
     />
   ))
 
   .add('Object - Array (Items is an object) - Number', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_OBJECT_NUMBER, fromDocumentToHash({ array: [1] }))}
+      pinion={OBJECT_OBJECT_ARRAY_OBJECT_NUMBER}
       params={{}}
     />
   ))
   .add('Object - Array (Items is an object) - Number (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_OBJECT_NUMBER, fromDocumentToHash({ array: [1] }))}
+      pinion={OBJECT_OBJECT_ARRAY_OBJECT_NUMBER}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }}
     />
   ))
 
   .add('Object - Array (Items is an object) - Boolean', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_OBJECT_BOOLEAN, fromDocumentToHash({ array: [true] }))}
+      pinion={OBJECT_OBJECT_ARRAY_OBJECT_BOOLEAN}
       params={{}}
     />
   ))
   .add('Object - Array (Items is an object) - Boolean (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_OBJECT_BOOLEAN, fromDocumentToHash({ array: [true] }))}
+      pinion={OBJECT_OBJECT_ARRAY_OBJECT_BOOLEAN}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }}
     />
   ))
 
   .add('Object - Array (Items is an object) - Null', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_OBJECT_NULL, fromDocumentToHash({ array: [null] }))}
+      pinion={OBJECT_OBJECT_ARRAY_OBJECT_NULL}
       params={{}}
     />
   ))
   .add('Object - Array (Items is an object) - Null (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_OBJECT_NULL, fromDocumentToHash({ array: [null] }))}
+      pinion={OBJECT_OBJECT_ARRAY_OBJECT_NULL}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }}
     />
   ))
 
   .add('Object - Array (Items is an array) - String', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_ARRAY_STRING, fromDocumentToHash({ array: ['string'] }))}
+      pinion={OBJECT_OBJECT_ARRAY_ARRAY_STRING}
       params={{}}
     />
   ))
   .add('Object - Array (Items is an array) - String (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_ARRAY_STRING, fromDocumentToHash({ array: ['string'] }))}
+      pinion={OBJECT_OBJECT_ARRAY_ARRAY_STRING}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }}
     />
   ))
 
   .add('Object - Array (Items is an array) - Number', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_ARRAY_NUMBER, fromDocumentToHash({ array: [1] }))}
+      pinion={OBJECT_OBJECT_ARRAY_ARRAY_NUMBER}
       params={{}}
     />
   ))
   .add('Object - Array (Items is an array) - Number (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_ARRAY_NUMBER, fromDocumentToHash({ array: [1] }))}
+      pinion={OBJECT_OBJECT_ARRAY_ARRAY_NUMBER}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }}
     />
   ))
 
   .add('Object - Array (Items is an array) - Boolean', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_ARRAY_BOOLEAN, fromDocumentToHash({ array: [true] }))}
+      pinion={OBJECT_OBJECT_ARRAY_ARRAY_BOOLEAN}
       params={{}}
     />
   ))
   .add('Object - Array (Items is an array) - Boolean (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_ARRAY_BOOLEAN, fromDocumentToHash({ array: [true] }))}
+      pinion={OBJECT_OBJECT_ARRAY_ARRAY_BOOLEAN}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }}
     />
   ))
 
   .add('Object - Array (Items is an array) - Null', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_ARRAY_NULL, fromDocumentToHash({ array: [null] }))}
+      pinion={OBJECT_OBJECT_ARRAY_ARRAY_NULL}
       params={{}}
     />
   ))
   .add('Object - Array (Items is an array) - Null (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_ARRAY_ARRAY_NULL, fromDocumentToHash({ array: [null] }))}
+      pinion={OBJECT_OBJECT_ARRAY_ARRAY_NULL}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }}
     />
   ))
 
   .add('Object - Boolean', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_BOOLEAN, fromDocumentToHash({ boolean: true }))}
+      pinion={OBJECT_OBJECT_BOOLEAN}
       params={{}}
     />
   ))
   .add('Object - Boolean (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_BOOLEAN, fromDocumentToHash({ boolean: true }))}
+      pinion={OBJECT_OBJECT_BOOLEAN}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/boolean' }] }}
     />
   ))
 
   .add('Object - Null', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_NULL, fromDocumentToHash({ null: null }))}
+      pinion={OBJECT_OBJECT_NULL}
       params={{}}
     />
   ))
   .add('Object - Null (Error)', () => (
     <Pinion
-      pinion={toZashiki(OBJECT_OBJECT_NULL, fromDocumentToHash({ null: null }))}
+      pinion={OBJECT_OBJECT_NULL}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/null' }] }}
     />
   ))
 
   .add('Array - Array (Items is an object) - String', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_STRING, fromDocumentToHash(['string']))}
+      pinion={ARRAY_ARRAY_OBJECT_STRING}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - String (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_STRING, fromDocumentToHash(['string']))}
+      pinion={ARRAY_ARRAY_OBJECT_STRING}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - String - Enum', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_STRING_ENUM, fromDocumentToHash(['Three']))}
+      pinion={ARRAY_ARRAY_OBJECT_STRING_ENUM}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - String - Enum (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_STRING_ENUM, fromDocumentToHash(['Three']))}
+      pinion={ARRAY_ARRAY_OBJECT_STRING_ENUM}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - String - Any Of', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_STRING_ANY_OF, fromDocumentToHash(['three']))}
+      pinion={ARRAY_ARRAY_OBJECT_STRING_ANY_OF}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - String - Any Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_STRING_ANY_OF, fromDocumentToHash(['three']))}
+      pinion={ARRAY_ARRAY_OBJECT_STRING_ANY_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - String - One Of', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_STRING_ONE_OF, fromDocumentToHash(['three']))}
+      pinion={ARRAY_ARRAY_OBJECT_STRING_ONE_OF}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - String - One Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_STRING_ONE_OF, fromDocumentToHash(['three']))}
+      pinion={ARRAY_ARRAY_OBJECT_STRING_ONE_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
 
   .add('Array - Array (Items is an object) - Number', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NUMBER, fromDocumentToHash([1]))}
+      pinion={ARRAY_ARRAY_OBJECT_NUMBER}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - Number (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NUMBER, fromDocumentToHash([1]))}
+      pinion={ARRAY_ARRAY_OBJECT_NUMBER}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - Number - Enum', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NUMBER_ENUM, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_OBJECT_NUMBER_ENUM}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - Number - Enum (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NUMBER_ENUM, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_OBJECT_NUMBER_ENUM}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - Number - Any Of', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NUMBER_ANY_OF, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_OBJECT_NUMBER_ANY_OF}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - Number - Any Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NUMBER_ANY_OF, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_OBJECT_NUMBER_ANY_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - Number - One Of', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NUMBER_ONE_OF, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_OBJECT_NUMBER_ONE_OF}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - Number - One Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NUMBER_ONE_OF, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_OBJECT_NUMBER_ONE_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
 
   .add('Array - Array (Items is an object) - Object', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_OBJECT, fromDocumentToHash([{ string: 'string', number: 1, boolean: true, null: null }]))}
+      pinion={ARRAY_ARRAY_OBJECT_OBJECT}
     />
   ))
   .add('Array - Array (Items is an object) - Object (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_OBJECT, fromDocumentToHash([{ string: 'string', number: 1, boolean: true, null: null }]))}
+      pinion={ARRAY_ARRAY_OBJECT_OBJECT}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0/string' }, { type: 'UNKNOWN', params: {}, uri: '#/0/number' }, { type: 'UNKNOWN', params: {}, uri: '#/0/boolean' }, { type: 'UNKNOWN', params: {}, uri: '#/0/null' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - Array', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_ARRAY, fromDocumentToHash([['string', 1, true, null]]))}
+      pinion={ARRAY_ARRAY_OBJECT_ARRAY}
     />
   ))
   .add('Array - Array (Items is an object) - Array (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_ARRAY, fromDocumentToHash([['string', 1, true, null]]))}
+      pinion={ARRAY_ARRAY_OBJECT_ARRAY}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0/0' }, { type: 'UNKNOWN', params: {}, uri: '#/0/1' }, { type: 'UNKNOWN', params: {}, uri: '#/0/2' }, { type: 'UNKNOWN', params: {}, uri: '#/0/3' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - Boolean', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_BOOLEAN, fromDocumentToHash([true]))}
+      pinion={ARRAY_ARRAY_OBJECT_BOOLEAN}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - Boolean (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_BOOLEAN, fromDocumentToHash([true]))}
+      pinion={ARRAY_ARRAY_OBJECT_BOOLEAN}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an object) - Null', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NULL, fromDocumentToHash([null]))}
+      pinion={ARRAY_ARRAY_OBJECT_NULL}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an object) - Null (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_OBJECT_NULL, fromDocumentToHash([null]))}
+      pinion={ARRAY_ARRAY_OBJECT_NULL}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
 
   .add('Array - Array (Items is an array) - String', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_STRING, fromDocumentToHash(['string']))}
+      pinion={ARRAY_ARRAY_ARRAY_STRING}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - String (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_STRING, fromDocumentToHash(['string']))}
+      pinion={ARRAY_ARRAY_ARRAY_STRING}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - String - Enum', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_STRING_ENUM, fromDocumentToHash(['Three']))}
+      pinion={ARRAY_ARRAY_ARRAY_STRING_ENUM}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - String - Enum (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_STRING_ENUM, fromDocumentToHash(['Three']))}
+      pinion={ARRAY_ARRAY_ARRAY_STRING_ENUM}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - String - Any Of', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_STRING_ANY_OF, fromDocumentToHash(['three']))}
+      pinion={ARRAY_ARRAY_ARRAY_STRING_ANY_OF}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - String - Any Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_STRING_ANY_OF, fromDocumentToHash(['three']))}
+      pinion={ARRAY_ARRAY_ARRAY_STRING_ANY_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - String - One Of', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_STRING_ONE_OF, fromDocumentToHash(['three']))}
+      pinion={ARRAY_ARRAY_ARRAY_STRING_ONE_OF}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - String - One Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_STRING_ONE_OF, fromDocumentToHash(['three']))}
+      pinion={ARRAY_ARRAY_ARRAY_STRING_ONE_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
 
   .add('Array - Array (Items is an array) - Number', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NUMBER, fromDocumentToHash([1]))}
+      pinion={ARRAY_ARRAY_ARRAY_NUMBER}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - Number (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NUMBER, fromDocumentToHash([1]))}
+      pinion={ARRAY_ARRAY_ARRAY_NUMBER}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - Number - Enum', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NUMBER_ENUM, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_ARRAY_NUMBER_ENUM}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - Number - Enum (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NUMBER_ENUM, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_ARRAY_NUMBER_ENUM}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - Number - Any Of', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NUMBER_ANY_OF, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_ARRAY_NUMBER_ANY_OF}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - Number - Any Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NUMBER_ANY_OF, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_ARRAY_NUMBER_ANY_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - Number - One Of', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NUMBER_ONE_OF, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_ARRAY_NUMBER_ONE_OF}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - Number - One Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NUMBER_ONE_OF, fromDocumentToHash([3]))}
+      pinion={ARRAY_ARRAY_ARRAY_NUMBER_ONE_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
 
   .add('Array - Array (Items is an array) - Object', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_OBJECT, fromDocumentToHash([{ string: 'string', number: 1, boolean: true, null: null }]))}
+      pinion={ARRAY_ARRAY_ARRAY_OBJECT}
     />
   ))
   .add('Array - Array (Items is an array) - Object (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_OBJECT, fromDocumentToHash([{ string: 'string', number: 1, boolean: true, null: null }]))}
+      pinion={ARRAY_ARRAY_ARRAY_OBJECT}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0/string' }, { type: 'UNKNOWN', params: {}, uri: '#/0/number' }, { type: 'UNKNOWN', params: {}, uri: '#/0/boolean' }, { type: 'UNKNOWN', params: {}, uri: '#/0/null' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - Array', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_ARRAY, fromDocumentToHash([['string', 1, true, null]]))}
+      pinion={ARRAY_ARRAY_ARRAY_ARRAY}
     />
   ))
   .add('Array - Array (Items is an array) - Array (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_ARRAY, fromDocumentToHash([['string', 1, true, null]]))}
+      pinion={ARRAY_ARRAY_ARRAY_ARRAY}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0/0' }, { type: 'UNKNOWN', params: {}, uri: '#/0/1' }, { type: 'UNKNOWN', params: {}, uri: '#/0/2' }, { type: 'UNKNOWN', params: {}, uri: '#/0/3' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - Boolean', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_BOOLEAN, fromDocumentToHash([true]))}
+      pinion={ARRAY_ARRAY_ARRAY_BOOLEAN}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - Boolean (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_BOOLEAN, fromDocumentToHash([true]))}
+      pinion={ARRAY_ARRAY_ARRAY_BOOLEAN}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
   .add('Array - Array (Items is an array) - Null', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NULL, fromDocumentToHash([null]))}
+      pinion={ARRAY_ARRAY_ARRAY_NULL}
       params={{}}
     />
   ))
   .add('Array - Array (Items is an array) - Null (Error)', () => (
     <Pinion
-      pinion={toZashiki(ARRAY_ARRAY_ARRAY_NULL, fromDocumentToHash([null]))}
+      pinion={ARRAY_ARRAY_ARRAY_NULL}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] }}
     />
   ))
 
   .add('Boolean - Boolean', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN, fromDocumentToHash(true))}
+      pinion={BOOLEAN_BOOLEAN}
       params={{}}
     />
   ))
   .add('Boolean - Boolean (Error)', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN, fromDocumentToHash(true))}
+      pinion={BOOLEAN_BOOLEAN}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Boolean - Boolean - Enum', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN_ENUM, fromDocumentToHash(false))}
+      pinion={BOOLEAN_BOOLEAN_ENUM}
       params={{}}
     />
   ))
   .add('Boolean - Boolean - Enum (Error)', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN_ENUM, fromDocumentToHash(false))}
+      pinion={BOOLEAN_BOOLEAN_ENUM}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Boolean - Boolean - Any Of', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN_ANY_OF, fromDocumentToHash(false))}
+      pinion={BOOLEAN_BOOLEAN_ANY_OF}
       params={{}}
     />
   ))
   .add('Boolean - Boolean - Any Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN_ANY_OF, fromDocumentToHash(false))}
+      pinion={BOOLEAN_BOOLEAN_ANY_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Boolean - Boolean - One Of', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN_ONE_OF, fromDocumentToHash(false))}
+      pinion={BOOLEAN_BOOLEAN_ONE_OF}
       params={{}}
     />
   ))
   .add('Boolean - Boolean - One Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN_ONE_OF, fromDocumentToHash(false))}
+      pinion={BOOLEAN_BOOLEAN_ONE_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Boolean - Boolean - All Of', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN_ALL_OF, fromDocumentToHash(true))}
+      pinion={BOOLEAN_BOOLEAN_ALL_OF}
       params={{}}
     />
   ))
   .add('Boolean - Boolean - All Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(BOOLEAN_BOOLEAN_ALL_OF, fromDocumentToHash(true))}
+      pinion={BOOLEAN_BOOLEAN_ALL_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
 
   .add('Null - Null', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL, fromDocumentToHash(null))}
+      pinion={NULL_NULL}
       params={{}}
     />
   ))
   .add('Null - Null (Error)', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL, fromDocumentToHash(null))}
+      pinion={NULL_NULL}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Null - Null - Enum', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL_ENUM, fromDocumentToHash(null))}
+      pinion={NULL_NULL_ENUM}
       params={{}}
     />
   ))
   .add('Null - Null - Enum (Error)', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL_ENUM, fromDocumentToHash(null))}
+      pinion={NULL_NULL_ENUM}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Null - Null - Any Of', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL_ANY_OF, fromDocumentToHash(null))}
+      pinion={NULL_NULL_ANY_OF}
       params={{}}
     />
   ))
   .add('Null - Null - Any Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL_ANY_OF, fromDocumentToHash(null))}
+      pinion={NULL_NULL_ANY_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Null - Null - One Of', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL_ONE_OF, fromDocumentToHash(null))}
+      pinion={NULL_NULL_ONE_OF}
       params={{}}
     />
   ))
   .add('Null - Null - One Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL_ONE_OF, fromDocumentToHash(null))}
+      pinion={NULL_NULL_ONE_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
   .add('Null - Null - All Of', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL_ALL_OF, fromDocumentToHash(null))}
+      pinion={NULL_NULL_ALL_OF}
       params={{}}
     />
   ))
   .add('Null - Null - All Of (Error)', () => (
     <Pinion
-      pinion={toZashiki(NULL_NULL_ALL_OF, fromDocumentToHash(null))}
+      pinion={NULL_NULL_ALL_OF}
       params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
     />
   ))
