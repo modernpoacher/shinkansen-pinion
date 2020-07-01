@@ -113,7 +113,7 @@
     "shinkansen-cogs": "1.5.16",
     "shinkansen-rails": "1.0.12",
     "shinkansen-signals": "1.0.12",
-    "shinkansen-sprockets": "1.0.19"
+    "shinkansen-sprockets": "1.0.20"
   },
   "husky": {
     "hooks": {
