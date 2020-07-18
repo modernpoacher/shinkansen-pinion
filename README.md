@@ -1,4 +1,4 @@
-## shinkansen-pinion
+## `shinkansen-pinion`
 
 # Shinkansen Pinion
 
