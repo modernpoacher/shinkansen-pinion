@@ -97,10 +97,10 @@
     "regenerator-runtime": "^0.13.5",
     "rimraf": "^3.0.2",
     "sacred-fs": "^1.0.17",
-    "shinkansen-cogs": "1.5.17",
-    "shinkansen-rails": "1.0.13",
-    "shinkansen-signals": "1.0.13",
-    "shinkansen-sprockets": "1.0.21",
+    "shinkansen-cogs": "1.5.18",
+    "shinkansen-rails": "1.0.14",
+    "shinkansen-signals": "1.0.14",
+    "shinkansen-sprockets": "1.0.22",
     "storybook-react-router": "^1.0.8",
     "vinyl-paths": "^3.0.1"
   },
@@ -110,10 +110,10 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "shinkansen-cogs": "1.5.17",
-    "shinkansen-rails": "1.0.13",
-    "shinkansen-signals": "1.0.13",
-    "shinkansen-sprockets": "1.0.21"
+    "shinkansen-cogs": "1.5.18",
+    "shinkansen-rails": "1.0.14",
+    "shinkansen-signals": "1.0.14",
+    "shinkansen-sprockets": "1.0.22"
   },
   "husky": {
     "hooks": {
