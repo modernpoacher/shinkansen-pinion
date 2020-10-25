@@ -97,10 +97,10 @@
     "react-test-renderer": "16.14.0",
     "regenerator-runtime": "^0.13.7",
     "rimraf": "^3.0.2",
-    "shinkansen-cogs": "1.5.22",
+    "shinkansen-cogs": "1.5.23",
     "shinkansen-rails": "1.0.17",
     "shinkansen-signals": "1.0.17",
-    "shinkansen-sprockets": "1.0.26",
+    "shinkansen-sprockets": "1.0.27",
     "storybook-react-router": "^1.0.8",
     "vinyl-paths": "^3.0.1"
   },
