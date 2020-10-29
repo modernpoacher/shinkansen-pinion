@@ -6,7 +6,7 @@ import getChangeAnswer from './get-change-answer'
 
 const log = debug('shinkansen:pinion:transformers:check-answers')
 
-export default function transformTypeArrayAnswers (answers = [], resource) {
+export default function transformTypeArrayAnswers (answers = [], resource = {}) {
   log('transformTypeArrayAnswers')
 
   const [
