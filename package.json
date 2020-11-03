@@ -102,6 +102,17 @@
     "shinkansen-sprockets": "1.0.27",
     "vinyl-paths": "^3.0.1"
   },
+  "peerDependencies": {
+    "prop-types": "<=15.7.2",
+    "react": "<=16.14.0",
+    "react-dom": "<=16.14.0",
+    "react-router": "<=5.2.0",
+    "react-router-dom": "<=5.2.0",
+    "shinkansen-cogs": "1.5.23",
+    "shinkansen-rails": "1.0.17",
+    "shinkansen-signals": "1.0.17",
+    "shinkansen-sprockets": "1.0.27"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run pre-commit"
