@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-const log = debug('shinkansen:pinion:transformers:error-message')
+const log = debug('shinkansen-pinion:transformers:error-message')
 
 export function hasError (errors = [], uri = null) {
   log('hasError')

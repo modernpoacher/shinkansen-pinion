@@ -3,7 +3,7 @@ import debug from 'debug'
 import getEnumSelectedItemsValue from './get-enum-selected-items-value'
 import getEnumSelectedItemValue from './get-enum-selected-item-value'
 
-const log = debug('shinkansen:pinion:transformers:check-answers')
+const log = debug('shinkansen-pinion:transformers:check-answers')
 
 export default function transformEnumValue ({ items, selectedItems } = {}) {
   log('transformEnumValue')

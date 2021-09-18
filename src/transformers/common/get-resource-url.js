@@ -8,7 +8,7 @@ import {
   Signals
 } from 'shinkansen-signals'
 
-const log = debug('shinkansen:pinion:transformers:check-answers')
+const log = debug('shinkansen-pinion:transformers:check-answers')
 
 export default function getResourceUrl (resource = {}) {
   log('getResourceUrl')

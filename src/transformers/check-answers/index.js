@@ -11,7 +11,7 @@ import transformTypeNullAnswer from './transform-type-null-answer'
 import transformTypeObjectAnswers from './transform-type-object-answers'
 import transformTypeArrayAnswers from './transform-type-array-answers'
 
-const log = debug('shinkansen:pinion:transformers:check-answers')
+const log = debug('shinkansen-pinion:transformers:check-answers')
 
 export function transformTypeObjectAnswer ({ elements: { fields = [] } = {} }, resource, array = [], group = []) {
   log('transformTypeObjectAnswer')

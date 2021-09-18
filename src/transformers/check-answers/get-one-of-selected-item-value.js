@@ -2,7 +2,7 @@ import debug from 'debug'
 
 import toAnswerValue from './to-answer-value'
 
-const log = debug('shinkansen:pinion:transformers:check-answers')
+const log = debug('shinkansen-pinion:transformers:check-answers')
 
 export default function getOneOfSelectedItemValue (items = [], [selectedItem] = []) {
   log('getOneOfSelectedItemValue')

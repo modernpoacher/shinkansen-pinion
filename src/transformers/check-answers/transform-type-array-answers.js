@@ -4,7 +4,7 @@ import getAnswerTitle from './get-answer-title'
 import getAnswerValue from './get-answer-value-for-type-array'
 import getChangeAnswer from './get-change-answer'
 
-const log = debug('shinkansen:pinion:transformers:check-answers')
+const log = debug('shinkansen-pinion:transformers:check-answers')
 
 export default function transformTypeArrayAnswers (answers = [], resource = {}) {
   log('transformTypeArrayAnswers')

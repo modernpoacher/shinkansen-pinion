@@ -14,7 +14,7 @@ import transformAnyOfValue from './transform-any-of-value'
 import transformOneOfValue from './transform-one-of-value'
 import transformFieldValue from './transform-field-value'
 
-const log = debug('shinkansen:pinion:transformers:check-answers')
+const log = debug('shinkansen-pinion:transformers:check-answers')
 
 export default function transformAnswerValue (elements) {
   log('transformAnswerValue')
