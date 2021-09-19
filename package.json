@@ -99,6 +99,6 @@
     "shinkansen-rails": "1.0.18",
     "shinkansen-signals": "1.1.2",
     "shinkansen-sprockets": "1.0.30",
-    "vinyl-paths": "3.0.1"
+    "vinyl-paths": "4.0.0"
   }
 }
