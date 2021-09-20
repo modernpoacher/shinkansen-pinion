@@ -11,6 +11,14 @@ import NUMBER_NUMBER_ANY_OF from 'stories/definitions/check-answers/number-numbe
 import NUMBER_NUMBER_ONE_OF from 'stories/definitions/check-answers/number-number-one-of'
 import NUMBER_NUMBER_ALL_OF from 'stories/definitions/check-answers/number-number-all-of'
 
+const NUMBER = {
+  NUMBER_NUMBER: [NUMBER_NUMBER],
+  NUMBER_NUMBER_ENUM: [NUMBER_NUMBER_ENUM],
+  NUMBER_NUMBER_ANY_OF: [NUMBER_NUMBER_ANY_OF],
+  NUMBER_NUMBER_ONE_OF: [NUMBER_NUMBER_ONE_OF],
+  NUMBER_NUMBER_ALL_OF: [NUMBER_NUMBER_ALL_OF]
+}
+
 export default {
   title: 'Components/Check Answers/Number',
   component: CheckAnswers,
@@ -20,24 +28,44 @@ export default {
         <Story />
       </MemoryRouter>
     )
-  ]
+  ],
+  args: {
+    title: 'Check Answers',
+    checkAnswers: 'NUMBER_NUMBER'
+  },
+  argTypes: {
+    checkAnswers: {
+      options: Object.keys(NUMBER),
+      mapping: NUMBER,
+      control: {
+        type: 'radio',
+        labels: {
+          NUMBER_NUMBER: 'Number',
+          NUMBER_NUMBER_ENUM: 'Number - Enum',
+          NUMBER_NUMBER_ANY_OF: 'Number - Any Of',
+          NUMBER_NUMBER_ONE_OF: 'Number - One Of',
+          NUMBER_NUMBER_ALL_OF: 'Number - All Of'
+        }
+      }
+    }
+  }
 }
+
+export const Default = (args) => (
+  <CheckAnswers
+    {...args}
+  />
+)
 
 export const AllAnswers = () => (
   <CheckAnswers
     title='All Answers'
-    checkAnswers={[
-      NUMBER_NUMBER,
-      NUMBER_NUMBER_ENUM,
-      NUMBER_NUMBER_ANY_OF,
-      NUMBER_NUMBER_ONE_OF,
-      NUMBER_NUMBER_ALL_OF
-    ]}
+    checkAnswers={Object.values(NUMBER).map(([n]) => n)}
   />
 )
 
 AllAnswers.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }
 
 export const NoAnswers = () => (
@@ -48,65 +76,5 @@ export const NoAnswers = () => (
 )
 
 NoAnswers.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumber = () => (
-  <CheckAnswers
-    title='Number - Number'
-    checkAnswers={[NUMBER_NUMBER]}
-  />
-)
-
-NumberNumber.storyName = 'Number'
-NumberNumber.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberEnum = () => (
-  <CheckAnswers
-    title='Number - Number - Enum'
-    checkAnswers={[NUMBER_NUMBER_ENUM]}
-  />
-)
-
-NumberNumberEnum.storyName = 'Number - Enum'
-NumberNumberEnum.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberAnyOf = () => (
-  <CheckAnswers
-    title='Number - Number - Any Of'
-    checkAnswers={[NUMBER_NUMBER_ANY_OF]}
-  />
-)
-
-NumberNumberAnyOf.storyName = 'Number - Any Of'
-NumberNumberAnyOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberOneOf = () => (
-  <CheckAnswers
-    title='Number - Number - One Of'
-    checkAnswers={[NUMBER_NUMBER_ONE_OF]}
-  />
-)
-
-NumberNumberOneOf.storyName = 'Number - One Of'
-NumberNumberOneOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberAllOf = () => (
-  <CheckAnswers
-    title='Number - Number - All Of'
-    checkAnswers={[NUMBER_NUMBER_ALL_OF]}
-  />
-)
-
-NumberNumberAllOf.storyName = 'Number - All Of'
-NumberNumberAllOf.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }

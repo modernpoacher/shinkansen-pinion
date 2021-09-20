@@ -11,7 +11,13 @@ import NULL_NULL_ANY_OF from 'stories/definitions/pinion/null-null-any-of'
 import NULL_NULL_ONE_OF from 'stories/definitions/pinion/null-null-one-of'
 import NULL_NULL_ALL_OF from 'stories/definitions/pinion/null-null-all-of'
 
-const PARAMS = {}
+const NULL = {
+  NULL_NULL,
+  NULL_NULL_ENUM,
+  NULL_NULL_ANY_OF,
+  NULL_NULL_ONE_OF,
+  NULL_NULL_ALL_OF
+}
 
 export default {
   title: 'Components/Pinion/Null',
@@ -22,125 +28,42 @@ export default {
         <Story />
       </MemoryRouter>
     )
-  ]
+  ],
+  args: {
+    pinion: 'NULL_NULL',
+    params: 'DEFAULT'
+  },
+  argTypes: {
+    pinion: {
+      options: Object.keys(NULL),
+      mapping: NULL,
+      control: {
+        type: 'radio',
+        labels: {
+          NULL_NULL: 'Null',
+          NULL_NULL_ENUM: 'Null - Enum',
+          NULL_NULL_ANY_OF: 'Null - Any Of',
+          NULL_NULL_ONE_OF: 'Null - One Of',
+          NULL_NULL_ALL_OF: 'Null - All Of'
+        }
+      }
+    },
+    params: {
+      options: ['DEFAULT', 'ERROR'],
+      mapping: { DEFAULT: {}, ERROR: { errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] } },
+      control: {
+        type: 'radio',
+        labels: {
+          DEFAULT: 'Default',
+          ERROR: 'Error'
+        }
+      }
+    }
+  }
 }
 
-export const NullNull = () => (
+export const Default = (args) => (
   <Pinion
-    pinion={NULL_NULL}
-    params={PARAMS}
+    {...args}
   />
 )
-
-NullNull.storyName = 'Null'
-NullNull.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullError = () => (
-  <Pinion
-    pinion={NULL_NULL}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NullNullError.storyName = 'Null - Error'
-NullNullError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullEnum = () => (
-  <Pinion
-    pinion={NULL_NULL_ENUM}
-    params={PARAMS}
-  />
-)
-
-NullNullEnum.storyName = 'Null - Enum'
-NullNullEnum.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullEnumError = () => (
-  <Pinion
-    pinion={NULL_NULL_ENUM}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NullNullEnumError.storyName = 'Null - Enum - Error'
-NullNullEnumError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullAnyOf = () => (
-  <Pinion
-    pinion={NULL_NULL_ANY_OF}
-    params={PARAMS}
-  />
-)
-
-NullNullAnyOf.storyName = 'Null - Any Of'
-NullNullAnyOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullAnyOfError = () => (
-  <Pinion
-    pinion={NULL_NULL_ANY_OF}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NullNullAnyOfError.storyName = 'Null - Any Of - Error'
-NullNullAnyOfError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullOneOf = () => (
-  <Pinion
-    pinion={NULL_NULL_ONE_OF}
-    params={PARAMS}
-  />
-)
-
-NullNullOneOf.storyName = 'Null - One Of'
-NullNullOneOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullOneOfError = () => (
-  <Pinion
-    pinion={NULL_NULL_ONE_OF}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NullNullOneOfError.storyName = 'Null - One Of - Error'
-NullNullOneOfError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullAllOf = () => (
-  <Pinion
-    pinion={NULL_NULL_ALL_OF}
-    params={PARAMS}
-  />
-)
-
-NullNullAllOf.storyName = 'Null - All Of'
-NullNullAllOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullAllOfError = () => (
-  <Pinion
-    pinion={NULL_NULL_ALL_OF}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NullNullAllOfError.storyName = 'Null - All Of - Error'
-NullNullAllOfError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}

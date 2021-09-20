@@ -99,10 +99,10 @@
     "react-test-renderer": "16.14.0",
     "regenerator-runtime": "^0.13.9",
     "rimraf": "^3.0.2",
-    "shinkansen-cogs": "1.5.26",
+    "shinkansen-cogs": "1.5.27",
     "shinkansen-rails": "1.0.18",
     "shinkansen-signals": "1.1.2",
-    "shinkansen-sprockets": "1.0.30",
+    "shinkansen-sprockets": "1.0.31",
     "vinyl-paths": "3.0.1"
   }
 }

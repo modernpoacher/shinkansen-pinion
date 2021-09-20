@@ -313,7 +313,7 @@ export const AllAnswers = () => (
 )
 
 AllAnswers.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }
 
 export const NoAnswers = () => (
@@ -324,5 +324,5 @@ export const NoAnswers = () => (
 )
 
 NoAnswers.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }

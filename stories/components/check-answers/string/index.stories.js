@@ -11,6 +11,14 @@ import STRING_STRING_ANY_OF from 'stories/definitions/check-answers/string-strin
 import STRING_STRING_ONE_OF from 'stories/definitions/check-answers/string-string-one-of'
 import STRING_STRING_ALL_OF from 'stories/definitions/check-answers/string-string-all-of'
 
+const STRING = {
+  STRING_STRING: [STRING_STRING],
+  STRING_STRING_ENUM: [STRING_STRING_ENUM],
+  STRING_STRING_ANY_OF: [STRING_STRING_ANY_OF],
+  STRING_STRING_ONE_OF: [STRING_STRING_ONE_OF],
+  STRING_STRING_ALL_OF: [STRING_STRING_ALL_OF]
+}
+
 export default {
   title: 'Components/Check Answers/String',
   component: CheckAnswers,
@@ -20,24 +28,44 @@ export default {
         <Story />
       </MemoryRouter>
     )
-  ]
+  ],
+  args: {
+    title: 'Check Answers',
+    checkAnswers: 'STRING_STRING'
+  },
+  argTypes: {
+    checkAnswers: {
+      options: Object.keys(STRING),
+      mapping: STRING,
+      control: {
+        type: 'radio',
+        labels: {
+          STRING_STRING: 'String',
+          STRING_STRING_ENUM: 'String - Enum',
+          STRING_STRING_ANY_OF: 'String - Any Of',
+          STRING_STRING_ONE_OF: 'String - One Of',
+          STRING_STRING_ALL_OF: 'String - All Of'
+        }
+      }
+    }
+  }
 }
+
+export const Default = (args) => (
+  <CheckAnswers
+    {...args}
+  />
+)
 
 export const AllAnswers = () => (
   <CheckAnswers
     title='All Answers'
-    checkAnswers={[
-      STRING_STRING,
-      STRING_STRING_ENUM,
-      STRING_STRING_ANY_OF,
-      STRING_STRING_ONE_OF,
-      STRING_STRING_ALL_OF
-    ]}
+    checkAnswers={Object.values(STRING).map(([s]) => s)}
   />
 )
 
 AllAnswers.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }
 
 export const NoAnswers = () => (
@@ -48,65 +76,5 @@ export const NoAnswers = () => (
 )
 
 NoAnswers.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const StringString = () => (
-  <CheckAnswers
-    title='String - String'
-    checkAnswers={[STRING_STRING]}
-  />
-)
-
-StringString.storyName = 'String'
-StringString.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const StringStringEnum = () => (
-  <CheckAnswers
-    title='String - String - Enum'
-    checkAnswers={[STRING_STRING_ENUM]}
-  />
-)
-
-StringStringEnum.storyName = 'String - Enum'
-StringStringEnum.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const StringStringAnyOf = () => (
-  <CheckAnswers
-    title='String - String - Any Of'
-    checkAnswers={[STRING_STRING_ANY_OF]}
-  />
-)
-
-StringStringAnyOf.storyName = 'String - Any Of'
-StringStringAnyOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const StringStringOneOf = () => (
-  <CheckAnswers
-    title='String - String - One Of'
-    checkAnswers={[STRING_STRING_ONE_OF]}
-  />
-)
-
-StringStringOneOf.storyName = 'String - One Of'
-StringStringOneOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const StringStringAllOf = () => (
-  <CheckAnswers
-    title='String - String - All Of'
-    checkAnswers={[STRING_STRING_ALL_OF]}
-  />
-)
-
-StringStringAllOf.storyName = 'String - All Of'
-StringStringAllOf.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }

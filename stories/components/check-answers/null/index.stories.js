@@ -11,6 +11,14 @@ import NULL_NULL_ANY_OF from 'stories/definitions/check-answers/null-null-any-of
 import NULL_NULL_ONE_OF from 'stories/definitions/check-answers/null-null-one-of'
 import NULL_NULL_ALL_OF from 'stories/definitions/check-answers/null-null-all-of'
 
+const NULL = {
+  NULL_NULL: [NULL_NULL],
+  NULL_NULL_ENUM: [NULL_NULL_ENUM],
+  NULL_NULL_ANY_OF: [NULL_NULL_ANY_OF],
+  NULL_NULL_ONE_OF: [NULL_NULL_ONE_OF],
+  NULL_NULL_ALL_OF: [NULL_NULL_ALL_OF]
+}
+
 export default {
   title: 'Components/Check Answers/Null',
   component: CheckAnswers,
@@ -20,24 +28,44 @@ export default {
         <Story />
       </MemoryRouter>
     )
-  ]
+  ],
+  args: {
+    title: 'Check Answers',
+    checkAnswers: 'NULL_NULL'
+  },
+  argTypes: {
+    checkAnswers: {
+      options: Object.keys(NULL),
+      mapping: NULL,
+      control: {
+        type: 'radio',
+        labels: {
+          NULL_NULL: 'Null',
+          NULL_NULL_ENUM: 'Null - Enum',
+          NULL_NULL_ANY_OF: 'Null - Any Of',
+          NULL_NULL_ONE_OF: 'Null - One Of',
+          NULL_NULL_ALL_OF: 'Null - All Of'
+        }
+      }
+    }
+  }
 }
+
+export const Default = (args) => (
+  <CheckAnswers
+    {...args}
+  />
+)
 
 export const AllAnswers = () => (
   <CheckAnswers
     title='All Answers'
-    checkAnswers={[
-      NULL_NULL,
-      NULL_NULL_ENUM,
-      NULL_NULL_ANY_OF,
-      NULL_NULL_ONE_OF,
-      NULL_NULL_ALL_OF
-    ]}
+    checkAnswers={Object.values(NULL).map(([n]) => n)}
   />
 )
 
 AllAnswers.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }
 
 export const NoAnswers = () => (
@@ -48,65 +76,5 @@ export const NoAnswers = () => (
 )
 
 NoAnswers.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNull = () => (
-  <CheckAnswers
-    title='Null - Null'
-    checkAnswers={[NULL_NULL]}
-  />
-)
-
-NullNull.storyName = 'Null'
-NullNull.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullEnum = () => (
-  <CheckAnswers
-    title='Null - Null - Enum'
-    checkAnswers={[NULL_NULL_ENUM]}
-  />
-)
-
-NullNullEnum.storyName = 'Null - Enum'
-NullNullEnum.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullAnyOf = () => (
-  <CheckAnswers
-    title='Null - Null - Any Of'
-    checkAnswers={[NULL_NULL_ANY_OF]}
-  />
-)
-
-NullNullAnyOf.storyName = 'Null - Any Of'
-NullNullAnyOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullOneOf = () => (
-  <CheckAnswers
-    title='Null - Null - One Of'
-    checkAnswers={[NULL_NULL_ONE_OF]}
-  />
-)
-
-NullNullOneOf.storyName = 'Null - One Of'
-NullNullOneOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NullNullAllOf = () => (
-  <CheckAnswers
-    title='Null - Null - All Of'
-    checkAnswers={[NULL_NULL_ALL_OF]}
-  />
-)
-
-NullNullAllOf.storyName = 'Null - All Of'
-NullNullAllOf.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { disabled: true, hideNoControlsWarning: true }
 }

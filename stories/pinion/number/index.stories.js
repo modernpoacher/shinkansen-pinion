@@ -11,7 +11,13 @@ import NUMBER_NUMBER_ANY_OF from 'stories/definitions/pinion/number-number-any-o
 import NUMBER_NUMBER_ONE_OF from 'stories/definitions/pinion/number-number-one-of'
 import NUMBER_NUMBER_ALL_OF from 'stories/definitions/pinion/number-number-all-of'
 
-const PARAMS = {}
+const NUMBER = {
+  NUMBER_NUMBER,
+  NUMBER_NUMBER_ENUM,
+  NUMBER_NUMBER_ANY_OF,
+  NUMBER_NUMBER_ONE_OF,
+  NUMBER_NUMBER_ALL_OF
+}
 
 export default {
   title: 'Components/Pinion/Number',
@@ -22,125 +28,42 @@ export default {
         <Story />
       </MemoryRouter>
     )
-  ]
+  ],
+  args: {
+    pinion: 'NUMBER_NUMBER',
+    params: 'DEFAULT'
+  },
+  argTypes: {
+    pinion: {
+      options: Object.keys(NUMBER),
+      mapping: NUMBER,
+      control: {
+        type: 'radio',
+        labels: {
+          NUMBER_NUMBER: 'Number',
+          NUMBER_NUMBER_ENUM: 'Number - Enum',
+          NUMBER_NUMBER_ANY_OF: 'Number - Any Of',
+          NUMBER_NUMBER_ONE_OF: 'Number - One Of',
+          NUMBER_NUMBER_ALL_OF: 'Number - All Of'
+        }
+      }
+    },
+    params: {
+      options: ['DEFAULT', 'ERROR'],
+      mapping: { DEFAULT: {}, ERROR: { errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] } },
+      control: {
+        type: 'radio',
+        labels: {
+          DEFAULT: 'Default',
+          ERROR: 'Error'
+        }
+      }
+    }
+  }
 }
 
-export const NumberNumber = () => (
+export const Default = (args) => (
   <Pinion
-    pinion={NUMBER_NUMBER}
-    params={PARAMS}
+    {...args}
   />
 )
-
-NumberNumber.storyName = 'Number'
-NumberNumber.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberError = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NumberNumberError.storyName = 'Number - Error'
-NumberNumberError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberEnum = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER_ENUM}
-    params={PARAMS}
-  />
-)
-
-NumberNumberEnum.storyName = 'Number - Enum'
-NumberNumberEnum.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberEnumError = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER_ENUM}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NumberNumberEnumError.storyName = 'Number - Enum - Error'
-NumberNumberEnumError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberAnyOf = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER_ANY_OF}
-    params={PARAMS}
-  />
-)
-
-NumberNumberAnyOf.storyName = 'Number - Any Of'
-NumberNumberAnyOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberAnyOfError = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER_ANY_OF}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NumberNumberAnyOfError.storyName = 'Number - Any Of - Error'
-NumberNumberAnyOfError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberOneOf = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER_ONE_OF}
-    params={PARAMS}
-  />
-)
-
-NumberNumberOneOf.storyName = 'Number - One Of'
-NumberNumberOneOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberOneOfError = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER_ONE_OF}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NumberNumberOneOfError.storyName = 'Number - One Of - Error'
-NumberNumberOneOfError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberAllOf = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER_ALL_OF}
-    params={PARAMS}
-  />
-)
-
-NumberNumberAllOf.storyName = 'Number - All Of'
-NumberNumberAllOf.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
-
-export const NumberNumberAllOfError = () => (
-  <Pinion
-    pinion={NUMBER_NUMBER_ALL_OF}
-    params={{ errors: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }}
-  />
-)
-
-NumberNumberAllOfError.storyName = 'Number - All Of - Error'
-NumberNumberAllOfError.parameters = {
-  controls: { hideNoControlsWarning: true }
-}
