@@ -16,7 +16,7 @@
       ]
     },
     "selectedItems": [
-      "null"
+      0
     ],
     "items": [
       {
@@ -61,7 +61,7 @@
     "description": "A null schema",
     "oneOf": {
       "selectedItems": [
-        "null"
+        0
       ],
       "items": [
         {

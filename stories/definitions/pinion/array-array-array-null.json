@@ -22,9 +22,9 @@
     "fields": [
       {
         "meta": {
-          "parentUri": "#/",
           "uri": "#/0",
           "type": "null",
+          "parentUri": "#/",
           "value": "null",
           "schema": {
             "type": "null",

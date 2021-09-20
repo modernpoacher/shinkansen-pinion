@@ -13,7 +13,7 @@
       ]
     },
     "selectedItems": [
-      "false"
+      1
     ],
     "items": [
       true,
@@ -25,7 +25,7 @@
     "description": "A boolean schema",
     "enum": {
       "selectedItems": [
-        "false"
+        1
       ],
       "items": [
         true,

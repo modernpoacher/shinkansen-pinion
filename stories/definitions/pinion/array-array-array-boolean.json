@@ -22,10 +22,10 @@
     "fields": [
       {
         "meta": {
-          "parentUri": "#/",
           "uri": "#/0",
           "type": "boolean",
-          "value": "true",
+          "parentUri": "#/",
+          "value": "false",
           "schema": {
             "type": "boolean",
             "title": "Boolean",
@@ -50,7 +50,7 @@
           "title": "Boolean",
           "description": "A boolean schema",
           "field": {
-            "value": "true",
+            "value": "false",
             "id": "#/0"
           }
         }

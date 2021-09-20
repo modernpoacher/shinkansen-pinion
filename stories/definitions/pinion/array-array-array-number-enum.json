@@ -59,7 +59,7 @@
             ]
           },
           "selectedItems": [
-            3
+            2
           ],
           "items": [
             1,
@@ -73,7 +73,7 @@
           "description": "A number schema",
           "enum": {
             "selectedItems": [
-              3
+              2
             ],
             "items": [
               1,

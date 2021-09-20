@@ -4,7 +4,7 @@
     "type": "number",
     "min": 0,
     "max": 9,
-    "value": "1",
+    "value": "3",
     "schema": {
       "$schema": "http://json-schema.org/draft-07/schema#",
       "type": "number",
@@ -28,7 +28,7 @@
     "field": {
       "min": 0,
       "max": 9,
-      "value": "1",
+      "value": "3",
       "id": "#/"
     }
   }
