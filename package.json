@@ -105,7 +105,7 @@
     "shinkansen-rails": "1.0.18",
     "shinkansen-signals": "1.1.2",
     "shinkansen-sprockets": "1.0.33",
-    "vinyl-paths": "3.0.1"
+    "vinyl-paths": "5.0.0"
   },
   "imports": {
     "#build/gulp/build": "./build/gulp/build/index.mjs",
