@@ -1,4 +1,4 @@
-export CheckAnswers from './check-answers'
+export { default as CheckAnswers } from './check-answers'
 export * as common from './common'
-export ErrorSummary from './error-summary'
-export Pinion from './pinion'
+export { default as ErrorSummary } from './error-summary'
+export { default as Pinion } from './pinion'
