@@ -117,7 +117,7 @@
       "require": "./src/index.cjs",
       "import": "./src/index.mjs"
     },
-    "./components/check-answers": "./src/components/check-answers/index.cjs",
+    "./components/check-answers": "./src/components/check-answers/index.mjs",
     "./components/common/text-content": "./src/components/common/text-content/index.cjs",
     "./components/common": "./src/components/common/index.mjs",
     "./components/error-summary": "./src/components/error-summary/index.mjs",
