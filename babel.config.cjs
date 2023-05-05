@@ -8,8 +8,6 @@ const {
   }
 } = process
 
-// console.log('BABEL CONFIG')
-
 log('`shinkansen` is awake')
 
 function env () {

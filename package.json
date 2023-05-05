@@ -10,7 +10,7 @@
     "Karakuri",
     "React"
   ],
-  "main": "./index.cjs",
+  "main": "./src/index.cjs",
   "type": "module",
   "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "license": "MIT",
@@ -98,10 +98,10 @@
     "regenerator-runtime": "^0.13.11",
     "rimraf": "^5.0.0",
     "sass": "^1.62.1",
-    "shinkansen-cogs": "^1.5.47",
-    "shinkansen-rails": "1.0.21",
-    "shinkansen-signals": "1.1.5",
-    "shinkansen-sprockets": "^1.0.49",
+    "shinkansen-cogs": "^1.5.48",
+    "shinkansen-rails": "^1.0.22",
+    "shinkansen-signals": "^1.1.8",
+    "shinkansen-sprockets": "^1.0.50",
     "vinyl-paths": "3.0.1"
   },
   "imports": {

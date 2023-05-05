@@ -10,6 +10,4 @@ const {
   CheckAnswersSprocket
 } = require('shinkansen-sprockets/sprockets')
 
-console.log(require('shinkansen-sprockets/sprockets'))
-
 module.exports = CheckAnswersSprocket
