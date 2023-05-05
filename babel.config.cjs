@@ -8,6 +8,8 @@ const {
   }
 } = process
 
+// console.log('BABEL CONFIG')
+
 log('`shinkansen` is awake')
 
 function env () {
@@ -50,10 +52,10 @@ const plugins = [
   ],
   [
     'module-resolver', {
-      root: ['./src'],
-      cwd: 'babelrc',
+      root: [
+        '.'
+      ],
       alias: {
-        'shinkansen-pinion': './src',
         build: './build',
         stories: './stories'
       }
@@ -65,9 +67,8 @@ module.exports = (api) => {
   if (api) api.cache.using(env)
 
   return {
-    compact: true,
-    comments: false,
     presets,
-    plugins
+    plugins,
+    ignore: [/core-js/]
   }
 }

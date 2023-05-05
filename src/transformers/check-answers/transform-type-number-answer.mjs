@@ -1,0 +1,22 @@
+import debug from 'debug'
+
+import getAnswerTitle from './get-answer-title.mjs'
+import getAnswerValue from './get-answer-value.mjs'
+import getChangeAnswer from './get-change-answer.mjs'
+
+const log = debug('shinkansen-pinion/transformers/check-answers')
+
+export default function transformTypeNumberAnswer (answer, resource) {
+  log('transformTypeNumberAnswer')
+
+  return {
+    type: 'NUMBER',
+    params: {
+      answer: {
+        title: getAnswerTitle(answer),
+        value: getAnswerValue(answer)
+      },
+      changeAnswer: getChangeAnswer(answer, resource)
+    }
+  }
+}
