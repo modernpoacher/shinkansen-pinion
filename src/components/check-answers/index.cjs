@@ -8,6 +8,6 @@ log('`shinkansen` is awake')
 
 const {
   CheckAnswersSprocket
-} = require('shinkansen-sprockets/sprockets')
+} = require('shinkansen-sprockets')
 
 module.exports = CheckAnswersSprocket
