@@ -99,7 +99,7 @@
     "rimraf": "^5.0.0",
     "sass": "^1.62.1",
     "shinkansen-cogs": "^1.5.48",
-    "shinkansen-rails": "^1.0.22",
+    "shinkansen-rails": "^1.0.23",
     "shinkansen-signals": "^1.1.8",
     "shinkansen-sprockets": "^1.0.50",
     "vinyl-paths": "3.0.1"
