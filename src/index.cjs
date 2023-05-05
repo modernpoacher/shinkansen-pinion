@@ -8,7 +8,9 @@ log('`shinkansen` is awake')
 
 const components = require('./components/index.mjs')
 const transformers = require('./transformers/index.mjs')
-const { default: Pinion } = require('./components/pinion/index.cjs')
+const {
+  default: Pinion
+} = require('./components/pinion/index.cjs')
 
 module.exports.components = components
 module.exports.transformers = transformers
