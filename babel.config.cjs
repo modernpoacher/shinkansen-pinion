@@ -52,7 +52,7 @@ const plugins = [
     'module-resolver', {
       alias: {
         /**
-         *  Jest and Storybook - Cogs
+         *  Storybook - Cogs
          */
         'shinkansen-cogs/cogs/checkbox': './node_modules/shinkansen-cogs/src/cogs/checkbox/index.cjs',
         'shinkansen-cogs/cogs/email': './node_modules/shinkansen-cogs/src/cogs/email/index.cjs',
@@ -105,7 +105,7 @@ const plugins = [
         'shinkansen-cogs/components/title': './node_modules/shinkansen-cogs/src/components/title/index.cjs',
         'shinkansen-cogs/transformers/error-message': './node_modules/shinkansen-cogs/src/transformers/error-message/index.mjs',
         /**
-         *  Jest and Storybook - Sprockets
+         *  Storybook - Sprockets
          */
         'shinkansen-sprockets/sprockets/check-answers': './node_modules/shinkansen-sprockets/src/sprockets/check-answers/index.cjs',
         'shinkansen-sprockets/sprockets/error-summary': './node_modules/shinkansen-sprockets/src/sprockets/error-summary/index.cjs',
@@ -133,7 +133,7 @@ const plugins = [
         'shinkansen-sprockets/transformers/error-message': './node_modules/shinkansen-sprockets/src/transformers/error-message/index.mjs',
         'shinkansen-sprockets/transformers/error-summary': './node_modules/shinkansen-sprockets/src/transformers/error-summary/index.mjs',
         /**
-         *  Jest and Storybook - Pinion
+         *  Storybook - Pinion
          */
         'shinkansen-pinion/components/check-answers': './src/components/check-answers/index.cjs',
         'shinkansen-pinion/components/common/text-content': './src/components/common/text-content/index.cjs',
