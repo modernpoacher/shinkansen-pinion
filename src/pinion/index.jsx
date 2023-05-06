@@ -21,7 +21,7 @@ import {
   getError
 } from 'shinkansen-pinion/transformers/error-message'
 
-const log = debug('shinkansen-pinion')
+const log = debug('shinkansen-pinion/pinion')
 
 log('`pinion` is awake')
 

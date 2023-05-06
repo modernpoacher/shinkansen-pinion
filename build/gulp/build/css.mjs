@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-import path from 'path'
+import path from 'node:path'
 import gulp from '@sequencemedia/gulp'
 import vinylPaths from 'vinyl-paths'
 import { deleteAsync as del } from 'del'
@@ -16,13 +16,13 @@ import handleWatchError from '#build/gulp/handle-watch-error'
 
 import cssFromSass from '#build/gulp/build/css-from-sass'
 
-const log = debug('shinkansen-pinion:build:gulp:build')
+const log = debug('shinkansen-pinion/build/gulp/build')
 
 const SOURCE_PATH = path.relative(currentDir, sourcePath)
 const TARGET_PATH = path.relative(currentDir, targetPath)
 const MODULE_PATH = path.relative(currentDir, modulePath)
 
-log('`shinkansen-pinion:build:gulp:build` is awake')
+log('`build` is awake')
 
 export function cleanCss () {
   log('cleanCss')

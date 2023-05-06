@@ -5,11 +5,11 @@ import {
 
 import CheckAnswers from 'shinkansen-pinion/components/check-answers'
 
-import BOOLEAN_BOOLEAN from 'stories/definitions/check-answers/boolean-boolean'
-import BOOLEAN_BOOLEAN_ENUM from 'stories/definitions/check-answers/boolean-boolean-enum'
-import BOOLEAN_BOOLEAN_ANY_OF from 'stories/definitions/check-answers/boolean-boolean-any-of'
-import BOOLEAN_BOOLEAN_ONE_OF from 'stories/definitions/check-answers/boolean-boolean-one-of'
-import BOOLEAN_BOOLEAN_ALL_OF from 'stories/definitions/check-answers/boolean-boolean-all-of'
+import BOOLEAN_BOOLEAN from '#stories/definitions/check-answers/boolean-boolean.json'
+import BOOLEAN_BOOLEAN_ENUM from '#stories/definitions/check-answers/boolean-boolean-enum.json'
+import BOOLEAN_BOOLEAN_ANY_OF from '#stories/definitions/check-answers/boolean-boolean-any-of.json'
+import BOOLEAN_BOOLEAN_ONE_OF from '#stories/definitions/check-answers/boolean-boolean-one-of.json'
+import BOOLEAN_BOOLEAN_ALL_OF from '#stories/definitions/check-answers/boolean-boolean-all-of.json'
 
 const BOOLEAN = {
   BOOLEAN_BOOLEAN: [BOOLEAN_BOOLEAN],

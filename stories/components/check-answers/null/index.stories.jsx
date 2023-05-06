@@ -5,11 +5,11 @@ import {
 
 import CheckAnswers from 'shinkansen-pinion/components/check-answers'
 
-import NULL_NULL from 'stories/definitions/check-answers/null-null'
-import NULL_NULL_ENUM from 'stories/definitions/check-answers/null-null-enum'
-import NULL_NULL_ANY_OF from 'stories/definitions/check-answers/null-null-any-of'
-import NULL_NULL_ONE_OF from 'stories/definitions/check-answers/null-null-one-of'
-import NULL_NULL_ALL_OF from 'stories/definitions/check-answers/null-null-all-of'
+import NULL_NULL from '#stories/definitions/check-answers/null-null.json'
+import NULL_NULL_ENUM from '#stories/definitions/check-answers/null-null-enum.json'
+import NULL_NULL_ANY_OF from '#stories/definitions/check-answers/null-null-any-of.json'
+import NULL_NULL_ONE_OF from '#stories/definitions/check-answers/null-null-one-of.json'
+import NULL_NULL_ALL_OF from '#stories/definitions/check-answers/null-null-all-of.json'
 
 const NULL = {
   NULL_NULL: [NULL_NULL],

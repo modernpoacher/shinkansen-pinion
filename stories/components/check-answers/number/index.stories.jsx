@@ -5,11 +5,11 @@ import {
 
 import CheckAnswers from 'shinkansen-pinion/components/check-answers'
 
-import NUMBER_NUMBER from 'stories/definitions/check-answers/number-number'
-import NUMBER_NUMBER_ENUM from 'stories/definitions/check-answers/number-number-enum'
-import NUMBER_NUMBER_ANY_OF from 'stories/definitions/check-answers/number-number-any-of'
-import NUMBER_NUMBER_ONE_OF from 'stories/definitions/check-answers/number-number-one-of'
-import NUMBER_NUMBER_ALL_OF from 'stories/definitions/check-answers/number-number-all-of'
+import NUMBER_NUMBER from '#stories/definitions/check-answers/number-number.json'
+import NUMBER_NUMBER_ENUM from '#stories/definitions/check-answers/number-number-enum.json'
+import NUMBER_NUMBER_ANY_OF from '#stories/definitions/check-answers/number-number-any-of.json'
+import NUMBER_NUMBER_ONE_OF from '#stories/definitions/check-answers/number-number-one-of.json'
+import NUMBER_NUMBER_ALL_OF from '#stories/definitions/check-answers/number-number-all-of.json'
 
 const NUMBER = {
   NUMBER_NUMBER: [NUMBER_NUMBER],

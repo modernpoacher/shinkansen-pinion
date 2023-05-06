@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-import path from 'path'
+import path from 'node:path'
 import gulp from '@sequencemedia/gulp'
 
 import {
@@ -16,7 +16,7 @@ import {
   writeFile
 } from 'fs/promises'
 
-const log = debug('shinkansen-pinion:build:gulp:transform')
+const log = debug('shinkansen-pinion/build/gulp/transform')
 
 log('`transform` is awake')
 
@@ -30,7 +30,7 @@ const CSS = /(<style.*>)[ -~"'+-:;,#%{}()/*\n\s\u200b\u2713\u2022]*(<\/style>)/g
 const SOURCE_PATH = path.relative(currentDir, sourcePath)
 const TARGET_PATH = path.relative(currentDir, targetPath)
 
-async function getCss (css = '') {
+async function getCss () { // css = '') {
   const filePath = path.join(SOURCE_PATH, 'css/preview-head.css')
   const fileData = await readFile(filePath, 'utf8')
 

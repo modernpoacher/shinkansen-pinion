@@ -5,11 +5,11 @@ import {
 
 import CheckAnswers from 'shinkansen-pinion/components/check-answers'
 
-import STRING_STRING from 'stories/definitions/check-answers/string-string'
-import STRING_STRING_ENUM from 'stories/definitions/check-answers/string-string-enum'
-import STRING_STRING_ANY_OF from 'stories/definitions/check-answers/string-string-any-of'
-import STRING_STRING_ONE_OF from 'stories/definitions/check-answers/string-string-one-of'
-import STRING_STRING_ALL_OF from 'stories/definitions/check-answers/string-string-all-of'
+import STRING_STRING from '#stories/definitions/check-answers/string-string.json'
+import STRING_STRING_ENUM from '#stories/definitions/check-answers/string-string-enum.json'
+import STRING_STRING_ANY_OF from '#stories/definitions/check-answers/string-string-any-of.json'
+import STRING_STRING_ONE_OF from '#stories/definitions/check-answers/string-string-one-of.json'
+import STRING_STRING_ALL_OF from '#stories/definitions/check-answers/string-string-all-of.json'
 
 const STRING = {
   STRING_STRING: [STRING_STRING],
