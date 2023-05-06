@@ -132,10 +132,9 @@
     "./transformers/check-answers": "./src/transformers/check-answers/index.mjs",
     "./transformers/common/*": "./src/transformers/common/*.mjs",
     "./transformers/common": "./src/transformers/common/index.mjs",
-    "./transformers/error-summary/*": "./src/transformers/error-summary/*.mjs",
-    "./transformers/error-summary": "./src/transformers/error-summary/index.mjs",
-    "./transformers": "./src/transformers/index.mjs",
+    "./transformers/error-message/*": "./src/transformers/error-message/*.mjs",
     "./transformers/error-message": "./src/transformers/error-message/index.mjs",
+    "./transformers": "./src/transformers/index.mjs",
     "./pinion": "./src/pinion/index.cjs"
   }
 }
