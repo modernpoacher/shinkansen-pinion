@@ -98,10 +98,10 @@
     "regenerator-runtime": "^0.13.11",
     "rimraf": "^5.0.0",
     "sass": "^1.62.1",
-    "shinkansen-cogs": "^1.5.48",
-    "shinkansen-rails": "^1.0.23",
-    "shinkansen-signals": "^1.1.8",
-    "shinkansen-sprockets": "^1.0.50",
+    "shinkansen-cogs": "1.5.48",
+    "shinkansen-rails": "1.0.23",
+    "shinkansen-signals": "1.1.8",
+    "shinkansen-sprockets": "1.0.50",
     "vinyl-paths": "3.0.1"
   },
   "imports": {
@@ -117,17 +117,23 @@
       "require": "./src/index.cjs",
       "import": "./src/index.mjs"
     },
-    "./components/check-answers": "./src/components/check-answers/index.cjs",
+    "./components/check-answers": {
+      "require": "./src/components/check-answers/index.cjs",
+      "import": "./src/components/check-answers/index.mjs"
+    },
     "./components/common/text-content": "./src/components/common/text-content/index.cjs",
     "./components/common": "./src/components/common/index.mjs",
-    "./components/error-summary": "./src/components/error-summary/index.cjs",
-    "./components/pinion": "./src/components/pinion/index.cjs",
+    "./components/error-summary": {
+      "require": "./src/components/error-summary/index.cjs",
+      "import":  "./src/components/error-summary/index.mjs"
+    },
     "./components": "./src/components/index.mjs",
     "./transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
     "./transformers/check-answers": "./src/transformers/check-answers/index.mjs",
     "./transformers/common/*": "./src/transformers/common/*.mjs",
     "./transformers/common": "./src/transformers/common/index.mjs",
     "./transformers": "./src/transformers/index.mjs",
-    "./transformers/error-message": "./src/transformers/error-message/index.mjs"
+    "./transformers/error-message": "./src/transformers/error-message/index.mjs",
+    "./pinion": "./src/pinion/index.cjs"
   }
 }

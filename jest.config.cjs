@@ -7,8 +7,7 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(mjs?|mts?|jsx?|js?|tsx?|ts?)$',
   transform: {
     '^.+\\.jsx$': 'babel-jest',
-    '^.+\\.mjs$': 'babel-jest',
-    '^.+\\.cjs$': 'babel-jest'
+    '^.+\\.mjs$': 'babel-jest'
   },
   moduleFileExtensions: ['js', 'jsx', 'mjs', 'cjs'],
   transformIgnorePatterns: [

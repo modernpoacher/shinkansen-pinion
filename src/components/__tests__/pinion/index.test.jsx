@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Component from 'shinkansen-pinion/components/pinion'
+import Component from 'shinkansen-pinion/pinion'
 
 import STRING_STRING from './string-string.json'
 import STRING_STRING_ENUM from './string-string-enum.json'
@@ -47,7 +47,7 @@ import NULL_NULL_ANY_OF from './null-null-any-of.json'
 import NULL_NULL_ONE_OF from './null-null-one-of.json'
 import NULL_NULL_ALL_OF from './null-null-all-of.json'
 
-describe('shinkansen-pinion/components/pinion', () => {
+describe('shinkansen-pinion/pinion', () => {
   describe('<Component />', () => {
     describe('With required props', () => {
       it('renders', () => {
