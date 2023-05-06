@@ -99,9 +99,9 @@
     "rimraf": "^5.0.0",
     "sass": "^1.62.1",
     "shinkansen-cogs": "1.5.56",
-    "shinkansen-rails": "1.0.26",
-    "shinkansen-signals": "1.1.11",
-    "shinkansen-sprockets": "1.0.54",
+    "shinkansen-rails": "1.0.27",
+    "shinkansen-signals": "1.1.12",
+    "shinkansen-sprockets": "1.0.56",
     "vinyl-paths": "^5.0.0"
   },
   "imports": {
