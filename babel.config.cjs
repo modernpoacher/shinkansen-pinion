@@ -50,7 +50,6 @@ const plugins = [
   ],
   [
     'module-resolver', {
-      root: '.',
       alias: {
         /**
          *  Storybook - Cogs
