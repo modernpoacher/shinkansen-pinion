@@ -20,7 +20,7 @@ const BOOLEAN = {
 }
 
 export default {
-  title: 'Components/Check Answers/Boolean',
+  title: 'Stories/Components/Check Answers/Boolean',
   component: CheckAnswers,
   decorators: [
     (Story) => (

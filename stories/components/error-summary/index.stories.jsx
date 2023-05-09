@@ -68,7 +68,7 @@ const ERROR = {
 }
 
 export default {
-  title: 'Components/Error Summary',
+  title: 'Stories/Components/Error Summary',
   component: ErrorSummary,
   decorators: [
     (Story) => (

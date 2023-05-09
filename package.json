@@ -126,11 +126,13 @@
       "require": "./src/components/check-answers/index.cjs",
       "import": "./src/components/check-answers/index.mjs"
     },
-    "./components/common/text-content": "./src/components/common/text-content/index.cjs",
-    "./components/common": "./src/components/common/index.mjs",
     "./components/error-summary": {
       "require": "./src/components/error-summary/index.cjs",
       "import": "./src/components/error-summary/index.mjs"
+    },
+    "./components/fieldset": {
+      "require": "./src/components/fieldset/index.cjs",
+      "import": "./src/components/fieldset/index.mjs"
     },
     "./components": "./src/components/index.mjs",
     "./transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",

@@ -20,7 +20,7 @@ const NULL = {
 }
 
 export default {
-  title: 'Components/Check Answers/Null',
+  title: 'Stories/Components/Check Answers/Null',
   component: CheckAnswers,
   decorators: [
     (Story) => (

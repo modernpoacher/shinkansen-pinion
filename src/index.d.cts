@@ -37,25 +37,18 @@ declare module 'shinkansen-pinion/components/check-answers' {
   export default function CheckAnswersSprocket(props: SprocketProps): React.JSX.Element
 }
 
-declare module 'shinkansen-pinion/components/common/text-content' {
-  import React from 'react'
-
-  export type TextContentProps = {
-    textContent: string
-  }
-
-  export default function TextContent(props: TextContentProps): React.JSX.Element
-}
-
-declare module 'shinkansen-pinion/components/common' {
-  export * as TextContent from 'shinkansen-pinion/components/common/text-content'
-}
-
 declare module 'shinkansen-pinion/components/error-summary' {
   import React from 'react'
   import type { SprocketProps } from 'shinkansen-sprockets/sprockets'
 
   export default function ErrorSummarySprocket(props: SprocketProps): React.JSX.Element
+}
+
+declare module 'shinkansen-pinion/components/fieldset' {
+  import React from 'react'
+  import type { SprocketProps } from 'shinkansen-sprockets/sprockets'
+
+  export default function FieldsetSprocket(props: SprocketProps): React.JSX.Element
 }
 
 declare module 'shinkansen-pinion/transformers/common/has-component' {

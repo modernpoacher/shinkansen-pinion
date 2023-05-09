@@ -150,7 +150,7 @@ import NULL_NULL_ONE_OF from '#stories/definitions/check-answers/null-null-one-o
 import NULL_NULL_ALL_OF from '#stories/definitions/check-answers/null-null-all-of.json'
 
 export default {
-  title: 'Components/Check Answers',
+  title: 'Stories/Components/Check Answers',
   component: CheckAnswers,
   decorators: [
     (Story) => (

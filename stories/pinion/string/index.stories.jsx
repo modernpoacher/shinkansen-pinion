@@ -20,7 +20,7 @@ const STRING = {
 }
 
 export default {
-  title: 'Components/Pinion/String',
+  title: 'Stories/Pinion/String',
   component: Pinion,
   decorators: [
     (Story) => (

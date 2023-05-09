@@ -20,7 +20,7 @@ const STRING = {
 }
 
 export default {
-  title: 'Components/Check Answers/String',
+  title: 'Stories/Components/Check Answers/String',
   component: CheckAnswers,
   decorators: [
     (Story) => (

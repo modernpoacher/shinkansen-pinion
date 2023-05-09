@@ -97,7 +97,7 @@ const ARRAY = {
 }
 
 export default {
-  title: 'Components/Check Answers/Array',
+  title: 'Stories/Components/Check Answers/Array',
   component: CheckAnswers,
   decorators: [
     (Story) => (

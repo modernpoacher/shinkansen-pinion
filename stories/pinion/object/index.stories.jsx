@@ -141,7 +141,7 @@ const OBJECT = {
 }
 
 export default {
-  title: 'Components/Pinion/Object',
+  title: 'Stories/Pinion/Object',
   component: Pinion,
   decorators: [
     (Story) => (

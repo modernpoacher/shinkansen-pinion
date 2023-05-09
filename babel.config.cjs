@@ -136,9 +136,8 @@ const plugins = [
          *  Storybook - Pinion
          */
         'shinkansen-pinion/components/check-answers': './src/components/check-answers/index.cjs',
-        'shinkansen-pinion/components/common/text-content': './src/components/common/text-content/index.cjs',
-        'shinkansen-pinion/components/common': './src/components/common/index.mjs',
         'shinkansen-pinion/components/error-summary': './src/components/error-summary/index.cjs',
+        'shinkansen-pinion/components/fieldset': './src/components/fieldset/index.cjs',
         'shinkansen-pinion/components': './src/components/index.mjs',
         'shinkansen-pinion/transformers/check-answers/get-answer-title': './src/transformers/check-answers.mjs',
         'shinkansen-pinion/transformers/check-answers/get-answer-value-for-type-array': './src/transformers/check-answers.mjs',
@@ -199,6 +198,7 @@ const plugins = [
         /**
          *  Storybook
          */
+        '#stories/errors.mjs': './stories/errors.mjs',
         '#stories': './stories'
       }
     }

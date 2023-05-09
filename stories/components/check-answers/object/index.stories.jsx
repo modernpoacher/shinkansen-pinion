@@ -141,7 +141,7 @@ const OBJECT = {
 }
 
 export default {
-  title: 'Components/Check Answers/Object',
+  title: 'Stories/Components/Check Answers/Object',
   component: CheckAnswers,
   decorators: [
     (Story) => (
