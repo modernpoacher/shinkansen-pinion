@@ -1,3 +1,13 @@
+/**
+ * Pinion component
+ *
+ * @typedef {import('shinkansen-pinion/pinion').PinionType} PinionType
+ * @typedef {import('shinkansen-pinion/pinion').ParamsType} ParamsType
+ * @typedef {import('shinkansen-pinion/pinion').GroupProps} GroupProps
+ * @typedef {import('shinkansen-pinion/pinion').FieldProps} FieldProps
+ * @typedef {import('shinkansen-pinion/pinion').PinionProps} PinionProps
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import debug from 'debug'
@@ -33,7 +43,13 @@ const getKey = (value, index) => `${value}-${index}`
 const getDefaultValue = (field) => Reflect.has(field, 'defaultValue') ? Reflect.get(field, 'defaultValue') : ''
 const getValue = (field) => Reflect.has(field, 'value') ? Reflect.get(field, 'value') : getDefaultValue(field)
 
-/* eslint-disable-next-line react/prop-types */
+/**
+ * @param {PinionTypes.MetaType}
+ * @param {PinionTypes.ElementsEnumType}
+ * @param {ParamsType}
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToRadiosForEnum')
 
@@ -62,7 +78,13 @@ export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, 
   )
 }
 
-/* eslint-disable-next-line react/prop-types */
+/**
+ * @param {PinionTypes.MetaType}
+ * @param {PinionTypes.ElementsAnyOfType}
+ * @param {ParamsType}
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToRadiosForAnyOf')
 
@@ -88,7 +110,13 @@ export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri },
   )
 }
 
-/* eslint-disable-next-line react/prop-types */
+/**
+ * @param {PinionTypes.MetaType}
+ * @param {PinionTypes.ElementsOneOfType}
+ * @param {ParamsType}
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToRadiosForOneOf')
 
@@ -114,7 +142,13 @@ export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri },
   )
 }
 
-/* eslint-disable-next-line react/prop-types */
+/**
+ * @param {PinionTypes.MetaType}
+ * @param {PinionTypes.ElementsEnumType}
+ * @param {ParamsType}
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToSelectForEnum')
 
@@ -138,7 +172,13 @@ export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, 
   )
 }
 
-/* eslint-disable-next-line react/prop-types */
+/**
+ * @param {PinionTypes.MetaType}
+ * @param {PinionTypes.ElementsAnyOfType}
+ * @param {ParamsType}
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToSelectForAnyOf')
 
@@ -162,7 +202,13 @@ export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri },
   )
 }
 
-/* eslint-disable-next-line react/prop-types */
+/**
+ * @param {PinionTypes.MetaType}
+ * @param {PinionTypes.ElementsOneOfType}
+ * @param {ParamsType}
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
   log('renderToSelectForOneOf')
 
@@ -186,6 +232,13 @@ export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri },
   )
 }
 
+/**
+ * @param {PinionTypes.MetaType} meta
+ * @param {PinionTypes.ElementsFieldType} elements
+ * @param {ParamsType} params
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderToField (meta, elements, params, onChange) {
   log('renderToField')
 
@@ -220,14 +273,18 @@ export function renderToField (meta, elements, params, onChange) {
   )
 }
 
-export function GroupComponent ({ component, meta, elements, params, onChange }) {
+export function ComponentGroup ({ component, meta, elements, params, onChange }) {
 
 }
 
-export function FieldComponent ({ component, meta, elements, params, onChange }) {
+export function ComponentField ({ component, meta, elements, params, onChange }) {
 
 }
 
+/**
+ * @param {GroupProps}
+ * @returns {React.JSX.Element}
+ */
 export function Group ({ meta, elements, params, onChange }) {
   log('Group')
 
@@ -281,6 +338,10 @@ Group.defaultProps = {
   onChange
 }
 
+/**
+ * @param {FieldProps}
+ * @returns {React.JSX.Element}
+ */
 export function Field ({ meta, elements, params, onChange }) {
   log('Field')
 
@@ -318,6 +379,12 @@ Field.defaultProps = {
   onChange
 }
 
+/**
+ * @param {PinionTypes.PinionType}
+ * @param {ParamsType} params
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderGroup ({ meta, elements }, params, onChange) { // eslint-disable-line
   log('renderGroup')
 
@@ -325,7 +392,7 @@ export function renderGroup ({ meta, elements }, params, onChange) { // eslint-d
     const component = getComponent(meta)
 
     return (
-      <GroupComponent
+      <ComponentGroup
         component={component}
         meta={meta}
         elements={elements}
@@ -345,6 +412,12 @@ export function renderGroup ({ meta, elements }, params, onChange) { // eslint-d
   )
 }
 
+/**
+ * @param {PinionType}
+ * @param {ParamsType} params
+ * @param {PinionTypes.OnChangeType} onChange
+ * @returns {React.JSX.Element}
+ */
 export function renderField ({ meta, elements }, params, onChange) { // eslint-disable-line
   log('renderField')
 
@@ -352,7 +425,7 @@ export function renderField ({ meta, elements }, params, onChange) { // eslint-d
     const component = getComponent(meta)
 
     return (
-      <FieldComponent
+      <ComponentField
         component={component}
         meta={meta}
         elements={elements}
@@ -372,6 +445,10 @@ export function renderField ({ meta, elements }, params, onChange) { // eslint-d
   )
 }
 
+/**
+ * @param {PinionProps}
+ * @returns {React.JSX.Element}
+ */
 export default function Pinion ({ pinion, params, onChange }) {
   log('Pinion')
 
