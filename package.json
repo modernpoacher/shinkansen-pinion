@@ -106,7 +106,7 @@
     "shinkansen-cogs": "1.5.63",
     "shinkansen-rails": "1.0.32",
     "shinkansen-signals": "1.1.15",
-    "shinkansen-sprockets": "1.0.61",
+    "shinkansen-sprockets": "1.0.63",
     "vinyl-paths": "^5.0.0"
   },
   "imports": {
