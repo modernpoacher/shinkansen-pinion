@@ -54,8 +54,6 @@ describe('shinkansen-pinion/pinion', () => {
         const component = (
           <Component
             pinion={{ meta: {}, elements: { title: 'MOCK TITLE', field: { id: 'MOCK ID' } } }}
-            params={{}}
-            onChange={jest.fn()}
           />
         )
 
