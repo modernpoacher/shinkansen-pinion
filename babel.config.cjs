@@ -198,7 +198,7 @@ const plugins = [
         /**
          *  Storybook
          */
-        '#stories/errors.mjs': './stories/errors.mjs',
+        '#stories/errors': './stories/errors.mjs',
         '#stories': './stories'
       }
     }
