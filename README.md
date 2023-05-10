@@ -1,10 +1,14 @@
 ## `shinkansen-pinion`
 
-# Shinkansen Pinion
+_Shinkansen_ generates JSON Schema valid documents from user submissions with `<html />` forms.
 
-*Pinion* implements components and transformers for Shinkansen using *Cogs* and *Sprockets*.
+# Pinion
+
+_Pinion_ implements components and transformers for integrating the the Zashiki description format with _Cogs_ and _Sprockets_.
+
+_Cogs_ and _Sprockets_ can be used in any React project but _Pinion_ connects them to Zashiki.
 
 ## See also
 
-- [Shinkansen Cogs](https://github.com/modernpoacher/shinkansen-cogs)
-- [Shinkansen Sprockets](https://github.com/modernpoacher/shinkansen-sprockets)
+- [Cogs](https://github.com/modernpoacher/shinkansen-cogs)
+- [Sprockets](https://github.com/modernpoacher/shinkansen-sprockets)
