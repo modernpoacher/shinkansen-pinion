@@ -1,25 +1,29 @@
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/
-    }
-  },
-  options: {
-    storySort: {
-      order: [
-        'Stories',
-        [
-          'Pinion',
-          'Components',
+/** @type { import('@storybook/react').Preview } */
+
+export default {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/
+      }
+    },
+    options: {
+      storySort: {
+        order: [
+          'Stories',
           [
-            'Check Answers',
-            'Error Summary',
-            'Fieldset'
+            'Pinion',
+            'Components',
+            [
+              'Check Answers',
+              'Error Summary',
+              'Fieldset'
+            ]
           ]
         ]
-      ]
+      }
     }
   }
 }
