@@ -470,7 +470,7 @@ Pinion.propTypes = {
   }).isRequired,
   params: PropTypes.shape({
     components: PropTypes.shape(),
-    errors: PropTypes.array
+    errors: PropTypes.arrayOf(PropTypes.shape())
   }),
   onChange: PropTypes.func
 }
