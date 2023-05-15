@@ -1,9 +1,7 @@
 import React from 'react'
 
-import FieldsetSprocket from 'shinkansen-pinion/components/fieldset'
+import FieldsetSprocket from 'shinkansen-pinion/components/sprockets/fieldset'
 import errors from '#stories/errors'
-
-console.log({ FieldsetSprocket })
 
 export default {
   title: 'Stories/Components/Fieldset',

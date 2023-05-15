@@ -3,7 +3,7 @@ import {
   MemoryRouter
 } from 'react-router-dom'
 
-import CheckAnswers from 'shinkansen-pinion/components/check-answers'
+import CheckAnswers from 'shinkansen-pinion/components/sprockets/check-answers'
 
 import BOOLEAN_BOOLEAN from '#stories/definitions/check-answers/boolean-boolean.json'
 import BOOLEAN_BOOLEAN_ENUM from '#stories/definitions/check-answers/boolean-boolean-enum.json'

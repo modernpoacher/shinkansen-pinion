@@ -3,7 +3,7 @@ import {
   MemoryRouter
 } from 'react-router-dom'
 
-import CheckAnswers from 'shinkansen-pinion/components/check-answers'
+import CheckAnswers from 'shinkansen-pinion/components/sprockets/check-answers'
 
 import STRING_STRING from '#stories/definitions/check-answers/string-string.json'
 import STRING_STRING_ENUM from '#stories/definitions/check-answers/string-string-enum.json'

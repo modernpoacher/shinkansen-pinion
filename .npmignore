@@ -2,16 +2,15 @@
 
 .circleci
 .github
+.husky
 
-.storybook
 .editorconfig
 .eslintignore
 .eslintrc
 
-.depsrc
-.json
+.gitattributes
 
-json.js
+.depsrc
 
 # User-defined NPM configuration
 .npmrc
@@ -27,14 +26,11 @@ gulpfile.mjs
 __tests__
 jest.config.cjs
 
-# NYC
-.nycrc
-.nyc_output
-
 # Coverage
 coverage
 
 # Storybook
+.storybook
 stories
 
 # Shell
