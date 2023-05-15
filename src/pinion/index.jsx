@@ -12,15 +12,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import debug from 'debug'
 
-import {
-  FieldsetSprocket
-} from 'shinkansen-sprockets'
+import FieldsetSprocket from 'shinkansen-pinion/components/sprockets/fieldset'
 
-import {
-  RadioCog,
-  SelectCog,
-  TextCog
-} from 'shinkansen-cogs'
+import RadioCog from 'shinkansen-pinion/components/cogs/radio'
+import SelectCog from 'shinkansen-pinion/components/cogs/select'
+import TextCog from 'shinkansen-pinion/components/cogs/text'
 
 import hasEnum from 'shinkansen-pinion/transformers/common/has-enum'
 import hasAnyOf from 'shinkansen-pinion/transformers/common/has-any-of'

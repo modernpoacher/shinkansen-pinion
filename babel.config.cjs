@@ -135,9 +135,14 @@ const plugins = [
         /**
          *  Storybook - Pinion
          */
-        'shinkansen-pinion/components/check-answers': './src/components/check-answers/index.cjs',
-        'shinkansen-pinion/components/error-summary': './src/components/error-summary/index.cjs',
-        'shinkansen-pinion/components/fieldset': './src/components/fieldset/index.cjs',
+        'shinkansen-pinion/components/sprockets/check-answers': './src/components/sprockets/check-answers/index.cjs',
+        'shinkansen-pinion/components/sprockets/error-summary': './src/components/sprockets/error-summary/index.cjs',
+        'shinkansen-pinion/components/sprockets/fieldset': './src/components/sprockets/fieldset/index.cjs',
+        'shinkansen-pinion/components/sprockets': './src/components/sprockets/index.mjs',
+        'shinkansen-pinion/components/cogs/radio': './src/components/cogs/radio/index.cjs',
+        'shinkansen-pinion/components/cogs/select': './src/components/cogs/select/index.cjs',
+        'shinkansen-pinion/components/cogs/text': './src/components/cogs/text/index.cjs',
+        'shinkansen-pinion/components/cogs': './src/components/cogs/index.mjs',
         'shinkansen-pinion/components': './src/components/index.mjs',
         'shinkansen-pinion/transformers/check-answers/get-answer-title': './src/transformers/check-answers.mjs',
         'shinkansen-pinion/transformers/check-answers/get-answer-value-for-type-array': './src/transformers/check-answers.mjs',

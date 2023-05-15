@@ -1,13 +1,13 @@
 import chai, { expect } from 'chai'
 import sinonChai from 'sinon-chai'
 
-import Fieldset from 'shinkansen-pinion/components/fieldset'
+import Radio from 'shinkansen-pinion/components/cogs/radio'
 
 chai.use(sinonChai)
 
-describe('shinkansen-pinion/components/fieldset', () => {
+describe('shinkansen-pinion/components/cogs/radio', () => {
   it('is an function', () => {
-    return expect(Fieldset)
+    return expect(Radio)
       .to.be.a('function')
   })
 })

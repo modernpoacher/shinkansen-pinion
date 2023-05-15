@@ -4,7 +4,7 @@ import {
   CheckAnswersSprocket
 } from 'shinkansen-sprockets'
 
-const log = debug('shinkansen-pinion/components/check-answers')
+const log = debug('shinkansen-pinion/components/sprockets/check-answers')
 
 log('`shinkansen` is awake')
 

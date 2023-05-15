@@ -55,7 +55,7 @@
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
     "@babel/register": "^7.21.0",
-    "@modernpoacher/design-system": "1.0.13",
+    "@modernpoacher/design-system": "1.0.14",
     "@modernpoacher/hooks": "^1.0.402",
     "@sequencemedia/gulp": "^1.0.11",
     "@storybook/addon-actions": "^7.0.11",
@@ -106,8 +106,8 @@
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.62.1",
     "shinkansen-cogs": "1.6.1",
-    "shinkansen-rails": "1.0.43",
-    "shinkansen-signals": "1.1.26",
+    "shinkansen-rails": "1.0.44",
+    "shinkansen-signals": "1.1.27",
     "shinkansen-sprockets": "1.1.1",
     "sinon": "^15.0.4",
     "sinon-chai": "^3.7.0",
@@ -127,18 +127,23 @@
       "require": "./src/index.cjs",
       "import": "./src/index.mjs"
     },
-    "./components/check-answers": {
-      "require": "./src/components/check-answers/index.cjs",
-      "import": "./src/components/check-answers/index.mjs"
+    "./components/sprockets/check-answers": {
+      "require": "./src/components/sprockets/check-answers/index.cjs",
+      "import": "./src/components/sprockets/check-answers/index.mjs"
     },
-    "./components/error-summary": {
-      "require": "./src/components/error-summary/index.cjs",
-      "import": "./src/components/error-summary/index.mjs"
+    "./components/sprockets/error-summary": {
+      "require": "./src/components/sprockets/error-summary/index.cjs",
+      "import": "./src/components/sprockets/error-summary/index.mjs"
     },
-    "./components/fieldset": {
-      "require": "./src/components/fieldset/index.cjs",
-      "import": "./src/components/fieldset/index.mjs"
+    "./components/sprockets/fieldset": {
+      "require": "./src/components/sprockets/fieldset/index.cjs",
+      "import": "./src/components/sprockets/fieldset/index.mjs"
     },
+    "./components/sprockets": "./src/components/sprockets/index.mjs",
+    "./components/cogs/radio": "./src/components/cogs/radio/index.cjs",
+    "./components/cogs/select": "./src/components/cogs/select/index.cjs",
+    "./components/cogs/text": "./src/components/cogs/text/index.cjs",
+    "./components/cogs": "./src/components/cogs/index.mjs",
     "./components": "./src/components/index.mjs",
     "./transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
     "./transformers/check-answers": "./src/transformers/check-answers/index.mjs",

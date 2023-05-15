@@ -2,12 +2,12 @@ require('@babel/register')({ ignore: [] })
 
 const debug = require('debug')
 
-const log = debug('shinkansen-pinion/components/check-answers')
+const log = debug('shinkansen-pinion/components/sprockets/error-summary')
 
 log('`shinkansen` is awake')
 
 const {
-  CheckAnswersSprocket
+  ErrorSummarySprocket
 } = require('shinkansen-sprockets')
 
-module.exports = CheckAnswersSprocket
+module.exports = ErrorSummarySprocket

@@ -5,11 +5,11 @@ import {
   CheckAnswers,
   ErrorSummary,
   Fieldset
-} from 'shinkansen-pinion/components'
+} from 'shinkansen-pinion/components/sprockets'
 
 chai.use(sinonChai)
 
-describe('shinkansen-pinion/components', () => {
+describe('shinkansen-pinion/components/sprockets', () => {
   describe('`CheckAnswers`', () => {
     it('is a function', () => {
       return expect(CheckAnswers)

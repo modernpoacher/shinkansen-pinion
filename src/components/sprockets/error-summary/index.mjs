@@ -4,7 +4,7 @@ import {
   ErrorSummarySprocket
 } from 'shinkansen-sprockets'
 
-const log = debug('shinkansen-pinion/components/error-summary')
+const log = debug('shinkansen-pinion/components/sprockets/error-summary')
 
 log('`shinkansen` is awake')
 
