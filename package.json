@@ -106,7 +106,7 @@
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.62.1",
     "shinkansen-cogs": "1.6.1",
-    "shinkansen-rails": "1.0.44",
+    "shinkansen-rails": "1.0.45",
     "shinkansen-signals": "1.1.27",
     "shinkansen-sprockets": "1.1.1",
     "sinon": "^15.0.4",
