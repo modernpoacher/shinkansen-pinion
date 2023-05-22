@@ -107,7 +107,7 @@
     "sass": "^1.62.1",
     "shinkansen-cogs": "1.6.3",
     "shinkansen-rails": "1.0.51",
-    "shinkansen-signals": "1.1.34",
+    "shinkansen-signals": "1.1.36",
     "shinkansen-sprockets": "1.1.3",
     "sinon": "^15.1.0",
     "sinon-chai": "^3.7.0",
