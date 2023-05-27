@@ -29,7 +29,7 @@ import {
 
 const log = debug('shinkansen-pinion/pinion')
 
-log('`pinion` is awake')
+log('`shinkansen` is awake')
 
 function onChange () {
   /* */
