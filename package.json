@@ -103,7 +103,7 @@
     "react-test-renderer": "^18.2.0",
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.63.4",
-    "shinkansen-cogs": "1.6.30",
+    "shinkansen-cogs": "1.6.31",
     "shinkansen-rails": "1.0.71",
     "shinkansen-signals": "1.1.56",
     "shinkansen-sprockets": "1.1.29",
