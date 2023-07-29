@@ -1,9 +1,9 @@
-import chai, { expect } from 'chai'
+import { use, expect } from 'chai'
 import sinonChai from 'sinon-chai'
 
 import Pinion from 'shinkansen-pinion/pinion'
 
-chai.use(sinonChai)
+use(sinonChai)
 
 describe('shinkansen-pinion/pinion', () => {
   describe('`Pinion`', () => {

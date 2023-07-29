@@ -1,4 +1,4 @@
-import chai, { expect } from 'chai'
+import { use, expect } from 'chai'
 import sinonChai from 'sinon-chai'
 
 import {
@@ -7,7 +7,7 @@ import {
   Fieldset
 } from 'shinkansen-pinion/components/sprockets'
 
-chai.use(sinonChai)
+use(sinonChai)
 
 describe('shinkansen-pinion/components/sprockets', () => {
   describe('`CheckAnswers`', () => {

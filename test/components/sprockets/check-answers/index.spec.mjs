@@ -1,9 +1,9 @@
-import chai, { expect } from 'chai'
+import { use, expect } from 'chai'
 import sinonChai from 'sinon-chai'
 
 import CheckAnswers from 'shinkansen-pinion/components/sprockets/check-answers'
 
-chai.use(sinonChai)
+use(sinonChai)
 
 describe('shinkansen-pinion/components/sprockets/check-answers', () => {
   it('is an function', () => {
