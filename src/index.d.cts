@@ -1,27 +1,27 @@
 declare namespace PinionTypes {
-  export type FieldError = {
+  export interface FieldError {
     type: string
-    params: {}
+    params: Record<string, unknown>
     uri: string
   }
 
-  export type MetaType = {
-    items: string[],
-    selectedItems: number[],
+  export interface MetaType {
+    items: string[]
+    selectedItems: number[]
     uri: string
   }
 
-  export type MetaComponentType = MetaType & { component: {} }
+  export type MetaComponentType = MetaType & { component: Record<string, unknown> }
 
-  export type ElementsType = {
-    title: string,
+  export interface ElementsType {
+    title: string
     description: string
   }
 
-  export type EnumType = { id: string, name?: string, isRequired?: boolean }
-  export type AnyOfType = { id: string, name?: string, isRequired?: boolean }
-  export type OneOfType = { id: string, name?: string, isRequired?: boolean }
-  export type FieldType = { id: string, name?: string, isRequired?: boolean }
+  export interface EnumType { id: string, name?: string, isRequired?: boolean }
+  export interface AnyOfType { id: string, name?: string, isRequired?: boolean }
+  export interface OneOfType { id: string, name?: string, isRequired?: boolean }
+  export interface FieldType { id: string, name?: string, isRequired?: boolean }
   export type ElementsEnumType = ElementsType & { enum: EnumType }
   export type ElementsAnyOfType = ElementsType & { anyOf: AnyOfType }
   export type ElementsOneOfType = ElementsType & { oneOf: OneOfType }
@@ -31,24 +31,24 @@ declare namespace PinionTypes {
 }
 
 declare module 'shinkansen-pinion/components/check-answers' {
-  import React from 'react'
+  import type React from 'react'
   import type { SprocketProps } from 'shinkansen-sprockets/sprockets'
 
-  export default function CheckAnswersSprocket(props: SprocketProps): React.JSX.Element
+  export default function CheckAnswersSprocket (props: SprocketProps): React.JSX.Element
 }
 
 declare module 'shinkansen-pinion/components/error-summary' {
-  import React from 'react'
+  import type React from 'react'
   import type { SprocketProps } from 'shinkansen-sprockets/sprockets'
 
-  export default function ErrorSummarySprocket(props: SprocketProps): React.JSX.Element
+  export default function ErrorSummarySprocket (props: SprocketProps): React.JSX.Element
 }
 
 declare module 'shinkansen-pinion/components/fieldset' {
-  import React from 'react'
+  import type React from 'react'
   import type { SprocketProps } from 'shinkansen-sprockets/sprockets'
 
-  export default function FieldsetSprocket(props: SprocketProps): React.JSX.Element
+  export default function FieldsetSprocket (props: SprocketProps): React.JSX.Element
 }
 
 declare module 'shinkansen-pinion/transformers/common/has-component' {
@@ -56,7 +56,7 @@ declare module 'shinkansen-pinion/transformers/common/has-component' {
 }
 
 declare module 'shinkansen-pinion/transformers/common/get-component' {
-  export default function getComponent (meta: PinionTypes.MetaType | PinionTypes.MetaComponentType): PinionTypes.MetaComponentType | void
+  export default function getComponent (meta: PinionTypes.MetaType | PinionTypes.MetaComponentType): PinionTypes.MetaComponentType | undefined
 }
 
 declare module 'shinkansen-pinion/transformers/common/has-enum' {
@@ -64,7 +64,7 @@ declare module 'shinkansen-pinion/transformers/common/has-enum' {
 }
 
 declare module 'shinkansen-pinion/transformers/common/get-enum' {
-  export default function getEnum (elements: (PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType)): PinionTypes.ElementsEnumType | void
+  export default function getEnum (elements: (PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType)): PinionTypes.ElementsEnumType | undefined
 }
 
 declare module 'shinkansen-pinion/transformers/common/has-any-of' {
@@ -72,7 +72,7 @@ declare module 'shinkansen-pinion/transformers/common/has-any-of' {
 }
 
 declare module 'shinkansen-pinion/transformers/common/get-any-of' {
-  export default function getAnyOf (elements: (PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType)): PinionTypes.ElementsAnyOfType | void
+  export default function getAnyOf (elements: (PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType)): PinionTypes.ElementsAnyOfType | undefined
 }
 
 declare module 'shinkansen-pinion/transformers/common/has-one-of' {
@@ -80,7 +80,7 @@ declare module 'shinkansen-pinion/transformers/common/has-one-of' {
 }
 
 declare module 'shinkansen-pinion/transformers/common/get-one-of' {
-  export default function getOneOf (elements: (PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType)): PinionTypes.ElementsOneOfType | void
+  export default function getOneOf (elements: (PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType)): PinionTypes.ElementsOneOfType | undefined
 }
 
 declare module 'shinkansen-pinion/transformers/error-message' {
@@ -89,46 +89,46 @@ declare module 'shinkansen-pinion/transformers/error-message' {
 }
 
 declare module 'shinkansen-pinion/pinion' {
-  import React from 'react'
+  import type React from 'react'
 
-  type PinionType = {
-    meta: PinionTypes.MetaType,
+  interface PinionType {
+    meta: PinionTypes.MetaType
     elements: PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType
   }
-  type ParamsType = {components: {}, errors: PinionTypes.FieldError[]}
+  interface ParamsType { components: Record<string, unknown>, errors: PinionTypes.FieldError[] }
 
-  export type FieldProps = {
-    meta: PinionTypes.MetaType,
-    elements: PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType
-    params: ParamsType
-    onChange: PinionTypes.OnChangeType
-  }
-
-  export type GroupProps = {
-    meta: PinionTypes.MetaType,
+  export interface FieldProps {
+    meta: PinionTypes.MetaType
     elements: PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType
     params: ParamsType
     onChange: PinionTypes.OnChangeType
   }
 
-  export type PinionProps = {
+  export interface GroupProps {
+    meta: PinionTypes.MetaType
+    elements: PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType
+    params: ParamsType
+    onChange: PinionTypes.OnChangeType
+  }
+
+  export interface PinionProps {
     pinion: PinionType
     params: ParamsType
     onChange: PinionTypes.OnChangeType
   }
 
-  export function renderToRadiosForEnum(meta: PinionTypes.MetaType, elements: PinionTypes.ElementsEnumType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
-  export function renderToRadiosForAnyOf(meta: PinionTypes.MetaType, elements: PinionTypes.ElementsAnyOfType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
-  export function renderToRadiosForOneOf(meta: PinionTypes.MetaType, elements: PinionTypes.ElementsOneOfType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
-  export function renderToSelectForEnum(meta: PinionTypes.MetaType, elements: PinionTypes.ElementsEnumType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
-  export function renderToSelectForAnyOf(meta: PinionTypes.MetaType, elements: PinionTypes.ElementsAnyOfType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
-  export function renderToSelectForOneOf(meta: PinionTypes.MetaType, elements: PinionTypes.ElementsOneOfType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
-  export function renderToField(meta: PinionTypes.MetaType, elements: PinionTypes.ElementsFieldType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
-  export function Field(props: FieldProps): React.JSX.Element
-  export function Group(props: GroupProps): React.JSX.Element
+  export function renderToRadiosForEnum (meta: PinionTypes.MetaType, elements: PinionTypes.ElementsEnumType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
+  export function renderToRadiosForAnyOf (meta: PinionTypes.MetaType, elements: PinionTypes.ElementsAnyOfType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
+  export function renderToRadiosForOneOf (meta: PinionTypes.MetaType, elements: PinionTypes.ElementsOneOfType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
+  export function renderToSelectForEnum (meta: PinionTypes.MetaType, elements: PinionTypes.ElementsEnumType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
+  export function renderToSelectForAnyOf (meta: PinionTypes.MetaType, elements: PinionTypes.ElementsAnyOfType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
+  export function renderToSelectForOneOf (meta: PinionTypes.MetaType, elements: PinionTypes.ElementsOneOfType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
+  export function renderToField (meta: PinionTypes.MetaType, elements: PinionTypes.ElementsFieldType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element
+  export function Field (props: FieldProps): React.JSX.Element
+  export function Group (props: GroupProps): React.JSX.Element
   export function renderField (pinion: PinionType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element | null
   export function renderGroup (pinion: PinionType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element | null
-  export default function Pinion(props: PinionProps): React.JSX.Element
+  export default function Pinion (props: PinionProps): React.JSX.Element
 }
 
 declare module 'shinkansen-pinion' {
