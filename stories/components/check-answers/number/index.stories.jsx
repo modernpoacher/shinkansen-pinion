@@ -69,10 +69,10 @@ AllAnswers.parameters = {
 }
 
 export const NoAnswers = () => (
-    <CheckAnswers
-      title='No Answers'
-      checkAnswers={[]}
-    />
+  <CheckAnswers
+    title='No Answers'
+    checkAnswers={[]}
+  />
 )
 
 NoAnswers.parameters = {
