@@ -68,6 +68,7 @@
     "@sequencemedia/gulp-postcss": "^1.0.76",
     "@sequencemedia/gulp-sass": "^1.0.67",
     "@sequencemedia/gulp-sourcemaps": "^1.0.70",
+    "@sequencemedia/sinon-chai": "^0.0.6",
     "@storybook/addon-actions": "^7.6.7",
     "@storybook/addon-essentials": "^7.6.7",
     "@storybook/addon-links": "^7.6.7",
@@ -110,7 +111,6 @@
     "shinkansen-signals": "1.1.104",
     "shinkansen-sprockets": "1.1.199",
     "sinon": "^17.0.1",
-    "sinon-chai": "^3.7.0",
     "storybook": "^7.6.7",
     "vinyl-paths": "^5.0.0"
   },
