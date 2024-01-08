@@ -109,7 +109,7 @@
     "shinkansen-cogs": "1.7.37",
     "shinkansen-rails": "1.0.125",
     "shinkansen-signals": "1.1.104",
-    "shinkansen-sprockets": "1.1.201",
+    "shinkansen-sprockets": "1.1.202",
     "sinon": "^17.0.1",
     "storybook": "^7.6.7",
     "vinyl-paths": "^5.0.0"
