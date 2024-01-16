@@ -103,10 +103,10 @@
     "react-test-renderer": "^18.2.0",
     "regenerator-runtime": "^0.14.1",
     "sass": "^1.69.7",
-    "shinkansen-cogs": "1.7.41",
-    "shinkansen-rails": "1.0.126",
+    "shinkansen-cogs": "1.7.42",
+    "shinkansen-rails": "1.0.127",
     "shinkansen-signals": "1.1.105",
-    "shinkansen-sprockets": "1.1.205",
+    "shinkansen-sprockets": "1.1.206",
     "sinon": "^17.0.1",
     "storybook": "^7.6.8",
     "vinyl-paths": "^5.0.0"
