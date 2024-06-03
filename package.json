@@ -27,25 +27,25 @@
     "url": "git@github.com/modernpoacher/shinkansen-pinion.git"
   },
   "scripts": {
-    "prepublishOnly": "cross-env NODE_ENV=production npm run build",
     "build": "cross-env DEBUG=shinkansen-pinion npm run gulp -- build",
+    "build-storybook": "storybook build",
     "build:watch": "cross-env DEBUG=shinkansen-pinion npm run gulp -- build:watch",
-    "transform": "cross-env DEBUG=shinkansen-pinion npm run gulp -- transform",
-    "transform:watch": "cross-env DEBUG=shinkansen-pinion npm run gulp -- transform:watch",
-    "pregulp": "npm run nvm",
     "gulp": "gulp --color",
-    "prelint": "npm run nvm",
     "lint": "eslint . .storybook --ext .mjs,.cjs,.jsx,.mts,.cts",
     "lint:fix": "npm run lint -- --fix",
-    "pretest": "npm run nvm",
-    "test": "npm run test:mocha && npm run test:jest",
-    "test:mocha": "cross-env NODE_ENV=test mocha test --recursive",
-    "test:jest": "cross-env NODE_ENV=test jest",
     "nvm": "bash nvm.sh",
-    "prestorybook": "npm run build && npm run transform",
-    "storybook": "storybook dev -p 6009",
+    "pregulp": "npm run nvm",
+    "prelint": "npm run nvm",
     "prepare": "husky",
-    "build-storybook": "storybook build"
+    "prepublishOnly": "cross-env NODE_ENV=production npm run build",
+    "prestorybook": "npm run build && npm run transform",
+    "pretest": "npm run nvm",
+    "storybook": "storybook dev -p 6009",
+    "test": "npm run test:mocha && npm run test:jest",
+    "test:jest": "cross-env NODE_ENV=test jest",
+    "test:mocha": "cross-env NODE_ENV=test mocha test --recursive",
+    "transform": "cross-env DEBUG=shinkansen-pinion npm run gulp -- transform",
+    "transform:watch": "cross-env DEBUG=shinkansen-pinion npm run gulp -- transform:watch"
   },
   "dependencies": {
     "debug": "^4.3.5"
@@ -56,7 +56,7 @@
     "@babel/preset-env": "^7.24.6",
     "@babel/preset-react": "^7.24.6",
     "@babel/register": "^7.24.6",
-    "@modernpoacher/design-system": "1.0.159",
+    "@modernpoacher/design-system": "1.0.160",
     "@modernpoacher/hooks": "^1.0.478",
     "@sequencemedia/gulp": "^1.1.188",
     "@sequencemedia/gulp-clean-css": "^1.0.103",
@@ -103,7 +103,7 @@
     "react-test-renderer": "^18.3.1",
     "regenerator-runtime": "^0.14.1",
     "sass": "^1.77.4",
-    "shinkansen-cogs": "1.7.130",
+    "shinkansen-cogs": "1.7.131",
     "shinkansen-rails": "1.0.168",
     "shinkansen-signals": "1.1.146",
     "shinkansen-sprockets": "1.1.291",
@@ -112,9 +112,9 @@
     "vinyl-paths": "^5.0.0"
   },
   "imports": {
-    "#build/gulp/build/*": "./build/gulp/build/*.mjs",
-    "#build/gulp/build": "./build/gulp/build/index.mjs",
     "#build/gulp/*": "./build/gulp/*.mjs",
+    "#build/gulp/build": "./build/gulp/build/index.mjs",
+    "#build/gulp/build/*": "./build/gulp/build/*.mjs",
     "#build/gulp/transform": "./build/gulp/transform/index.mjs",
     "#build/paths": "./build/paths.mjs",
     "#stories": "./stories"
@@ -124,6 +124,12 @@
       "require": "./src/index.cjs",
       "import": "./src/index.mjs"
     },
+    "./components": "./src/components/index.mjs",
+    "./components/cogs": "./src/components/cogs/index.mjs",
+    "./components/cogs/radio": "./src/components/cogs/radio/index.cjs",
+    "./components/cogs/select": "./src/components/cogs/select/index.cjs",
+    "./components/cogs/text": "./src/components/cogs/text/index.cjs",
+    "./components/sprockets": "./src/components/sprockets/index.mjs",
     "./components/sprockets/check-answers": {
       "require": "./src/components/sprockets/check-answers/index.cjs",
       "import": "./src/components/sprockets/check-answers/index.mjs"
@@ -136,19 +142,13 @@
       "require": "./src/components/sprockets/fieldset/index.cjs",
       "import": "./src/components/sprockets/fieldset/index.mjs"
     },
-    "./components/sprockets": "./src/components/sprockets/index.mjs",
-    "./components/cogs/radio": "./src/components/cogs/radio/index.cjs",
-    "./components/cogs/select": "./src/components/cogs/select/index.cjs",
-    "./components/cogs/text": "./src/components/cogs/text/index.cjs",
-    "./components/cogs": "./src/components/cogs/index.mjs",
-    "./components": "./src/components/index.mjs",
-    "./transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
-    "./transformers/check-answers": "./src/transformers/check-answers/index.mjs",
-    "./transformers/common/*": "./src/transformers/common/*.mjs",
-    "./transformers/common": "./src/transformers/common/index.mjs",
-    "./transformers/error-message/*": "./src/transformers/error-message/*.mjs",
-    "./transformers/error-message": "./src/transformers/error-message/index.mjs",
+    "./pinion": "./src/pinion/index.cjs",
     "./transformers": "./src/transformers/index.mjs",
-    "./pinion": "./src/pinion/index.cjs"
+    "./transformers/check-answers": "./src/transformers/check-answers/index.mjs",
+    "./transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
+    "./transformers/common": "./src/transformers/common/index.mjs",
+    "./transformers/common/*": "./src/transformers/common/*.mjs",
+    "./transformers/error-message": "./src/transformers/error-message/index.mjs",
+    "./transformers/error-message/*": "./src/transformers/error-message/*.mjs"
   }
 }
