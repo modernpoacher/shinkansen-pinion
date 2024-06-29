@@ -6,7 +6,7 @@ import Fieldset from 'shinkansen-pinion/components/sprockets/fieldset'
 use(sinonChai)
 
 describe('shinkansen-pinion/components/sprockets/fieldset', () => {
-  it('is an function', () => {
+  it('is a function', () => {
     return expect(Fieldset)
       .to.be.a('function')
   })

@@ -6,7 +6,7 @@ import ErrorSummary from 'shinkansen-pinion/components/sprockets/error-summary'
 use(sinonChai)
 
 describe('shinkansen-pinion/components/sprockets/error-summary', () => {
-  it('is an function', () => {
+  it('is a function', () => {
     return expect(ErrorSummary)
       .to.be.a('function')
   })

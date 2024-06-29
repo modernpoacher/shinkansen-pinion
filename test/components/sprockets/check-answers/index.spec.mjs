@@ -6,7 +6,7 @@ import CheckAnswers from 'shinkansen-pinion/components/sprockets/check-answers'
 use(sinonChai)
 
 describe('shinkansen-pinion/components/sprockets/check-answers', () => {
-  it('is an function', () => {
+  it('is a function', () => {
     return expect(CheckAnswers)
       .to.be.a('function')
   })

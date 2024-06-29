@@ -6,7 +6,7 @@ import Text from 'shinkansen-pinion/components/cogs/text'
 use(sinonChai)
 
 describe('shinkansen-pinion/components/cogs/text', () => {
-  it('is an function', () => {
+  it('is a function', () => {
     return expect(Text)
       .to.be.a('function')
   })
