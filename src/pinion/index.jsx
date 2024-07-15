@@ -31,6 +31,8 @@ import {
   DEFAULT_HANDLE_CHANGE
 } from 'shinkansen-pinion/common'
 
+const DEFAULT_PARAMS = {}
+
 const log = debug('shinkansen-pinion/pinion')
 
 log('`shinkansen` is awake')
@@ -235,7 +237,7 @@ export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri },
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderToField (meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToField (meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToField')
 
   const {
@@ -269,11 +271,11 @@ export function renderToField (meta, elements, params, onChange = DEFAULT_HANDLE
   )
 }
 
-export function ComponentGroup ({ component, meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE }) {
+export function ComponentGroup ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
 
 }
 
-export function ComponentField ({ component, meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE }) {
+export function ComponentField ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
 
 }
 
@@ -281,7 +283,7 @@ export function ComponentField ({ component, meta, elements, params, onChange = 
  * @param {GroupProps}
  * @returns {React.JSX.Element}
  */
-export function Group ({ meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE }) {
+export function Group ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Group')
 
   const {
@@ -330,15 +332,11 @@ Group.propTypes = {
   onChange: PropTypes.func
 }
 
-Group.defaultProps = {
-  onChange: DEFAULT_HANDLE_CHANGE
-}
-
 /**
  * @param {FieldProps}
  * @returns {React.JSX.Element}
  */
-export function Field ({ meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE }) {
+export function Field ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Field')
 
   if (hasEnum(elements)) {
@@ -371,17 +369,13 @@ Field.propTypes = {
   onChange: PropTypes.func
 }
 
-Field.defaultProps = {
-  onChange: DEFAULT_HANDLE_CHANGE
-}
-
 /**
  * @param {PinionTypes.PinionType}
  * @param {ParamsType} params
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderGroup ({ meta, elements }, params, onChange = DEFAULT_HANDLE_CHANGE) { // eslint-disable-line
+export function renderGroup ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) { // eslint-disable-line
   log('renderGroup')
 
   if (hasComponent(meta)) {
@@ -414,7 +408,7 @@ export function renderGroup ({ meta, elements }, params, onChange = DEFAULT_HAND
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderField ({ meta, elements }, params, onChange = DEFAULT_HANDLE_CHANGE) { // eslint-disable-line
+export function renderField ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) { // eslint-disable-line
   log('renderField')
 
   if (hasComponent(meta)) {
@@ -445,7 +439,7 @@ export function renderField ({ meta, elements }, params, onChange = DEFAULT_HAND
  * @param {PinionProps}
  * @returns {React.JSX.Element}
  */
-export default function Pinion ({ pinion, params, onChange = DEFAULT_HANDLE_CHANGE }) {
+export default function Pinion ({ pinion, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Pinion')
 
   const {
@@ -469,9 +463,4 @@ Pinion.propTypes = {
     errors: PropTypes.arrayOf(PropTypes.shape())
   }),
   onChange: PropTypes.func
-}
-
-Pinion.defaultProps = {
-  params: {},
-  onChange: DEFAULT_HANDLE_CHANGE
 }
