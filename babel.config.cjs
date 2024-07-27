@@ -128,6 +128,7 @@ const plugins = [
         /**
          *  Storybook - Pinion
          */
+        'shinkansen-pinion/common': './src/common/index.mjs',
         'shinkansen-pinion/components/sprockets/check-answers': './src/components/sprockets/check-answers/index.cjs',
         'shinkansen-pinion/components/sprockets/error-summary': './src/components/sprockets/error-summary/index.cjs',
         'shinkansen-pinion/components/sprockets/fieldset': './src/components/sprockets/fieldset/index.cjs',

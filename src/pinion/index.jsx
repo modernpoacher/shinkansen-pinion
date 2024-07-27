@@ -27,13 +27,13 @@ import {
   getError
 } from 'shinkansen-pinion/transformers/error-message'
 
+import {
+  DEFAULT_HANDLE_CHANGE
+} from 'shinkansen-pinion/common'
+
 const log = debug('shinkansen-pinion/pinion')
 
 log('`shinkansen` is awake')
-
-function onChange () {
-  /* */
-}
 
 const getKey = (value, index) => `${value}-${index}`
 const getDefaultValue = (field) => Reflect.has(field, 'defaultValue') ? Reflect.get(field, 'defaultValue') : ''
@@ -46,7 +46,7 @@ const getValue = (field) => Reflect.has(field, 'value') ? Reflect.get(field, 'va
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToRadiosForEnum')
 
   return (
@@ -81,7 +81,7 @@ export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, 
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToRadiosForAnyOf')
 
   return (
@@ -113,7 +113,7 @@ export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri },
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToRadiosForOneOf')
 
   return (
@@ -145,7 +145,7 @@ export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri },
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToSelectForEnum')
 
   return (
@@ -175,7 +175,7 @@ export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, 
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToSelectForAnyOf')
 
   return (
@@ -205,7 +205,7 @@ export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri },
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange) {
+export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToSelectForOneOf')
 
   return (
@@ -235,7 +235,7 @@ export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri },
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderToField (meta, elements, params, onChange) {
+export function renderToField (meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToField')
 
   const {
@@ -269,11 +269,11 @@ export function renderToField (meta, elements, params, onChange) {
   )
 }
 
-export function ComponentGroup ({ component, meta, elements, params, onChange }) {
+export function ComponentGroup ({ component, meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE }) {
 
 }
 
-export function ComponentField ({ component, meta, elements, params, onChange }) {
+export function ComponentField ({ component, meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE }) {
 
 }
 
@@ -281,7 +281,7 @@ export function ComponentField ({ component, meta, elements, params, onChange })
  * @param {GroupProps}
  * @returns {React.JSX.Element}
  */
-export function Group ({ meta, elements, params, onChange }) {
+export function Group ({ meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Group')
 
   const {
@@ -331,14 +331,14 @@ Group.propTypes = {
 }
 
 Group.defaultProps = {
-  onChange
+  onChange: DEFAULT_HANDLE_CHANGE
 }
 
 /**
  * @param {FieldProps}
  * @returns {React.JSX.Element}
  */
-export function Field ({ meta, elements, params, onChange }) {
+export function Field ({ meta, elements, params, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Field')
 
   if (hasEnum(elements)) {
@@ -372,7 +372,7 @@ Field.propTypes = {
 }
 
 Field.defaultProps = {
-  onChange
+  onChange: DEFAULT_HANDLE_CHANGE
 }
 
 /**
@@ -381,7 +381,7 @@ Field.defaultProps = {
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderGroup ({ meta, elements }, params, onChange) { // eslint-disable-line
+export function renderGroup ({ meta, elements }, params, onChange = DEFAULT_HANDLE_CHANGE) { // eslint-disable-line
   log('renderGroup')
 
   if (hasComponent(meta)) {
@@ -414,7 +414,7 @@ export function renderGroup ({ meta, elements }, params, onChange) { // eslint-d
  * @param {PinionTypes.OnChangeType} onChange
  * @returns {React.JSX.Element}
  */
-export function renderField ({ meta, elements }, params, onChange) { // eslint-disable-line
+export function renderField ({ meta, elements }, params, onChange = DEFAULT_HANDLE_CHANGE) { // eslint-disable-line
   log('renderField')
 
   if (hasComponent(meta)) {
@@ -445,7 +445,7 @@ export function renderField ({ meta, elements }, params, onChange) { // eslint-d
  * @param {PinionProps}
  * @returns {React.JSX.Element}
  */
-export default function Pinion ({ pinion, params, onChange }) {
+export default function Pinion ({ pinion, params, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Pinion')
 
   const {
@@ -473,5 +473,5 @@ Pinion.propTypes = {
 
 Pinion.defaultProps = {
   params: {},
-  onChange
+  onChange: DEFAULT_HANDLE_CHANGE
 }
