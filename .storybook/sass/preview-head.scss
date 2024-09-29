@@ -3,5 +3,7 @@
 #storybook-root {
   @include design-system;
 
+  & { // stylelint-disable-line no-duplicate-selectors
   margin: 0 auto;
+  }
 }
