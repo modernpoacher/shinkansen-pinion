@@ -103,9 +103,9 @@
     "regenerator-runtime": "^0.14.1",
     "sass": "^1.80.5",
     "shinkansen-cogs": "1.7.239",
-    "shinkansen-rails": "1.0.240",
-    "shinkansen-signals": "1.1.178",
-    "shinkansen-sprockets": "1.1.397",
+    "shinkansen-rails": "1.0.241",
+    "shinkansen-signals": "1.1.179",
+    "shinkansen-sprockets": "1.1.398",
     "sinon": "^19.0.2",
     "storybook": "7.6.20",
     "vinyl-paths": "^5.0.0"
