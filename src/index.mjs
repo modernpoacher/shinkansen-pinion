@@ -1,10 +1,8 @@
 import debug from 'debug'
 
-import {
-  components,
-  transformers,
-  Pinion
-} from './index.cjs'
+import * as components from './components/index.mjs'
+import * as transformers from './transformers/index.mjs'
+import Pinion from './pinion/index.cjs'
 
 const log = debug('shinkansen-pinion')
 
