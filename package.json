@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com/modernpoacher/shinkansen-pinion.git"
+    "url": "git+ssh://git@github.com/modernpoacher/shinkansen-pinion.git"
   },
   "scripts": {
     "build": "cross-env DEBUG=shinkansen-pinion* webpack",
