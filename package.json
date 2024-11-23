@@ -96,14 +96,20 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.81.0",
     "sass-loader": "^16.0.3",
-    "shinkansen-cogs": "1.7.263",
+    "shinkansen-cogs": "1.7.264",
     "shinkansen-rails": "1.0.252",
     "shinkansen-signals": "1.1.182",
-    "shinkansen-sprockets": "1.1.423",
+    "shinkansen-sprockets": "1.1.424",
     "sinon": "^19.0.2",
     "storybook": "7.6.20",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4"
+  },
+  "peerDependencies": {
+    "shinkansen-cogs": "1.7.x",
+    "shinkansen-rails": "1.0.x",
+    "shinkansen-signals": "1.1.x",
+    "shinkansen-sprockets": "1.1.x"
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
