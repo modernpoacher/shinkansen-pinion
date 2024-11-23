@@ -27,9 +27,9 @@
     "url": "git@github.com/modernpoacher/shinkansen-pinion.git"
   },
   "scripts": {
-    "build": "cross-env DEBUG=shinkansen-pinion webpack",
+    "build": "cross-env DEBUG=shinkansen-pinion* webpack",
     "build-storybook": "storybook build",
-    "build:watch": "cross-env DEBUG=shinkansen-pinion webpack --watch",
+    "build:watch": "cross-env DEBUG=shinkansen-pinion* webpack --watch",
     "lint": "eslint . .storybook --ext .mjs,.cjs,.jsx,.mts,.cts",
     "lint:fix": "npm run lint -- --fix",
     "nvm": "bash nvm.sh",
@@ -42,7 +42,7 @@
     "test": "npm run test:mocha && npm run test:jest",
     "test:jest": "cross-env NODE_ENV=test jest",
     "test:mocha": "cross-env NODE_ENV=test mocha test --recursive",
-    "transform": "cross-env DEBUG=shinkansen-pinion  ./transform.sh"
+    "transform": "cross-env DEBUG=shinkansen-pinion* ./transform.sh"
   },
   "dependencies": {
     "debug": "^4.3.7"
