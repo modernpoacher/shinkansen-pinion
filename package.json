@@ -137,23 +137,12 @@
       "require": "./src/components/index.cjs",
       "import": "./src/components/index.mjs"
     },
-    "./components/cogs": {
-      "require": "./src/components/cogs/index.cjs",
-      "import": "./src/components/cogs/index.mjs"
-    },
-    "./components/cogs/*": {
-      "require": "./src/components/cogs/*/index.cjs",
-      "import": "./src/components/cogs/*/index.mjs"
-    },
-    "./components/sprockets": {
-      "require": "./src/components/sprockets/index.cjs",
-      "import": "./src/components/sprockets/index.mjs"
-    },
-    "./components/sprockets/*": {
-      "require": "./src/components/sprockets/*/index.cjs",
-      "import": "./src/components/sprockets/*/index.mjs"
+    "./components/*": {
+      "require": "./src/components/*/index.cjs",
+      "import": "./src/components/*/index.mjs"
     },
     "./pinion": "./src/pinion/index.cjs",
+    "./pinion/*": "./src/pinion/*/index.cjs",
     "./transformers": "./src/transformers/index.mjs",
     "./transformers/check-answers": "./src/transformers/check-answers/index.mjs",
     "./transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
