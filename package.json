@@ -113,7 +113,19 @@
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
-    "#stories": "./stories"
+    "#pinion/common": "./src/common/index.mjs",
+    "#pinion/components": "./src/components/index.mjs",
+    "#pinion/components/*": "./src/components/*/index.mjs",
+    "#pinion/pinion": "./src/pinion/index.jsx",
+    "#pinion/pinion/*": "./src/pinion/*/index.jsx",
+    "#pinion/transformers": "./src/transformers/index.mjs",
+    "#pinion/transformers/*": "./src/transformers/*/index.mjs",
+    "#stories/components/*": "./stories/components/*/index.stories.jsx",
+    "#stories/definitions/*": "./stories/definitions/*.json",
+    "#stories/errors": "./stories/errors.mjs",
+    "#stories/pinion/*": "./stories/pinion/*/index.stories.jsx",
+    "#stories/state": "./stories/state/index.jsx",
+    "#stories/state/*": "./stories/state/*/index.jsx"
   },
   "exports": {
     ".": {
@@ -121,23 +133,25 @@
       "import": "./src/index.mjs"
     },
     "./common": "./src/common/index.mjs",
-    "./components": "./src/components/index.mjs",
-    "./components/cogs": "./src/components/cogs/index.mjs",
-    "./components/cogs/radio": "./src/components/cogs/radio/index.cjs",
-    "./components/cogs/select": "./src/components/cogs/select/index.cjs",
-    "./components/cogs/text": "./src/components/cogs/text/index.cjs",
-    "./components/sprockets": "./src/components/sprockets/index.mjs",
-    "./components/sprockets/check-answers": {
-      "require": "./src/components/sprockets/check-answers/index.cjs",
-      "import": "./src/components/sprockets/check-answers/index.mjs"
+    "./components": {
+      "require": "./src/components/index.cjs",
+      "import": "./src/components/index.mjs"
     },
-    "./components/sprockets/error-summary": {
-      "require": "./src/components/sprockets/error-summary/index.cjs",
-      "import": "./src/components/sprockets/error-summary/index.mjs"
+    "./components/cogs": {
+      "require": "./src/components/cogs/index.cjs",
+      "import": "./src/components/cogs/index.mjs"
     },
-    "./components/sprockets/fieldset": {
-      "require": "./src/components/sprockets/fieldset/index.cjs",
-      "import": "./src/components/sprockets/fieldset/index.mjs"
+    "./components/cogs/*": {
+      "require": "./src/components/cogs/*/index.cjs",
+      "import": "./src/components/cogs/*/index.mjs"
+    },
+    "./components/sprockets": {
+      "require": "./src/components/sprockets/index.cjs",
+      "import": "./src/components/sprockets/index.mjs"
+    },
+    "./components/sprockets/*": {
+      "require": "./src/components/sprockets/*/index.cjs",
+      "import": "./src/components/sprockets/*/index.mjs"
     },
     "./pinion": "./src/pinion/index.cjs",
     "./transformers": "./src/transformers/index.mjs",

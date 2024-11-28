@@ -1,11 +1,59 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
+    "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "NodeNext",
+    "allowJs": true,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
-    "baseUrl": "."
-  }
+    "baseUrl": ".",
+    "paths": {
+      "#pinion/common": [
+        "src/common/index.mjs"
+      ],
+      "#pinion/components": [
+        "src/components/index.mjs"
+      ],
+      "#pinion/components/*": [
+        "src/components/*/index.mjs"
+      ],
+      "#pinion/pinion": [
+        "src/pinion/index.jsx"
+      ],
+      "#pinion/pinion/*": [
+        "src/pinion/*/index.jsx"
+      ],
+      "#pinion/transformers": [
+        "src/transformers/index.mjs"
+      ],
+      "#pinion/transformers/*": [
+        "src/transformers/*/index.mjs"
+      ],
+      "#stories/components/*": [
+        "stories/components/*/index.stories.jsx"
+      ],
+      "#stories/definitions/*": [
+        "stories/definitions/*.json"
+      ],
+      "#stories/errors": [
+        "stories/errors.mjs"
+      ],
+      "#stories/pinion/*": [
+        "stories/pinion/*/index.stories.jsx"
+      ],
+      "#stories/state/*": [
+        "stories/state/*/index.jsx"
+      ],
+      "#stories/state": [
+        "stories/state/index.jsx"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "node_modules/shinkansen-cogs/src/**/*",
+    "node_modules/shinkansen-sprockets/src/**/*"
+  ]
 }

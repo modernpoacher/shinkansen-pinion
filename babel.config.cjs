@@ -40,18 +40,7 @@ const presets = [
 ]
 
 const plugins = [
-  '@babel/syntax-jsx',
-  [
-    'module-resolver', {
-      alias: {
-        /**
-         *  Storybook
-         */
-        '#stories/errors': './stories/errors.mjs',
-        '#stories': './stories'
-      }
-    }
-  ]
+  '@babel/syntax-jsx'
 ]
 
 module.exports = (api) => {
