@@ -10,6 +10,9 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
+      "#pinion": [
+        "src/index.mjs"
+      ],
       "#pinion/common": [
         "src/common/index.mjs"
       ],
@@ -43,17 +46,17 @@
       "#stories/pinion/*": [
         "stories/pinion/*/index.stories.jsx"
       ],
-      "#stories/state/*": [
-        "stories/state/*/index.jsx"
-      ],
       "#stories/state": [
         "stories/state/index.jsx"
+      ],
+      "#stories/state/*": [
+        "stories/state/*/index.jsx"
       ]
     }
   },
   "include": [
-    "src/**/*",
     "node_modules/shinkansen-cogs/src/**/*",
-    "node_modules/shinkansen-sprockets/src/**/*"
+    "node_modules/shinkansen-sprockets/src/**/*",
+    "src/**/*"
   ]
 }

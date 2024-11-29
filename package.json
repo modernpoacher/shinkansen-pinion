@@ -113,6 +113,7 @@
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
+    "#pinion": "./src/index.mjs",
     "#pinion/common": "./src/common/index.mjs",
     "#pinion/components": "./src/components/index.mjs",
     "#pinion/components/*": "./src/components/*/index.mjs",
