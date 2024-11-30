@@ -1,1 +1,5 @@
-export default (field = {}) => Reflect.has(field, 'value')
+export default function hasValue (field = {}) {
+  return (
+    Reflect.has(field, 'value')
+  )
+}

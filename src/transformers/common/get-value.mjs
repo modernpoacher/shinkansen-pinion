@@ -1,1 +1,5 @@
-export default (field = {}) => Reflect.get(field, 'value')
+export default function getValue (field = {}) {
+  return (
+    Reflect.get(field, 'value')
+  )
+}

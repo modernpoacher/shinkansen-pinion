@@ -1,1 +1,5 @@
-export default (elements = {}) => Reflect.get(elements, 'enum')
+export default function getEnum (elements = {}) {
+  return (
+    Reflect.get(elements, 'enum')
+  )
+}

@@ -1,7 +1,7 @@
 import debug from 'debug'
 
-import hasElementsTitle from 'shinkansen-pinion/transformers/common/has-elements-title'
-import getGroup from 'shinkansen-pinion/transformers/common/get-group'
+import hasElementsTitle from '#pinion/transformers/common/has-elements-title'
+import getGroup from '#pinion/transformers/common/get-group'
 
 import transformTypeStringAnswer from './transform-type-string-answer.mjs'
 import transformTypeNumberAnswer from './transform-type-number-answer.mjs'

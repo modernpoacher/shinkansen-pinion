@@ -1,1 +1,5 @@
-export default (elements = {}) => Reflect.get(elements, 'title')
+export default function getTitle (elements = {}) {
+  return (
+    Reflect.get(elements, 'title')
+  )
+}

@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-import getResourceUrl from 'shinkansen-pinion/transformers/common/get-resource-url'
+import getResourceUrl from '#pinion/transformers/common/get-resource-url'
 import getVisuallyHiddenText from './get-visually-hidden-text.mjs'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')

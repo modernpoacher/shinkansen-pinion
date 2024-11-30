@@ -1,1 +1,5 @@
-export default (meta = {}) => Reflect.has(meta, 'type')
+export default function hasType (meta = {}) {
+  return (
+    Reflect.has(meta, 'type')
+  )
+}

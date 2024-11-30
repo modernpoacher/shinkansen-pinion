@@ -1,1 +1,5 @@
-export default (elements = {}) => Reflect.has(elements, 'required')
+export default function hasRequired (elements = {}) {
+  return (
+    Reflect.has(elements, 'required')
+  )
+}

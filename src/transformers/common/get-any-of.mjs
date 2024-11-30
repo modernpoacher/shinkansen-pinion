@@ -1,1 +1,5 @@
-export default (elements = {}) => Reflect.get(elements, 'anyOf')
+export default function getAnyOf (elements = {}) {
+  return (
+    Reflect.get(elements, 'anyOf')
+  )
+}

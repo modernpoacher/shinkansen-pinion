@@ -1,1 +1,5 @@
-export default (elements = {}) => Reflect.has(elements, 'title')
+export default function hasTtile (elements = {}) {
+  return (
+    Reflect.has(elements, 'title')
+  )
+}

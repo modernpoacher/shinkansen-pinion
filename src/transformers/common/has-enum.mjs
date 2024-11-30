@@ -1,1 +1,5 @@
-export default (elements = {}) => Reflect.has(elements, 'enum')
+export default function hasEnum (elements = {}) {
+  return (
+    Reflect.has(elements, 'enum')
+  )
+}

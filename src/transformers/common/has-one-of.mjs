@@ -1,1 +1,5 @@
-export default (elements = {}) => Reflect.has(elements, 'oneOf')
+export default function hasOneOf (elements = {}) {
+  return (
+    Reflect.has(elements, 'oneOf')
+  )
+}

@@ -1,1 +1,5 @@
-export default (meta = {}) => Reflect.has(meta, 'component')
+export default function hasComponent (meta = {}) {
+  return (
+    Reflect.has(meta, 'component')
+  )
+}

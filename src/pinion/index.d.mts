@@ -1,11 +1,12 @@
-declare module 'shinkansen-pinion/pinion' {
+declare module '#pinion/pinion' {
   import type React from 'react'
 
   interface PinionType {
     meta: PinionTypes.MetaType
     elements: PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType
   }
-  interface ParamsType { components: Record<string, unknown>, errors: PinionTypes.FieldError[] }
+
+  interface ParamsType { components: Record<PropertyKey, unknown>, errors: PinionTypes.FieldError[] }
 
   export interface FieldProps {
     meta: PinionTypes.MetaType
@@ -39,4 +40,8 @@ declare module 'shinkansen-pinion/pinion' {
   export function renderField (pinion: PinionType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element | null
   export function renderGroup (pinion: PinionType, params: ParamsType, onChange: PinionTypes.OnChangeType): React.JSX.Element | null
   export default function Pinion (props: PinionProps): React.JSX.Element
+}
+
+declare module 'shinkansen-pinion/pinion' {
+  export * from '#pinion/pinion'
 }

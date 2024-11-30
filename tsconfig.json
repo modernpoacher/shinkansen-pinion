@@ -34,6 +34,15 @@
       "#pinion/transformers/*": [
         "src/transformers/*/index.mjs"
       ],
+      "#pinion/transformers/check-answers/*": [
+        "src/transformers/check-answers/*.mjs"
+      ],
+      "#pinion/transformers/common/*": [
+        "src/transformers/common/*.mjs"
+      ],
+      "#pinion/transformers/error-message/*": [
+        "src/transformers/error-message/*.mjs"
+      ],
       "#stories/components/*": [
         "stories/components/*/index.stories.jsx"
       ],

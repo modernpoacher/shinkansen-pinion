@@ -1,1 +1,5 @@
-export default (elements = {}) => Reflect.get(elements, 'required')
+export default function getRequired (elements = {}) {
+  return (
+    Reflect.get(elements, 'required')
+  )
+}

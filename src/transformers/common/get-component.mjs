@@ -1,1 +1,5 @@
-export default (meta = {}) => Reflect.get(meta, 'component')
+export default function getComponent (meta = {}) {
+  return (
+    Reflect.get(meta, 'component')
+  )
+}
