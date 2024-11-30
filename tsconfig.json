@@ -65,9 +65,9 @@
   },
   "include": [
     "node_modules/shinkansen-cogs/src/**/*",
-    "node_modules/shinkansen-sprockets/src/**/*",
     "node_modules/shinkansen-rails/src/**/*",
     "node_modules/shinkansen-signals/src/**/*",
+    "node_modules/shinkansen-sprockets/src/**/*",
     "src/**/*"
   ]
 }

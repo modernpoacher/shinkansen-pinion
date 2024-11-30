@@ -1,9 +1,6 @@
-import { use, expect } from 'chai'
-import sinonChai from '@sequencemedia/sinon-chai'
+import { expect } from 'chai'
 
 import Pinion from 'shinkansen-pinion/pinion'
-
-use(sinonChai)
 
 describe('shinkansen-pinion/pinion', () => {
   describe('`Pinion`', () => {

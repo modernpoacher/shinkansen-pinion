@@ -1,9 +1,6 @@
-import { use, expect } from 'chai'
-import sinonChai from '@sequencemedia/sinon-chai'
+import { expect } from 'chai'
 
 import ErrorSummary from 'shinkansen-pinion/components/sprockets/error-summary'
-
-use(sinonChai)
 
 describe('shinkansen-pinion/components/sprockets/error-summary', () => {
   it('is a function', () => {

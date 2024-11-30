@@ -1,13 +1,10 @@
-import { use, expect } from 'chai'
-import sinonChai from '@sequencemedia/sinon-chai'
+import { expect } from 'chai'
 
 import {
   RadioCog,
   SelectCog,
   TextCog
 } from 'shinkansen-pinion/components/cogs'
-
-use(sinonChai)
 
 describe('shinkansen-pinion/components/cogs', () => {
   describe('`RadioCog`', () => {

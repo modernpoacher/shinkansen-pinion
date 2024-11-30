@@ -1,9 +1,6 @@
-import { use, expect } from 'chai'
-import sinonChai from '@sequencemedia/sinon-chai'
+import { expect } from 'chai'
 
 import * as checkAnswers from 'shinkansen-pinion/transformers/check-answers'
-
-use(sinonChai)
 
 describe('shinkansen-pinion/transformers/check-answers', () => {
   it('is a module', () => {
