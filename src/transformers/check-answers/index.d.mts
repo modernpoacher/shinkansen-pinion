@@ -81,11 +81,11 @@ declare module '#pinion/transformers/check-answers/transform-answer-value' {
 }
 
 declare module '#pinion/transformers/check-answers/transform-any-of-value' {
-  export default function transformAnyOfValue (meta: PinionTypes.MetaType | PinionTypes.MetaComponentType): string
+  export default function transformAnyOfValue (field: PinionTypes.ElementsAnyOfType['anyOf']): string
 }
 
 declare module '#pinion/transformers/check-answers/transform-enum-value' {
-  export default function transformEnumValue (meta: PinionTypes.MetaType | PinionTypes.MetaComponentType): string
+  export default function transformEnumValue (field: PinionTypes.ElementsEnumType['enum']): string
 }
 
 declare module '#pinion/transformers/check-answers/transform-field-value' {
@@ -93,7 +93,7 @@ declare module '#pinion/transformers/check-answers/transform-field-value' {
 }
 
 declare module '#pinion/transformers/check-answers/transform-one-of-value' {
-  export default function transformOneOfValue (meta: PinionTypes.MetaType | PinionTypes.MetaComponentType): string
+  export default function transformOneOfValue (field: PinionTypes.ElementsOneOfType['oneOf']): string
 }
 
 declare module '#pinion/transformers/check-answers/transform-type-array-answers' {

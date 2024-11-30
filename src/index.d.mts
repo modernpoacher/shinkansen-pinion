@@ -1,50 +1,3 @@
-/**
- *
-declare namespace Zashiki {
-  export type ObjectLiteralType = Record<PropertyKey, never>
-  export type ObjectType = Record<PropertyKey, unknown>
-  export type ArrayLiteralType = never[]
-  export type ArrayType = unknown[]
-
-  export interface SchemaType {
-    type: string
-    title?: string
-    description?: string
-    readOnly?: boolean
-    writeOnly?: boolean
-    const?: unknown
-    default?: unknown
-    enum?: ObjectType | ObjectLiteralType | ArrayType | ArrayLiteralType
-    anyOf?: ObjectType | ObjectLiteralType | ArrayType | ArrayLiteralType
-    oneOf?: ObjectType | ObjectLiteralType | ArrayType | ArrayLiteralType
-    allOf: ObjectType | ObjectLiteralType | ArrayType | ArrayLiteralType
-    minimum?: number
-    maximum?: number
-    minLength?: number
-    maxLength?: number
-    minItems?: number
-    maxItems?: number
-    hasUniqueItems?: boolean
-    minContains?: number
-    maxContains?: number
-    minProperties?: number
-    maxProperties?: number
-    isExclusiveMin?: boolean
-    isExclusiveMax?: boolean
-    multipleOf?: number
-  }
-
-  export type DocumentType = string | number | boolean | null | ObjectType | ObjectLiteralType | ArrayType | ArrayLiteralType | ObjectLiteralType | undefined
-  export type HashType = Record<PropertyKey, string> | Record<PropertyKey, never>
-
-  export interface ZashikiType {
-    meta: ObjectType | ObjectLiteralType
-    elements: ObjectType | ObjectLiteralType
-  }
-}
- *
- */
-
 declare namespace PinionTypes {
   export type ObjectLiteralType = Record<PropertyKey, never>
   export type ObjectType = Record<PropertyKey, unknown>
@@ -58,9 +11,10 @@ declare namespace PinionTypes {
   }
 
   export interface MetaType {
-    items: string[] | ArrayLiteralType
-    selectedItems: number[] | ArrayLiteralType
     uri: string
+    isRequired?: boolean
+    items?: string[] | ArrayLiteralType
+    selectedItems?: number[] | ArrayLiteralType
   }
 
   export type MetaComponentType = MetaType & { component: ObjectType }
@@ -70,10 +24,38 @@ declare namespace PinionTypes {
     description: string
   }
 
-  export interface EnumType { id: string, name?: string, isRequired?: boolean }
-  export interface AnyOfType { id: string, name?: string, isRequired?: boolean }
-  export interface OneOfType { id: string, name?: string, isRequired?: boolean }
-  export interface FieldType { id: string, name?: string, isRequired?: boolean }
+  export interface EnumType {
+    id: string
+    name?: string
+    isRequired?: boolean
+    items?: string[] | ArrayLiteralType
+    selectedItems?: number[] | ArrayLiteralType
+  }
+
+  export interface AnyOfType {
+    id: string
+    name?: string
+    isRequired?: boolean
+    items?: string[] | ArrayLiteralType
+    selectedItems?: number[] | ArrayLiteralType
+  }
+
+  export interface OneOfType {
+    id: string
+    name?: string
+    isRequired?: boolean
+    items?: string[] | ArrayLiteralType
+    selectedItems?: number[] | ArrayLiteralType
+  }
+
+  export interface FieldType {
+    id: string
+    name?: string
+    isRequired?: boolean
+    items?: string[] | ArrayLiteralType
+    selectedItems?: number[] | ArrayLiteralType
+  }
+
   export type ElementsEnumType = ElementsType & { enum: EnumType }
   export type ElementsAnyOfType = ElementsType & { anyOf: AnyOfType }
   export type ElementsOneOfType = ElementsType & { oneOf: OneOfType }

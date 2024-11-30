@@ -6,6 +6,11 @@ import getChangeAnswer from './get-change-answer.mjs'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
+/**
+ * @param {PinionTypes.AnswerType[]} [answers]
+ * @param {PinionTypes.ResourceType} [resource]
+ * @returns {PinionTypes.TypeObjectAnswerType}
+ */
 export default function transformTypeObjectAnswers (answers = [], resource = {}) {
   log('transformTypeObjectAnswers')
 

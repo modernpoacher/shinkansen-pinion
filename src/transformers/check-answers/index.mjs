@@ -13,6 +13,13 @@ import transformTypeArrayAnswers from './transform-type-array-answers.mjs'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
+/**
+ * @param {PinionTypes.AnswerType} answer
+ * @param {PinionTypes.ResourceType} resource
+ * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} array
+ * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} group
+ * @returns {PinionTypes.TypeObjectAnswerType}
+ */
 export function transformTypeObjectAnswer ({ elements: { fields = [] } = {} }, resource, array = [], group = []) {
   log('transformTypeObjectAnswer')
 
@@ -39,6 +46,13 @@ export function transformTypeObjectAnswer ({ elements: { fields = [] } = {} }, r
   }, array)
 }
 
+/**
+ * @param {PinionTypes.AnswerType} answer
+ * @param { PinionTypes.ResourceType} resource
+ * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} array
+ * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} group
+ * @returns {PinionTypes.TypeObjectAnswerType}
+ */
 export function transformTypeArrayAnswer ({ elements: { fields = [] } = {} }, resource, array = [], group = []) {
   log('transformTypeArrayAnswer')
 
@@ -65,6 +79,13 @@ export function transformTypeArrayAnswer ({ elements: { fields = [] } = {} }, re
   }, array)
 }
 
+/**
+ * @param {PinionTypes.AnswerType} answer
+ * @param { PinionTypes.ResourceType} resource
+ * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} array
+ * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} group
+ * @returns {PinionTypes.TypeObjectAnswerType}
+ */
 export default function transformAnswer (answer, resource, array = [], group = []) {
   const {
     meta: {
