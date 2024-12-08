@@ -45,7 +45,7 @@
     "transform": "cross-env DEBUG=shinkansen-pinion* ./transform.sh"
   },
   "dependencies": {
-    "debug": "^4.3.7"
+    "debug": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -53,7 +53,7 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.26.3",
     "@babel/register": "^7.25.9",
-    "@modernpoacher/design-system": "1.1.18",
+    "@modernpoacher/design-system": "1.1.19",
     "@storybook/addon-actions": "7.6.20",
     "@storybook/addon-essentials": "7.6.20",
     "@storybook/addon-links": "7.6.20",
@@ -93,8 +93,8 @@
     "sass": "^1.82.0",
     "sass-loader": "^16.0.4",
     "shinkansen-cogs": "1.7.278",
-    "shinkansen-rails": "1.0.257",
-    "shinkansen-signals": "1.1.185",
+    "shinkansen-rails": "1.0.258",
+    "shinkansen-signals": "1.1.186",
     "shinkansen-sprockets": "1.1.437",
     "sinon": "^19.0.2",
     "storybook": "7.6.20",
