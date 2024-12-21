@@ -95,7 +95,7 @@
     "shinkansen-cogs": "1.7.280",
     "shinkansen-rails": "1.0.258",
     "shinkansen-signals": "1.1.186",
-    "shinkansen-sprockets": "1.1.437",
+    "shinkansen-sprockets": "1.1.439",
     "sinon": "^19.0.2",
     "storybook": "7.6.20",
     "webpack": "^5.97.0",
