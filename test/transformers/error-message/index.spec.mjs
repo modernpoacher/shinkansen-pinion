@@ -1,4 +1,6 @@
-import { expect } from 'chai'
+import {
+  expect
+} from 'chai'
 
 import * as errorMessage from 'shinkansen-pinion/transformers/error-message'
 

@@ -1,4 +1,6 @@
-import { expect } from 'chai'
+import {
+  expect
+} from 'chai'
 
 import CheckAnswers from 'shinkansen-pinion/components/sprockets/check-answers'
 

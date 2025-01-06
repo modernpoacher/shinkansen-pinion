@@ -1,4 +1,6 @@
-import { expect } from 'chai'
+import {
+  expect
+} from 'chai'
 
 import Text from 'shinkansen-pinion/components/cogs/text'
 

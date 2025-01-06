@@ -1,4 +1,6 @@
-import { expect } from 'chai'
+import {
+  expect
+} from 'chai'
 
 import * as common from 'shinkansen-pinion/transformers/common'
 

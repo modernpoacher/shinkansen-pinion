@@ -1,4 +1,6 @@
-import { expect } from 'chai'
+import {
+  expect
+} from 'chai'
 
 import Fieldset from 'shinkansen-pinion/components/sprockets/fieldset'
 
