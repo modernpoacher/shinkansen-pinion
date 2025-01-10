@@ -33,7 +33,7 @@ declare module '#pinion/transformers/common/get-required' {
   type OneOfType = PinionTypes.OneOfType
   type FieldType = PinionTypes.FieldType
 
-  export default function getRequired (record?: MetaType | MetaComponentType | EnumType | AnyOfType | OneOfType | FieldType): MetaType['isRequired'] | MetaComponentType['isRequired'] | EnumType['isRequired'] | AnyOfType['isRequired'] | OneOfType['isRequired'] | FieldType['isRequired'] | undefined
+  export default function getRequired (record?: MetaType | MetaComponentType | EnumType | AnyOfType | OneOfType | FieldType): MetaType['isRequired'] | undefined
 }
 
 declare module '#pinion/transformers/common/has-title' {
