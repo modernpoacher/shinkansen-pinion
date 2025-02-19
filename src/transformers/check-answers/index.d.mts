@@ -30,10 +30,10 @@ export default function transformAnswer (
   array: ArrayType,
   group: GroupType
 ): (
-    TypeStringAnswerType[] |
-    TypeNumberAnswerType[] |
-   TypeArrayAnswerType[] |
-    TypeObjectAnswerType[] |
-    TypeBooleanAnswerType[] |
-    TypeNullAnswerType[]
+  TypeStringAnswerType[] |
+  TypeNumberAnswerType[] |
+  TypeArrayAnswerType[] |
+  TypeObjectAnswerType[] |
+  TypeBooleanAnswerType[] |
+  TypeNullAnswerType[]
 )
