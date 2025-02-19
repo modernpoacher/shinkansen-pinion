@@ -1,5 +1,10 @@
 import hasElementsTitle from './has-elements-title.mjs'
 
+/**
+ *  @param {number} index
+ *  @param {PinionTypes.AnswerType[]} array
+ *  @returns {PinionTypes.AnswerType[]}
+ */
 export default function getGroup (index, array) {
   const group = []
 

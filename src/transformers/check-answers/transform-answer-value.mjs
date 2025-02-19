@@ -17,8 +17,8 @@ import transformFieldValue from './transform-field-value.mjs'
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
 /**
- * @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType} elements
- * @returns {string | null}
+ *  @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType} elements
+ *  @returns {string | null}
  */
 export default function transformAnswerValue (elements) {
   log('transformAnswerValue')

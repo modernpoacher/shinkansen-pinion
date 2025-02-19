@@ -1,3 +1,11 @@
+/**
+ *  @typedef {PinionTypes.ObjectType} ObjectType
+ *
+ *  @typedef {PinionTypes.PinionProps} PinionProps
+ *
+ *  @typedef {PinionTypes.ParamsType} ParamsType
+ */
+
 import React from 'react'
 import {
   MemoryRouter
@@ -5,77 +13,79 @@ import {
 
 import Pinion from '#pinion/pinion'
 
-import OBJECT_STRING from '#stories/definitions/pinion/object-string'
-import OBJECT_STRING_ENUM from '#stories/definitions/pinion/object-string-enum'
-import OBJECT_STRING_ANY_OF from '#stories/definitions/pinion/object-string-any-of'
-import OBJECT_STRING_ONE_OF from '#stories/definitions/pinion/object-string-one-of'
-import OBJECT_STRING_ALL_OF from '#stories/definitions/pinion/object-string-all-of'
+import {
+  OBJECT_STRING,
+  OBJECT_STRING_ENUM,
+  OBJECT_STRING_ANY_OF,
+  OBJECT_STRING_ONE_OF,
+  OBJECT_STRING_ALL_OF,
+  OBJECT_NUMBER,
+  OBJECT_NUMBER_ENUM,
+  OBJECT_NUMBER_ANY_OF,
+  OBJECT_NUMBER_ONE_OF,
+  OBJECT_NUMBER_ALL_OF,
+  OBJECT_ARRAY_OBJECT_STRING,
+  OBJECT_ARRAY_OBJECT_STRING_ENUM,
+  OBJECT_ARRAY_OBJECT_STRING_ANY_OF,
+  OBJECT_ARRAY_OBJECT_STRING_ONE_OF,
+  OBJECT_ARRAY_OBJECT_STRING_ALL_OF,
+  OBJECT_ARRAY_OBJECT_NUMBER,
+  OBJECT_ARRAY_OBJECT_NUMBER_ENUM,
+  OBJECT_ARRAY_OBJECT_NUMBER_ANY_OF,
+  OBJECT_ARRAY_OBJECT_NUMBER_ONE_OF,
+  OBJECT_ARRAY_OBJECT_NUMBER_ALL_OF,
+  OBJECT_ARRAY_OBJECT_BOOLEAN,
+  OBJECT_ARRAY_OBJECT_BOOLEAN_ENUM,
+  OBJECT_ARRAY_OBJECT_BOOLEAN_ANY_OF,
+  OBJECT_ARRAY_OBJECT_BOOLEAN_ONE_OF,
+  OBJECT_ARRAY_OBJECT_BOOLEAN_ALL_OF,
+  OBJECT_ARRAY_OBJECT_NULL,
+  OBJECT_ARRAY_OBJECT_NULL_ENUM,
+  OBJECT_ARRAY_OBJECT_NULL_ANY_OF,
+  OBJECT_ARRAY_OBJECT_NULL_ONE_OF,
+  OBJECT_ARRAY_OBJECT_NULL_ALL_OF,
+  OBJECT_ARRAY_ARRAY_STRING,
+  OBJECT_ARRAY_ARRAY_STRING_ENUM,
+  OBJECT_ARRAY_ARRAY_STRING_ANY_OF,
+  OBJECT_ARRAY_ARRAY_STRING_ONE_OF,
+  OBJECT_ARRAY_ARRAY_STRING_ALL_OF,
+  OBJECT_ARRAY_ARRAY_NUMBER,
+  OBJECT_ARRAY_ARRAY_NUMBER_ENUM,
+  OBJECT_ARRAY_ARRAY_NUMBER_ANY_OF,
+  OBJECT_ARRAY_ARRAY_NUMBER_ONE_OF,
+  OBJECT_ARRAY_ARRAY_NUMBER_ALL_OF,
+  OBJECT_ARRAY_ARRAY_BOOLEAN,
+  OBJECT_ARRAY_ARRAY_BOOLEAN_ENUM,
+  OBJECT_ARRAY_ARRAY_BOOLEAN_ANY_OF,
+  OBJECT_ARRAY_ARRAY_BOOLEAN_ONE_OF,
+  OBJECT_ARRAY_ARRAY_BOOLEAN_ALL_OF,
+  OBJECT_ARRAY_ARRAY_NULL,
+  OBJECT_ARRAY_ARRAY_NULL_ENUM,
+  OBJECT_ARRAY_ARRAY_NULL_ANY_OF,
+  OBJECT_ARRAY_ARRAY_NULL_ONE_OF,
+  OBJECT_ARRAY_ARRAY_NULL_ALL_OF,
+  OBJECT_BOOLEAN,
+  OBJECT_BOOLEAN_ENUM,
+  OBJECT_BOOLEAN_ANY_OF,
+  OBJECT_BOOLEAN_ONE_OF,
+  OBJECT_BOOLEAN_ALL_OF,
+  OBJECT_NULL,
+  OBJECT_NULL_ENUM,
+  OBJECT_NULL_ANY_OF,
+  OBJECT_NULL_ONE_OF,
+  OBJECT_NULL_ALL_OF
+} from './definitions.mjs'
 
-import OBJECT_NUMBER from '#stories/definitions/pinion/object-number'
-import OBJECT_NUMBER_ENUM from '#stories/definitions/pinion/object-number-enum'
-import OBJECT_NUMBER_ANY_OF from '#stories/definitions/pinion/object-number-any-of'
-import OBJECT_NUMBER_ONE_OF from '#stories/definitions/pinion/object-number-one-of'
-import OBJECT_NUMBER_ALL_OF from '#stories/definitions/pinion/object-number-all-of'
-
-import OBJECT_ARRAY_OBJECT_STRING from '#stories/definitions/pinion/object-array-object-string'
-import OBJECT_ARRAY_OBJECT_STRING_ENUM from '#stories/definitions/pinion/object-array-object-string-enum'
-import OBJECT_ARRAY_OBJECT_STRING_ANY_OF from '#stories/definitions/pinion/object-array-object-string-any-of'
-import OBJECT_ARRAY_OBJECT_STRING_ONE_OF from '#stories/definitions/pinion/object-array-object-string-one-of'
-import OBJECT_ARRAY_OBJECT_STRING_ALL_OF from '#stories/definitions/pinion/object-array-object-string-all-of'
-
-import OBJECT_ARRAY_OBJECT_NUMBER from '#stories/definitions/pinion/object-array-object-number'
-import OBJECT_ARRAY_OBJECT_NUMBER_ENUM from '#stories/definitions/pinion/object-array-object-number-enum'
-import OBJECT_ARRAY_OBJECT_NUMBER_ANY_OF from '#stories/definitions/pinion/object-array-object-number-any-of'
-import OBJECT_ARRAY_OBJECT_NUMBER_ONE_OF from '#stories/definitions/pinion/object-array-object-number-one-of'
-import OBJECT_ARRAY_OBJECT_NUMBER_ALL_OF from '#stories/definitions/pinion/object-array-object-number-all-of'
-
-import OBJECT_ARRAY_OBJECT_BOOLEAN from '#stories/definitions/pinion/object-array-object-boolean'
-import OBJECT_ARRAY_OBJECT_BOOLEAN_ENUM from '#stories/definitions/pinion/object-array-object-boolean-enum'
-import OBJECT_ARRAY_OBJECT_BOOLEAN_ANY_OF from '#stories/definitions/pinion/object-array-object-boolean-any-of'
-import OBJECT_ARRAY_OBJECT_BOOLEAN_ONE_OF from '#stories/definitions/pinion/object-array-object-boolean-one-of'
-import OBJECT_ARRAY_OBJECT_BOOLEAN_ALL_OF from '#stories/definitions/pinion/object-array-object-boolean-all-of'
-
-import OBJECT_ARRAY_OBJECT_NULL from '#stories/definitions/pinion/object-array-object-null'
-import OBJECT_ARRAY_OBJECT_NULL_ENUM from '#stories/definitions/pinion/object-array-object-null-enum'
-import OBJECT_ARRAY_OBJECT_NULL_ANY_OF from '#stories/definitions/pinion/object-array-object-null-any-of'
-import OBJECT_ARRAY_OBJECT_NULL_ONE_OF from '#stories/definitions/pinion/object-array-object-null-one-of'
-import OBJECT_ARRAY_OBJECT_NULL_ALL_OF from '#stories/definitions/pinion/object-array-object-null-all-of'
-
-import OBJECT_ARRAY_ARRAY_STRING from '#stories/definitions/pinion/object-array-array-string'
-import OBJECT_ARRAY_ARRAY_STRING_ENUM from '#stories/definitions/pinion/object-array-array-string-enum'
-import OBJECT_ARRAY_ARRAY_STRING_ANY_OF from '#stories/definitions/pinion/object-array-array-string-any-of'
-import OBJECT_ARRAY_ARRAY_STRING_ONE_OF from '#stories/definitions/pinion/object-array-array-string-one-of'
-import OBJECT_ARRAY_ARRAY_STRING_ALL_OF from '#stories/definitions/pinion/object-array-array-string-all-of'
-
-import OBJECT_ARRAY_ARRAY_NUMBER from '#stories/definitions/pinion/object-array-array-number'
-import OBJECT_ARRAY_ARRAY_NUMBER_ENUM from '#stories/definitions/pinion/object-array-array-number-enum'
-import OBJECT_ARRAY_ARRAY_NUMBER_ANY_OF from '#stories/definitions/pinion/object-array-array-number-any-of'
-import OBJECT_ARRAY_ARRAY_NUMBER_ONE_OF from '#stories/definitions/pinion/object-array-array-number-one-of'
-import OBJECT_ARRAY_ARRAY_NUMBER_ALL_OF from '#stories/definitions/pinion/object-array-array-number-all-of'
-
-import OBJECT_ARRAY_ARRAY_BOOLEAN from '#stories/definitions/pinion/object-array-array-boolean'
-import OBJECT_ARRAY_ARRAY_BOOLEAN_ENUM from '#stories/definitions/pinion/object-array-array-boolean-enum'
-import OBJECT_ARRAY_ARRAY_BOOLEAN_ANY_OF from '#stories/definitions/pinion/object-array-array-boolean-any-of'
-import OBJECT_ARRAY_ARRAY_BOOLEAN_ONE_OF from '#stories/definitions/pinion/object-array-array-boolean-one-of'
-import OBJECT_ARRAY_ARRAY_BOOLEAN_ALL_OF from '#stories/definitions/pinion/object-array-array-boolean-all-of'
-
-import OBJECT_ARRAY_ARRAY_NULL from '#stories/definitions/pinion/object-array-array-null'
-import OBJECT_ARRAY_ARRAY_NULL_ENUM from '#stories/definitions/pinion/object-array-array-null-enum'
-import OBJECT_ARRAY_ARRAY_NULL_ANY_OF from '#stories/definitions/pinion/object-array-array-null-any-of'
-import OBJECT_ARRAY_ARRAY_NULL_ONE_OF from '#stories/definitions/pinion/object-array-array-null-one-of'
-import OBJECT_ARRAY_ARRAY_NULL_ALL_OF from '#stories/definitions/pinion/object-array-array-null-all-of'
-
-import OBJECT_BOOLEAN from '#stories/definitions/pinion/object-boolean'
-import OBJECT_BOOLEAN_ENUM from '#stories/definitions/pinion/object-boolean-enum'
-import OBJECT_BOOLEAN_ANY_OF from '#stories/definitions/pinion/object-boolean-any-of'
-import OBJECT_BOOLEAN_ONE_OF from '#stories/definitions/pinion/object-boolean-one-of'
-import OBJECT_BOOLEAN_ALL_OF from '#stories/definitions/pinion/object-boolean-all-of'
-
-import OBJECT_NULL from '#stories/definitions/pinion/object-null'
-import OBJECT_NULL_ENUM from '#stories/definitions/pinion/object-null-enum'
-import OBJECT_NULL_ANY_OF from '#stories/definitions/pinion/object-null-any-of'
-import OBJECT_NULL_ONE_OF from '#stories/definitions/pinion/object-null-one-of'
-import OBJECT_NULL_ALL_OF from '#stories/definitions/pinion/object-null-all-of'
+/**
+ *  @type {Array<(Story: () => React.JSX.Element) => React.JSX.Element>}
+ */
+const decorators = [
+  (Story) => (
+    <MemoryRouter>
+      <Story />
+    </MemoryRouter>
+  )
+]
 
 const OBJECT = {
   OBJECT_STRING,
@@ -143,13 +153,7 @@ const OBJECT = {
 export default {
   title: 'Stories/Pinion/Object',
   component: Pinion,
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    )
-  ],
+  decorators,
   args: {
     pinion: 'OBJECT_STRING',
     params: 'DEFAULT'
@@ -226,7 +230,7 @@ export default {
     },
     params: {
       options: ['DEFAULT', 'ERROR'],
-      mapping: { DEFAULT: {}, ERROR: { errorMessage: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] } },
+      mapping: { DEFAULT: { components: {} }, ERROR: { components: {}, errors: [] } },
       control: {
         type: 'radio',
         labels: {
@@ -238,34 +242,46 @@ export default {
   }
 }
 
-const hasError = (params) => Reflect.has(params, 'errors')
-const getError = ({ meta: { schema: { properties = {} } = {} } = {} }) => {
-  let error = { errorMessage: [{ type: 'UNKNOWN', params: {}, uri: '#/' }] }
+/**
+ *  @param {ParamsType} params
+ *  @returns {boolean}
+ */
+const hasErrors = (params) => Reflect.has(params, 'errors')
+function getErrors ({ meta: { schema: { properties = {} } = {} } = {} }) {
+  let errors = [{ type: 'UNKNOWN', params: {}, uri: '#/' }]
 
-  if (Reflect.has(properties, 'string')) error = { errorMessage: [{ type: 'UNKNOWN', params: {}, uri: '#/string' }] }
+  if (Reflect.has(properties, 'string')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/string' }]
 
-  if (Reflect.has(properties, 'number')) error = { errorMessage: [{ type: 'UNKNOWN', params: {}, uri: '#/number' }] }
+  if (Reflect.has(properties, 'number')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/number' }]
 
-  if (Reflect.has(properties, 'array')) error = { errorMessage: [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }] }
+  if (Reflect.has(properties, 'array')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }]
 
-  if (Reflect.has(properties, 'boolean')) error = { errorMessage: [{ type: 'UNKNOWN', params: {}, uri: '#/boolean' }] }
+  if (Reflect.has(properties, 'boolean')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/boolean' }]
 
-  if (Reflect.has(properties, 'null')) error = { errorMessage: [{ type: 'UNKNOWN', params: {}, uri: '#/null' }] }
+  if (Reflect.has(properties, 'null')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/null' }]
 
-  return error
+  return errors
 }
 
-export const Default = ({ pinion, params }) => {
-  const PARAMS = hasError(params) ? getError(pinion) : params
+const onChange = () => {}
+
+/**
+ *  @param {PinionProps} args
+ *  @returns {React.JSX.Element}
+ */
+export function Default (args) {
+  const {
+    pinion,
+    params
+  } = args
+  const errors = hasErrors(params) ? getErrors(pinion) : []
+  const PARAMS = Object.assign(params, { errors })
 
   return (
     <Pinion
       pinion={pinion}
       params={PARAMS}
+      onChange={onChange}
     />
   )
-}
-
-Default.propTypes = {
-  ...Pinion.propTypes
 }

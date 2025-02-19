@@ -1,9 +1,11 @@
 /**
- * @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType} [elements]
- * @returns {PinionTypes.ElementsType['description'] | undefined}
+ *  @param {PinionTypes.ElementsType} [elements]
+ *  @returns {string | undefined}
  */
-export default function getDescription (elements = {}) {
-  return (
-    Reflect.get(elements, 'description')
-  )
+export default function getDescription (elements) {
+  if (elements) {
+    return (
+      Reflect.get(elements, 'description')
+    )
+  }
 }

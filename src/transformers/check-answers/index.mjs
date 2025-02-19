@@ -14,13 +14,27 @@ import transformTypeArrayAnswers from './transform-type-array-answers.mjs'
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
 /**
- * @param {PinionTypes.AnswerType} answer
- * @param {PinionTypes.ResourceType} resource
- * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} array
- * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} group
- * @returns {PinionTypes.TypeObjectAnswerType}
+ *  @param {PinionTypes.AnswerType} answer
+ *  @param {PinionTypes.ResourceType} resource
+ *  @param {(
+*    PinionTypes.TypeStringAnswerType |
+*    PinionTypes.TypeNumberAnswerType |
+*    PinionTypes.TypeObjectAnswerType |
+*    PinionTypes.TypeArrayAnswerType |
+*    PinionTypes.TypeBooleanAnswerType |
+*    PinionTypes.TypeNullAnswerType
+*  )[]} array
+ *  @param {PinionTypes.AnswerType[]} group
+ *  @returns {(
+*    PinionTypes.TypeStringAnswerType |
+*    PinionTypes.TypeNumberAnswerType |
+*    PinionTypes.TypeObjectAnswerType |
+*    PinionTypes.TypeArrayAnswerType |
+*    PinionTypes.TypeBooleanAnswerType |
+*    PinionTypes.TypeNullAnswerType
+*  )[]}
  */
-export function transformTypeObjectAnswer ({ elements: { fields = [] } = {} }, resource, array = [], group = []) {
+export function transformTypeObjectAnswer ({ elements: { fields = [] } }, resource, array = [], group = []) {
   log('transformTypeObjectAnswer')
 
   return fields.reduce((accumulator, answer, i, a) => {
@@ -47,13 +61,27 @@ export function transformTypeObjectAnswer ({ elements: { fields = [] } = {} }, r
 }
 
 /**
- * @param {PinionTypes.AnswerType} answer
- * @param { PinionTypes.ResourceType} resource
- * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} array
- * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} group
- * @returns {PinionTypes.TypeObjectAnswerType}
+ *  @param {PinionTypes.AnswerType} answer
+ *  @param {PinionTypes.ResourceType} resource
+ *  @param {(
+*    PinionTypes.TypeStringAnswerType |
+*    PinionTypes.TypeNumberAnswerType |
+*    PinionTypes.TypeObjectAnswerType |
+*    PinionTypes.TypeArrayAnswerType |
+*    PinionTypes.TypeBooleanAnswerType |
+*    PinionTypes.TypeNullAnswerType
+*  )[]} array
+ *  @param {PinionTypes.AnswerType[]} group
+ *  @returns {(
+*    PinionTypes.TypeStringAnswerType |
+*    PinionTypes.TypeNumberAnswerType |
+*    PinionTypes.TypeObjectAnswerType |
+*    PinionTypes.TypeArrayAnswerType |
+*    PinionTypes.TypeBooleanAnswerType |
+*    PinionTypes.TypeNullAnswerType
+*  )[]}
  */
-export function transformTypeArrayAnswer ({ elements: { fields = [] } = {} }, resource, array = [], group = []) {
+export function transformTypeArrayAnswer ({ elements: { fields = [] } }, resource, array = [], group = []) {
   log('transformTypeArrayAnswer')
 
   return fields.reduce((accumulator, answer, i, a) => {
@@ -80,11 +108,25 @@ export function transformTypeArrayAnswer ({ elements: { fields = [] } = {} }, re
 }
 
 /**
- * @param {PinionTypes.AnswerType} answer
- * @param { PinionTypes.ResourceType} resource
- * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} array
- * @param {PinionTypes.ArrayType[] | PinionTypes.ArrayLiteralType[]} group
- * @returns {PinionTypes.TypeObjectAnswerType}
+ *  @param {PinionTypes.AnswerType} answer
+ *  @param {PinionTypes.ResourceType} resource
+ *  @param {(
+ *    PinionTypes.TypeStringAnswerType |
+ *    PinionTypes.TypeNumberAnswerType |
+ *    PinionTypes.TypeObjectAnswerType |
+ *    PinionTypes.TypeArrayAnswerType |
+ *    PinionTypes.TypeBooleanAnswerType |
+ *    PinionTypes.TypeNullAnswerType
+ *  )[]} array
+ *  @param {PinionTypes.AnswerType[]} group
+ *  @returns {(
+ *    PinionTypes.TypeStringAnswerType |
+ *    PinionTypes.TypeNumberAnswerType |
+ *    PinionTypes.TypeObjectAnswerType |
+ *    PinionTypes.TypeArrayAnswerType |
+ *    PinionTypes.TypeBooleanAnswerType |
+ *    PinionTypes.TypeNullAnswerType
+ *  )[]}
  */
 export default function transformAnswer (answer, resource, array = [], group = []) {
   const {
@@ -125,5 +167,5 @@ export default function transformAnswer (answer, resource, array = [], group = [
       )
   }
 
-  return null
+  return array
 }

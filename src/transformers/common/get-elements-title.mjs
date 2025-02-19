@@ -1,6 +1,10 @@
 import getTitle from './get-title.mjs'
 
-export default function getElementsTitle ({ elements } = {}) {
+/**
+ *  @param {{ elements?: PinionTypes.ElementsType }} pinion
+ *  @returns {string | undefined}
+ */
+export default function getElementsTitle ({ elements }) {
   return (
     getTitle(elements)
   )

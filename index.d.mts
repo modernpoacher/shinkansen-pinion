@@ -1,9 +1,45 @@
+import type { CheckboxProps } from 'shinkansen-cogs/cogs/checkbox'
+import type { EmailProps } from 'shinkansen-cogs/cogs/email'
+import type { NumberProps } from 'shinkansen-cogs/cogs/number'
+import type { PasswordProps } from 'shinkansen-cogs/cogs/password'
+import type { RadioProps } from 'shinkansen-cogs/cogs/radio'
+import type { SelectProps } from 'shinkansen-cogs/cogs/select'
+import type { TextProps } from 'shinkansen-cogs/cogs/text'
+import type { TextareaProps } from 'shinkansen-cogs/cogs/textarea'
+import type { CheckAnswersProps } from 'shinkansen-sprockets/sprockets/check-answers'
+import type { ErrorSummaryProps } from 'shinkansen-sprockets/sprockets/error-summary'
+import type { FieldsetProps } from 'shinkansen-sprockets/sprockets/fieldset'
+
 declare global {
   namespace PinionTypes {
     export type ObjectLiteralType = Record<PropertyKey, never>
     export type ObjectType = Record<PropertyKey, unknown>
     export type ArrayLiteralType = never[]
     export type ArrayType = unknown[]
+
+    export interface EnumType {
+      id: string
+      name?: string
+      isRequired?: boolean
+      items?: string[] | number[] | boolean[] | null[]
+      selectedItems?: number[]
+    }
+
+    export interface AnyOfType {
+      id: string
+      name?: string
+      isRequired?: boolean
+      items?: string[]
+      selectedItems?: number[]
+    }
+
+    export interface OneOfType {
+      id: string
+      name?: string
+      isRequired?: boolean
+      items?: string[]
+      selectedItems?: number[]
+    }
 
     export interface FieldError {
       type: string
@@ -12,59 +48,65 @@ declare global {
     }
 
     export interface MetaType {
+      type: string,
       uri: string
       isRequired?: boolean
-      items?: string[] | ArrayLiteralType
-      selectedItems?: number[] | ArrayLiteralType
+      schema?: ObjectLiteralType | ObjectType
+      items?: unknown[]
+      selectedItems?: number[]
     }
 
-    export type MetaComponentType = MetaType & { component: ObjectType }
-
-    export interface ElementsType {
-      title: string
-      description: string
+    export interface MetaEnumType extends Omit<MetaType, 'items'> {
+      items?: string[]
+      selectedItems?: number[]
     }
 
-    export interface EnumType {
-      id: string
-      name?: string
-      isRequired?: boolean
-      items?: string[] | ArrayLiteralType
-      selectedItems?: number[] | ArrayLiteralType
+    export interface MetaAnyOfType extends Omit<MetaType, 'items'> {
+      items?: PinionType[] // eslint-disable-line no-use-before-define -- Standard type
+      selectedItems?: number[]
     }
 
-    export interface AnyOfType {
-      id: string
-      name?: string
-      isRequired?: boolean
-      items?: string[] | ArrayLiteralType
-      selectedItems?: number[] | ArrayLiteralType
+    export interface MetaOneOfType extends Omit<MetaType, 'items'> {
+      items?: PinionType[] // eslint-disable-line no-use-before-define -- Standard type
+      selectedItems?: number[]
     }
 
-    export interface OneOfType {
-      id: string
-      name?: string
-      isRequired?: boolean
-      items?: string[] | ArrayLiteralType
-      selectedItems?: number[] | ArrayLiteralType
-    }
+    export type MetaFieldType = MetaType
 
     export interface FieldType {
       id: string
       name?: string
       isRequired?: boolean
-      items?: string[] | ArrayLiteralType
-      selectedItems?: number[] | ArrayLiteralType
+      items?: string[]
+      selectedItems?: number[],
+      value?: string | number | boolean | null | ObjectType | ArrayType
+      defaultValue?: string | number | boolean | null | ObjectType | ArrayType
     }
 
-    export type ElementsEnumType = ElementsType & { enum: EnumType }
-    export type ElementsAnyOfType = ElementsType & { anyOf: AnyOfType }
-    export type ElementsOneOfType = ElementsType & { oneOf: OneOfType }
-    export type ElementsFieldType = ElementsType & { field: FieldType }
+    export interface ElementsType {
+      title: string
+      description?: string,
+      field?: FieldType,
+      fields?: PinionType[] // eslint-disable-line no-use-before-define -- Standard type
+    }
+
+    export interface ElementsEnumType extends ElementsType {
+      enum: EnumType
+    }
+
+    export interface ElementsAnyOfType extends ElementsType {
+      anyOf: AnyOfType
+    }
+
+    export interface ElementsOneOfType extends ElementsType {
+      oneOf: OneOfType
+    }
+
+    export type ElementsFieldType = ElementsType
 
     export interface AnswerType {
-      meta: MetaType | MetaComponentType
-      elements: ElementsType | ElementsEnumType | ElementsAnyOfType | ElementsOneOfType | ElementsFieldType
+      meta: MetaType | MetaEnumType | MetaAnyOfType | MetaOneOfType
+      elements: ElementsType | ElementsEnumType | ElementsAnyOfType | ElementsOneOfType
     }
 
     export type ResourceType = Record<PropertyKey, unknown>
@@ -72,7 +114,7 @@ declare global {
     interface AnswerChangeAnswerType {
       href: string
       text: string
-      visuallyHiddenText: string
+      visuallyHiddenText?: string
     }
 
     export interface TypeStringAnswerType {
@@ -142,6 +184,109 @@ declare global {
     }
 
     export type OnChangeType = () => void
+
+    export interface PinionType {
+      meta: MetaType | MetaEnumType | MetaAnyOfType | MetaOneOfType
+      elements: ElementsType | ElementsEnumType | ElementsAnyOfType | ElementsOneOfType
+    }
+
+    export interface ParamsType { components: Record<PropertyKey, unknown>, errors: FieldError[] }
+
+    export interface PinionProps {
+      pinion: PinionType
+      params: ParamsType
+      onChange: OnChangeType
+    }
+
+    export interface FieldProps {
+      meta: MetaEnumType | MetaAnyOfType | MetaOneOfType | MetaFieldType
+      elements: ElementsEnumType | ElementsAnyOfType | ElementsOneOfType | ElementsFieldType
+      params: ParamsType
+      onChange: OnChangeType
+    }
+
+    export interface GroupProps {
+      meta: MetaEnumType | MetaAnyOfType | MetaOneOfType | MetaFieldType
+      elements: ElementsEnumType | ElementsAnyOfType | ElementsOneOfType | ElementsFieldType
+      params: ParamsType
+      onChange: OnChangeType
+    }
+
+    export namespace Components {
+      export namespace Cogs {
+        export namespace Cog {
+          export namespace Checkbox {
+            export type {
+              CheckboxProps
+            }
+          }
+
+          export namespace Email {
+            export type {
+              EmailProps
+            }
+          }
+
+          export namespace Number {
+            export type {
+              NumberProps
+            }
+          }
+
+          export namespace Password {
+            export type {
+              PasswordProps
+            }
+          }
+
+          export namespace Radio {
+            export type {
+              RadioProps
+            }
+          }
+
+          export namespace Select {
+            export type {
+              SelectProps
+            }
+          }
+
+          export namespace Text {
+            export type {
+              TextProps
+            }
+          }
+
+          export namespace Textarea {
+            export type {
+              TextareaProps
+            }
+          }
+        }
+      }
+
+      export namespace Sprockets {
+        export namespace Sprocket {
+          export namespace CheckAnswers {
+            export type {
+              CheckAnswersProps
+            }
+          }
+
+          export namespace ErrorSummary {
+            export type {
+              ErrorSummaryProps
+            }
+          }
+
+          export namespace Fieldset {
+            export type {
+              FieldsetProps
+            }
+          }
+        }
+      }
+    }
   }
 }
 

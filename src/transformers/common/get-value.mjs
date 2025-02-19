@@ -1,6 +1,6 @@
 /**
- * @param {PinionTypes.ElementsFieldType['field']} [field]
- * @returns {string | undefined}
+ *  @param {{ value?: string }} [field]
+ *  @returns {string | undefined}
  */
 export default function getValue (field = {}) {
   return (

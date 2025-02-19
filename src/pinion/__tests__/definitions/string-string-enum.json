@@ -14,7 +14,7 @@
       ]
     },
     "selectedItems": [
-      "Three"
+      1
     ],
     "items": [
       "One",
@@ -27,7 +27,7 @@
     "description": "A string schema",
     "enum": {
       "selectedItems": [
-        "Three"
+        1
       ],
       "items": [
         "One",

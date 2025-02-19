@@ -1,3 +1,7 @@
+/**
+ *  @typedef {PinionTypes.Components.Sprockets.Sprocket.Fieldset.FieldsetProps} FieldsetProps
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -31,24 +35,30 @@ export default {
   }
 }
 
-export function Default (args) {
+/**
+ *  @param {FieldsetProps} props
+ *  @returns {React.JSX.Element}
+ */
+export function Default (props) {
   return (
     <FieldsetSprocket
-      {...args}
-      errorMessage={undefined}
+      {...props}
     />
   )
 }
 
-export function WithError ({ errorMessage = {}, ...args }) {
+/**
+ *  @param {FieldsetProps} props
+ *  @returns {React.JSX.Element}
+ */
+export function WithError (props) {
   return (
     <FieldsetSprocket
-      {...args}
-      errorMessage={errorMessage}
+      {...props}
     />
   )
 }
 
 WithError.propTypes = {
-  errorMessage: PropTypes.shape()
+  errorMessage: PropTypes.shape({})
 }

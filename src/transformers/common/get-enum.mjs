@@ -1,9 +1,11 @@
 /**
- * @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType} [elements]
- * @returns {PinionTypes.ElementsEnumType['enum'] | undefined}
+ *  @param {PinionTypes.ElementsType} [elements]
+ *  @returns {PinionTypes.EnumType | undefined}
  */
-export default function getEnum (elements = {}) {
-  return (
-    Reflect.get(elements, 'enum')
-  )
+export default function getEnum (elements) {
+  if (elements) {
+    return (
+      Reflect.get(elements, 'enum')
+    )
+  }
 }

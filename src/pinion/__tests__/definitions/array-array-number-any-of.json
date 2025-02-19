@@ -95,7 +95,7 @@
             ]
           },
           "selectedItems": [
-            3
+            1
           ],
           "items": [
             {
@@ -104,7 +104,7 @@
                 "uri": "#/0/0",
                 "type": "number",
                 "selectedItems": [
-                  3
+                  1
                 ],
                 "value": "1",
                 "schema": {
@@ -149,7 +149,7 @@
                 "description": "The value \"1\"",
                 "field": {
                   "selectedItems": [
-                    3
+                    1
                   ],
                   "value": "1",
                   "id": "#/0/0"
@@ -162,7 +162,7 @@
                 "uri": "#/0/1",
                 "type": "number",
                 "selectedItems": [
-                  3
+                  1
                 ],
                 "value": "2",
                 "schema": {
@@ -207,7 +207,7 @@
                 "description": "The value \"2\"",
                 "field": {
                   "selectedItems": [
-                    3
+                    1
                   ],
                   "value": "2",
                   "id": "#/0/1"
@@ -220,7 +220,7 @@
                 "uri": "#/0/2",
                 "type": "number",
                 "selectedItems": [
-                  3
+                  1
                 ],
                 "value": "3",
                 "schema": {
@@ -265,7 +265,7 @@
                 "description": "The value \"3\"",
                 "field": {
                   "selectedItems": [
-                    3
+                    1
                   ],
                   "value": "3",
                   "id": "#/0/2"
@@ -280,7 +280,7 @@
           "description": "A number schema",
           "anyOf": {
             "selectedItems": [
-              3
+              1
             ],
             "items": [
               {
@@ -289,7 +289,7 @@
                   "uri": "#/0/0",
                   "type": "number",
                   "selectedItems": [
-                    3
+                    1
                   ],
                   "value": "1",
                   "schema": {
@@ -334,7 +334,7 @@
                   "description": "The value \"1\"",
                   "field": {
                     "selectedItems": [
-                      3
+                      1
                     ],
                     "value": "1",
                     "id": "#/0/0"
@@ -347,7 +347,7 @@
                   "uri": "#/0/1",
                   "type": "number",
                   "selectedItems": [
-                    3
+                    1
                   ],
                   "value": "2",
                   "schema": {
@@ -392,7 +392,7 @@
                   "description": "The value \"2\"",
                   "field": {
                     "selectedItems": [
-                      3
+                      1
                     ],
                     "value": "2",
                     "id": "#/0/1"
@@ -405,7 +405,7 @@
                   "uri": "#/0/2",
                   "type": "number",
                   "selectedItems": [
-                    3
+                    1
                   ],
                   "value": "3",
                   "schema": {
@@ -450,7 +450,7 @@
                   "description": "The value \"3\"",
                   "field": {
                     "selectedItems": [
-                      3
+                      1
                     ],
                     "value": "3",
                     "id": "#/0/2"

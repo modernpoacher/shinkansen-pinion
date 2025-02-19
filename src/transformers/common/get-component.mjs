@@ -1,9 +1,11 @@
 /**
- * @param {PinionTypes.MetaType | PinionTypes.MetaComponentType} [meta]
- * @returns {PinionTypes.MetaComponentType['component'] | undefined}
+ *  @param {PinionTypes.MetaType} [meta]
+ *  @returns {PinionTypes.ObjectType | undefined}
  */
-export default function getComponent (meta = {}) {
-  return (
-    Reflect.get(meta, 'component')
-  )
+export default function getComponent (meta) {
+  if (meta) {
+    return (
+      Reflect.get(meta, 'component')
+    )
+  }
 }

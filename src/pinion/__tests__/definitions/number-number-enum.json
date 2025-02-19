@@ -14,7 +14,7 @@
       ]
     },
     "selectedItems": [
-      3
+      1
     ],
     "items": [
       1,
@@ -27,7 +27,7 @@
     "description": "A number schema",
     "enum": {
       "selectedItems": [
-        3
+        1
       ],
       "items": [
         1,

@@ -1,65 +1,70 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ESNext",
     "allowJs": true,
-    "checkJs": false,
+    "checkJs": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
     "baseUrl": ".",
+    "jsx": "react",
+    "resolveJsonModule": true,
     "paths": {
       "#pinion": [
-        "src/index.mjs"
+        "./src/index.mjs"
       ],
       "#pinion/common": [
-        "src/common/index.mjs"
+        "./src/common/index.mjs"
+      ],
+      "#pinion/common/*": [
+        "./src/common/*.mjs"
       ],
       "#pinion/components": [
-        "src/components/index.mjs"
+        "./src/components/index.mjs"
       ],
       "#pinion/components/*": [
-        "src/components/*/index.mjs"
+        "./src/components/*/index.mjs"
       ],
       "#pinion/pinion": [
-        "src/pinion/index.jsx"
+        "./src/pinion/index.jsx"
       ],
       "#pinion/pinion/*": [
-        "src/pinion/*/index.jsx"
+        "./src/pinion/*/index.jsx"
       ],
       "#pinion/transformers": [
-        "src/transformers/index.mjs"
+        "./src/transformers/index.mjs"
       ],
       "#pinion/transformers/*": [
-        "src/transformers/*/index.mjs"
+        "./src/transformers/*/index.mjs"
       ],
       "#pinion/transformers/check-answers/*": [
-        "src/transformers/check-answers/*.mjs"
+        "./src/transformers/check-answers/*.mjs"
       ],
       "#pinion/transformers/common/*": [
-        "src/transformers/common/*.mjs"
+        "./src/transformers/common/*.mjs"
       ],
       "#pinion/transformers/error-message/*": [
-        "src/transformers/error-message/*.mjs"
+        "./src/transformers/error-message/*.mjs"
       ],
       "#stories/components/*": [
-        "stories/components/*/index.stories.jsx"
+        "./stories/components/*/index.stories.jsx"
       ],
       "#stories/definitions/*": [
-        "stories/definitions/*.json"
+        "./stories/definitions/*.json"
       ],
       "#stories/errors": [
-        "stories/errors.mjs"
+        "./stories/errors.mjs"
       ],
       "#stories/pinion/*": [
-        "stories/pinion/*/index.stories.jsx"
+        "./stories/pinion/*/index.stories.jsx"
       ],
       "#stories/state": [
-        "stories/state/index.jsx"
+        "./stories/state/index.jsx"
       ],
       "#stories/state/*": [
-        "stories/state/*/index.jsx"
+        "./stories/state/*/index.jsx"
       ]
     }
   },
@@ -71,5 +76,8 @@
     "node_modules/shinkansen-sprockets/src/**/*",
     "src/**/*",
     "stories/**/*"
+  ],
+  "exclude": [
+    "**/__tests___/**/*"
   ]
 }

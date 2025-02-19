@@ -1,9 +1,13 @@
 /**
- * @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType} [elements]
- * @returns {boolean}
+ *  @param {PinionTypes.ElementsType} [elements]
+ *  @returns {boolean}
  */
-export default function hasField (elements = {}) {
-  return (
-    Reflect.has(elements, 'field')
-  )
+export default function hasField (elements) {
+  if (elements) {
+    return (
+      Reflect.has(elements, 'field')
+    )
+  }
+
+  return false
 }

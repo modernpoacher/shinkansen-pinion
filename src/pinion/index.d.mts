@@ -43,5 +43,6 @@ declare module '#pinion/pinion' {
 }
 
 declare module 'shinkansen-pinion/pinion' {
+  export { default } from '#pinion/pinion'
   export * from '#pinion/pinion'
 }

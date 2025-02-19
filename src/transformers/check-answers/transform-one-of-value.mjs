@@ -6,8 +6,8 @@ import getOneOfSelectedItemValue from './get-one-of-selected-item-value.mjs'
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
 /**
- * @param {PinionTypes.ElementsOneOfType} [elements]
- * @returns {string | null}
+ *  @param {PinionTypes.ElementsOneOfType} [elements]
+ *  @returns {string | null}
  */
 export default function transformOneOfValue ({ items, selectedItems } = {}) {
   log('transformOneOfValue')

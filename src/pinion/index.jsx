@@ -1,54 +1,100 @@
 /**
- * Pinion component
+ *  @typedef {PinionTypes.ObjectLiteralType} ObjectLiteralType
+ *  @typedef {PinionTypes.ObjectType} ObjectType
+ *  @typedef {PinionTypes.ArrayLiteralType} ArrayLiteralType
+ *  @typedef {PinionTypes.ArrayType} ArrayType
  *
- * @typedef {import('shinkansen-pinion/pinion').PinionType} PinionType
- * @typedef {import('shinkansen-pinion/pinion').ParamsType} ParamsType
- * @typedef {import('shinkansen-pinion/pinion').GroupProps} GroupProps
- * @typedef {import('shinkansen-pinion/pinion').FieldProps} FieldProps
- * @typedef {import('shinkansen-pinion/pinion').PinionProps} PinionProps
+ *  @typedef {PinionTypes.FieldType} FieldType
+ *
+ *  @typedef {PinionTypes.MetaType} MetaType
+ *  @typedef {PinionTypes.MetaEnumType} MetaEnumType
+ *  @typedef {PinionTypes.MetaAnyOfType} MetaAnyOfType
+ *  @typedef {PinionTypes.MetaOneOfType} MetaOneOfType
+ *  @typedef {PinionTypes.MetaFieldType} MetaFieldType
+ *
+ *  @typedef {PinionTypes.ElementsType} ElementsType
+ *  @typedef {PinionTypes.ElementsEnumType} ElementsEnumType
+ *  @typedef {PinionTypes.ElementsAnyOfType} ElementsAnyOfType
+ *  @typedef {PinionTypes.ElementsOneOfType} ElementsOneOfType
+ *  @typedef {PinionTypes.ElementsFieldType} ElementsFieldType
+ *
+ *  @typedef {PinionTypes.OnChangeType} OnChangeType
+ *  @typedef {PinionTypes.PinionType} PinionType
+ *  @typedef {PinionTypes.ParamsType} ParamsType
+ *  @typedef {PinionTypes.GroupProps} GroupProps
+ *  @typedef {PinionTypes.FieldProps} FieldProps
+ *  @typedef {PinionTypes.PinionProps} PinionProps
  */
 
 import React from 'react'
 import PropTypes from 'prop-types'
 import debug from 'debug'
 
-import FieldsetSprocket from 'shinkansen-pinion/components/sprockets/fieldset'
+import FieldsetSprocket from '#pinion/components/sprockets/fieldset'
 
-import RadioCog from 'shinkansen-pinion/components/cogs/radio'
-import SelectCog from 'shinkansen-pinion/components/cogs/select'
-import TextCog from 'shinkansen-pinion/components/cogs/text'
+import RadioCog from '#pinion/components/cogs/radio'
+import SelectCog from '#pinion/components/cogs/select'
+import TextCog from '#pinion/components/cogs/text'
 
-import hasEnum from 'shinkansen-pinion/transformers/common/has-enum'
-import hasAnyOf from 'shinkansen-pinion/transformers/common/has-any-of'
-import hasOneOf from 'shinkansen-pinion/transformers/common/has-one-of'
-import hasComponent from 'shinkansen-pinion/transformers/common/has-component'
-import getComponent from 'shinkansen-pinion/transformers/common/get-component'
+import hasMetaEnum from '#pinion/common/meta/has-enum'
+import hasMetaAnyOf from '#pinion/common/meta/has-any-of'
+import hasMetaOneOf from '#pinion/common/meta/has-one-of'
+import hasMetaField from '#pinion/common/meta/has-field'
+
+import hasElementsEnum from '#pinion/common/elements/has-enum'
+import hasElementsAnyOf from '#pinion/common/elements/has-any-of'
+import hasElementsOneOf from '#pinion/common/elements/has-one-of'
+import hasElementsField from '#pinion/common/elements/has-field'
+
+import hasComponent from '#pinion/transformers/common/has-component'
+import getComponent from '#pinion/transformers/common/get-component'
 import {
   getError
-} from 'shinkansen-pinion/transformers/error-message'
+} from '#pinion/transformers/error-message'
 
 import {
   DEFAULT_HANDLE_CHANGE
-} from 'shinkansen-pinion/common'
+} from '#pinion/common'
 
-const DEFAULT_PARAMS = {}
+/**
+ *  @type {ParamsType}
+ */
+const DEFAULT_PARAMS = {
+  components: {},
+  errors: []
+}
 
 const log = debug('shinkansen-pinion/pinion')
 
 log('`shinkansen` is awake')
 
+/**
+ *  @param {string} value
+ *  @param {number} index
+ *  @returns {string}
+ */
 const getKey = (value, index) => `${value}-${index}`
+
+/**
+ *  @param {FieldType} field
+ *  @returns {string | number | boolean | ObjectType | ArrayType | null | undefined}
+ */
 const getDefaultValue = (field) => Reflect.has(field, 'defaultValue') ? Reflect.get(field, 'defaultValue') : ''
+
+/**
+ *  @param {FieldType} field
+ *  @returns {string | number | boolean | ObjectType | ArrayType | null | undefined}
+ */
 const getValue = (field) => Reflect.has(field, 'value') ? Reflect.get(field, 'value') : getDefaultValue(field)
 
 /**
- * @param {PinionTypes.MetaType}
- * @param {PinionTypes.ElementsEnumType}
- * @param {ParamsType}
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {MetaEnumType} meta
+ *  @param {ElementsEnumType} elements
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element}
  */
-export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToRadiosForEnum')
 
   return (
@@ -77,13 +123,13 @@ export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, 
 }
 
 /**
- * @param {PinionTypes.MetaType}
- * @param {PinionTypes.ElementsAnyOfType}
- * @param {ParamsType}
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {MetaAnyOfType} meta
+ *  @param {ElementsAnyOfType} elements
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element}
  */
-export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToRadiosForAnyOf')
 
   return (
@@ -91,31 +137,55 @@ export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri },
       title={title}
       description={description}
       errorMessage={getError(errors, uri)}>
-      {items.map(({ meta: { uri }, elements: { title, description, field: { id } } }, index) => (
-        <RadioCog
-          key={uri}
-          title={title}
-          description={description}
-          value={String(index)}
-          id={id}
-          name={name}
-          onChange={onChange}
-          required={isRequired}
-          checked={selectedItems.includes(index)}
-        />
-      ))}
+      {items.map((item, index) => {
+        const {
+          elements: {
+            field: {
+              id
+            } = {}
+          }
+        } = item
+
+        if (id) {
+          const {
+            meta: {
+              uri
+            },
+            elements: {
+              title,
+              description
+            }
+          } = item
+
+          return (
+            <RadioCog
+              key={uri}
+              title={title}
+              description={description}
+              value={String(index)}
+              id={id}
+              name={name}
+              onChange={onChange}
+              required={isRequired}
+              checked={selectedItems.includes(index)}
+            />
+          )
+        }
+
+        return null
+      })}
     </FieldsetSprocket>
   )
 }
 
 /**
- * @param {PinionTypes.MetaType}
- * @param {PinionTypes.ElementsOneOfType}
- * @param {ParamsType}
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {MetaOneOfType} meta
+ *  @param {ElementsOneOfType} elements
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element}
  */
-export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToRadiosForOneOf')
 
   return (
@@ -123,31 +193,55 @@ export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri },
       title={title}
       description={description}
       errorMessage={getError(errors, uri)}>
-      {items.map(({ meta: { uri }, elements: { title, description, field: { id } } }, index) => (
-        <RadioCog
-          key={uri}
-          title={title}
-          description={description}
-          value={String(index)}
-          id={id}
-          name={name}
-          onChange={onChange}
-          required={isRequired}
-          checked={selectedItems.includes(index)}
-        />
-      ))}
+      {items.map((item, index) => {
+        const {
+          elements: {
+            field: {
+              id
+            } = {}
+          }
+        } = item
+
+        if (id) {
+          const {
+            meta: {
+              uri
+            },
+            elements: {
+              title,
+              description
+            }
+          } = item
+
+          return (
+            <RadioCog
+              key={uri}
+              title={title}
+              description={description}
+              value={String(index)}
+              id={id}
+              name={name}
+              onChange={onChange}
+              required={isRequired}
+              checked={selectedItems.includes(index)}
+            />
+          )
+        }
+
+        return null
+      })}
     </FieldsetSprocket>
   )
 }
 
 /**
- * @param {PinionTypes.MetaType}
- * @param {PinionTypes.ElementsEnumType}
- * @param {ParamsType}
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {MetaEnumType} meta
+ *  @param {ElementsEnumType} elements
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element}
  */
-export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToSelectForEnum')
 
   return (
@@ -158,26 +252,28 @@ export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, 
       name={name}
       onChange={onChange}
       required={isRequired}>
-      {items.map((value, index) => (
-        <option
-          key={getKey(uri, index)}
-          value={String(index)}
-          selected={selectedItems.includes(index)}>
-          {value}
-        </option>
-      ))}
+      {items.map((value, index) => {
+        return (
+          <option
+            key={getKey(uri, index)}
+            value={String(index)}
+            selected={selectedItems.includes(index)}>
+            {String(value)}
+          </option>
+        )
+      })}
     </SelectCog>
   )
 }
 
 /**
- * @param {PinionTypes.MetaType}
- * @param {PinionTypes.ElementsAnyOfType}
- * @param {ParamsType}
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {MetaAnyOfType} meta
+ *  @param {ElementsAnyOfType} elements
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element}
  */
-export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToSelectForAnyOf')
 
   return (
@@ -188,26 +284,28 @@ export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri },
       name={name}
       onChange={onChange}
       required={isRequired}>
-      {items.map(({ meta: { uri }, elements: { title } }, index) => (
-        <option
-          key={uri}
-          value={String(index)}
-          selected={selectedItems.includes(index)}>
-          {title}
-        </option>
-      ))}
+      {items.map(({ meta: { uri }, elements: { title } }, index) => {
+        return (
+          <option
+            key={uri}
+            value={String(index)}
+            selected={selectedItems.includes(index)}>
+            {title}
+          </option>
+        )
+      })}
     </SelectCog>
   )
 }
 
 /**
- * @param {PinionTypes.MetaType}
- * @param {PinionTypes.ElementsOneOfType}
- * @param {ParamsType}
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {MetaOneOfType} meta
+ *  @param {ElementsOneOfType} elements
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element}
  */
-export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { components, errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToSelectForOneOf')
 
   return (
@@ -218,164 +316,265 @@ export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri },
       name={name}
       onChange={onChange}
       required={isRequired}>
-      {items.map(({ meta: { uri }, elements: { title } }, index) => (
-        <option
-          key={uri}
-          value={String(index)}
-          selected={selectedItems.includes(index)}>
-          {title}
-        </option>
-      ))}
+      {items.map(({ meta: { uri }, elements: { title } }, index) => {
+        return (
+          <option
+            key={uri}
+            value={String(index)}
+            selected={selectedItems.includes(index)}>
+            {title}
+          </option>
+        )
+      })}
     </SelectCog>
   )
 }
 
 /**
- * @param {PinionTypes.MetaType} meta
- * @param {PinionTypes.ElementsFieldType} elements
- * @param {ParamsType} params
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {MetaFieldType} meta
+ *  @param {ElementsFieldType} elements
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element | null}
  */
 export function renderToField (meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderToField')
 
   const {
-    uri
-  } = meta
-
-  const {
-    title,
-    description,
-    field: {
-      id,
-      isRequired = false,
-      ...field
-    } = {}
+    field
   } = elements
 
-  const {
-    errors
-  } = params
+  if (field) {
+    const {
+      uri
+    } = meta
 
-  return (
-    <TextCog
-      title={title}
-      description={description}
-      name={id}
-      value={getValue(field)}
-      errorMessage={getError(errors, uri)}
-      required={isRequired}
-      onChange={onChange}
-    />
-  )
-}
+    const {
+      title,
+      description
+    } = elements
 
-export function ComponentGroup ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+    const {
+      id,
+      isRequired = false
+    } = field
 
-}
+    const {
+      errors
+    } = params
 
-export function ComponentField ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+    return (
+      <TextCog
+        title={title}
+        description={description}
+        name={id}
+        value={getValue(field)}
+        errorMessage={getError(errors, uri)}
+        required={isRequired}
+        onChange={onChange}
+      />
+    )
+  }
 
+  return null
 }
 
 /**
- * @param {GroupProps}
- * @returns {React.JSX.Element}
+ *  @param {GroupProps & { component?: ObjectLiteralType | ObjectType }} group
+ *  @returns {React.JSX.Element | null}
+ */
+export function ComponentGroup ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+  log('ComponentGroup', component, meta, elements, params, onChange)
+
+  return null
+}
+
+ComponentGroup.propTypes = {
+  component: PropTypes.shape({}).isRequired,
+  meta: PropTypes.shape({}).isRequired,
+  elements: PropTypes.shape({}).isRequired,
+  params: PropTypes.shape({}).isRequired,
+  onChange: PropTypes.func
+}
+
+/**
+ *  @param {FieldProps & { component?: ObjectLiteralType | ObjectType }} field
+ *  @returns {React.JSX.Element | null}
+ */
+export function ComponentField ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+  log('ComponentField', component, meta, elements, params, onChange)
+
+  return null
+}
+
+ComponentField.propTypes = {
+  component: PropTypes.shape({}).isRequired,
+  meta: PropTypes.shape({}).isRequired,
+  elements: PropTypes.shape({}).isRequired,
+  params: PropTypes.shape({}).isRequired,
+  onChange: PropTypes.func
+}
+
+/**
+ *  @overload
+ *  @param {{ meta: MetaEnumType, elements: ElementsEnumType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @returns {React.JSX.Element | null}
+ *
+ *  @overload
+ *  @param {{ meta: MetaAnyOfType, elements: ElementsAnyOfType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @returns {React.JSX.Element | null}
+ *
+ *  @overload
+ *  @param {{ meta: MetaOneOfType, elements: ElementsOneOfType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @returns {React.JSX.Element | null}
+ *
+ *  @overload
+ *  @param {{ meta: MetaFieldType, elements: ElementsFieldType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @returns {React.JSX.Element | null}
+ *
+ *  @param {GroupProps} groupProps
+ *  @returns {React.JSX.Element | null}
  */
 export function Group ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Group')
 
   const {
-    uri
-  } = meta
-
-  const {
-    title,
-    description,
     fields = []
   } = elements
 
-  const {
-    errors
-  } = params
+  if (fields.length) {
+    const {
+      uri
+    } = meta
 
-  return (
-    <FieldsetSprocket
-      title={title}
-      description={description}
-      errorMessage={getError(errors, uri)}>
-      {fields.map((pinion) => {
-        const {
-          meta: {
-            uri
-          } = {}
-        } = pinion
+    const {
+      title,
+      description
+    } = elements
 
-        return (
-          <Pinion
-            key={uri}
-            pinion={pinion}
-            params={params}
-            onChange={onChange}
-          />
-        )
-      })}
-    </FieldsetSprocket>
-  )
+    const {
+      errors
+    } = params
+
+    return (
+      <FieldsetSprocket
+        title={title}
+        description={description}
+        errorMessage={getError(errors, uri)}>
+        {fields.map((pinion) => {
+          const {
+            meta: {
+              uri
+            } = {}
+          } = pinion
+
+          return (
+            <Pinion
+              key={uri}
+              pinion={pinion}
+              params={params}
+              onChange={onChange}
+            />
+          )
+        })}
+      </FieldsetSprocket>
+    )
+  }
+
+  return null
 }
 
 Group.propTypes = {
-  meta: PropTypes.shape().isRequired,
-  elements: PropTypes.shape().isRequired,
-  params: PropTypes.shape().isRequired,
+  meta: PropTypes.shape({
+    uri: PropTypes.string.isRequired
+  }).isRequired,
+  elements: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    fields: PropTypes.array
+  }).isRequired,
+  params: PropTypes.shape({}).isRequired,
   onChange: PropTypes.func
 }
 
 /**
- * @param {FieldProps}
- * @returns {React.JSX.Element}
+ *  @overload
+ *  @param {{ meta: MetaEnumType, elements: ElementsEnumType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @returns {React.JSX.Element | null}
+ *
+ *  @overload
+ *  @param {{ meta: MetaAnyOfType, elements: ElementsAnyOfType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @returns {React.JSX.Element | null}
+ *
+ *  @overload
+ *  @param {{ meta: MetaOneOfType, elements: ElementsOneOfType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @returns {React.JSX.Element | null}
+ *
+ *  @overload
+ *  @param {{ meta: MetaFieldType, elements: ElementsFieldType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @returns {React.JSX.Element | null}
+ *
+ *  @param {FieldProps} fieldProps
+ *  @returns {React.JSX.Element | null}
  */
 export function Field ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Field')
 
-  if (hasEnum(elements)) {
+  if (hasMetaEnum(meta)) {
     log('Field (`enum`)')
 
-    return renderToRadiosForEnum(meta, elements, params, onChange)
+    if (hasElementsEnum(elements)) {
+      return renderToRadiosForEnum(meta, elements, params, onChange)
+    }
   } else {
-    if (hasAnyOf(elements)) {
+    if (hasMetaAnyOf(meta)) {
       log('Field (`anyOf`)')
 
-      return renderToRadiosForAnyOf(meta, elements, params, onChange)
+      if (hasElementsAnyOf(elements)) {
+        return renderToRadiosForAnyOf(meta, elements, params, onChange)
+      }
     } else {
-      if (hasOneOf(elements)) {
+      if (hasMetaOneOf(meta)) {
         log('Field (`oneOf`)')
 
-        return renderToRadiosForOneOf(meta, elements, params, onChange)
+        if (hasElementsOneOf(elements)) {
+          return renderToRadiosForOneOf(meta, elements, params, onChange)
+        }
       } else {
-        log('Field (`field`)')
+        if (hasMetaField(meta)) {
+          log('Field (`field`)')
 
-        return renderToField(meta, elements, params, onChange)
+          if (hasElementsField(elements)) {
+            return renderToField(meta, elements, params, onChange)
+          }
+        }
       }
     }
   }
+
+  return null
 }
 
 Field.propTypes = {
-  meta: PropTypes.shape().isRequired,
-  elements: PropTypes.shape().isRequired,
-  params: PropTypes.shape().isRequired,
+  meta: PropTypes.shape({
+    uri: PropTypes.string.isRequired
+  }).isRequired,
+  elements: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    fields: PropTypes.array
+  }).isRequired,
+  params: PropTypes.shape({}).isRequired,
   onChange: PropTypes.func
 }
 
 /**
- * @param {PinionTypes.PinionType}
- * @param {ParamsType} params
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {PinionType} pinion
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element}
  */
-export function renderGroup ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) { // eslint-disable-line
+export function renderGroup ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderGroup')
 
   if (hasComponent(meta)) {
@@ -403,12 +602,12 @@ export function renderGroup ({ meta, elements }, params = DEFAULT_PARAMS, onChan
 }
 
 /**
- * @param {PinionType}
- * @param {ParamsType} params
- * @param {PinionTypes.OnChangeType} onChange
- * @returns {React.JSX.Element}
+ *  @param {PinionType} pinion
+ *  @param {ParamsType} params
+ *  @param {OnChangeType} onChange
+ *  @returns {React.JSX.Element}
  */
-export function renderField ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) { // eslint-disable-line
+export function renderField ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) {
   log('renderField')
 
   if (hasComponent(meta)) {
@@ -436,8 +635,8 @@ export function renderField ({ meta, elements }, params = DEFAULT_PARAMS, onChan
 }
 
 /**
- * @param {PinionProps}
- * @returns {React.JSX.Element}
+ *  @param {PinionProps} pinionProps
+ *  @returns {React.JSX.Element}
  */
 export default function Pinion ({ pinion, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
   log('Pinion')
@@ -448,19 +647,25 @@ export default function Pinion ({ pinion, params = DEFAULT_PARAMS, onChange = DE
     } = {}
   } = pinion
 
-  return (type === 'object' || type === 'array')
-    ? renderGroup(pinion, params, onChange)
-    : renderField(pinion, params, onChange)
+  if (type === 'object' || type === 'array') {
+    return (
+      renderGroup(pinion, params, onChange)
+    )
+  }
+
+  return (
+    renderField(pinion, params, onChange)
+  )
 }
 
 Pinion.propTypes = {
   pinion: PropTypes.shape({
-    meta: PropTypes.shape().isRequired,
-    elements: PropTypes.shape().isRequired
+    meta: PropTypes.shape({}).isRequired,
+    elements: PropTypes.shape({}).isRequired
   }).isRequired,
   params: PropTypes.shape({
-    components: PropTypes.shape(),
-    errors: PropTypes.arrayOf(PropTypes.shape())
+    components: PropTypes.shape({}),
+    errors: PropTypes.arrayOf(PropTypes.shape({}))
   }),
   onChange: PropTypes.func
 }

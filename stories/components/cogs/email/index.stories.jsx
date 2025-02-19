@@ -1,3 +1,7 @@
+/**
+ *  @typedef {PinionTypes.Components.Cogs.Cog.Email.EmailProps} EmailProps
+ */
+
 import React from 'react'
 
 import EmailCog from '#pinion/components/cogs/email'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {EmailProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
     <EmailState value='email@email.com'>
@@ -51,6 +59,10 @@ Value.args = {
   name: 'email'
 }
 
+/**
+ *  @param {EmailProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
     <EmailState defaultValue='email@email.com'>

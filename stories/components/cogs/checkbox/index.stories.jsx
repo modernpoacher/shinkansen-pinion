@@ -1,3 +1,7 @@
+/**
+ *  @typedef {PinionTypes.Components.Cogs.Cog.Checkbox.CheckboxProps} CheckboxProps
+ */
+
 import React from 'react'
 
 import CheckboxCog from '#pinion/components/cogs/checkbox'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {CheckboxProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Checked (args) {
   return (
     <CheckboxState checked>
@@ -51,6 +59,10 @@ Checked.args = {
   name: 'checkbox'
 }
 
+/**
+ *  @param {CheckboxProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultChecked (args) {
   return (
     <CheckboxState defaultChecked>

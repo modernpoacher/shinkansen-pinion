@@ -6,8 +6,8 @@ import getEnumSelectedItemValue from './get-enum-selected-item-value.mjs'
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
 /**
- * @param {PinionTypes.ElementsEnumType['enum']} [enum]
- * @returns {string | null}
+ *  @param {PinionTypes.ElementsEnumType['enum']} [enum]
+ *  @returns {string | null}
  */
 export default function transformEnumValue ({ items, selectedItems } = {}) {
   log('transformEnumValue')

@@ -1,9 +1,11 @@
 /**
- * @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType} [elements]
- * @returns {PinionTypes.ElementsFieldType['field'] | undefined}
+ *  @param {PinionTypes.ElementsType} [elements]
+ *  @returns {PinionTypes.FieldType | undefined}
  */
-export default function getField (elements = {}) {
-  return (
-    Reflect.get(elements, 'field')
-  )
+export default function getField (elements) {
+  if (elements) {
+    return (
+      Reflect.get(elements, 'field')
+    )
+  }
 }

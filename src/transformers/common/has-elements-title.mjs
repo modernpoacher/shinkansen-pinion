@@ -1,6 +1,10 @@
 import hasTitle from './has-title.mjs'
 
-export default function getElementsTitle ({ elements } = {}) {
+/**
+ *  @param {{ elements?: PinionTypes.ElementsType }} pinion
+ *  @returns {boolean}
+ */
+export default function hasElementsTitle ({ elements }) {
   return (
     hasTitle(elements)
   )

@@ -26,7 +26,7 @@
       ]
     },
     "selectedItems": [
-      "three"
+      1
     ],
     "items": [
       {
@@ -171,7 +171,7 @@
     "description": "A string schema",
     "oneOf": {
       "selectedItems": [
-        "three"
+        1
       ],
       "items": [
         {

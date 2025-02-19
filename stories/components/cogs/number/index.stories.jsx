@@ -1,3 +1,7 @@
+/**
+ *  @typedef {PinionTypes.Components.Cogs.Cog.Number.NumberProps} NumberProps
+ */
+
 import React from 'react'
 
 import NumberCog from '#pinion/components/cogs/number'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {NumberProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
     <NumberState value={1}>
@@ -51,6 +59,10 @@ Value.args = {
   name: 'number'
 }
 
+/**
+ *  @param {NumberProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
     <NumberState defaultValue={1}>

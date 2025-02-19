@@ -1,9 +1,13 @@
 /**
- * @param {PinionTypes.MetaType | PinionTypes.MetaComponentType} [meta]
- * @returns {boolean}
+ *  @param {PinionTypes.MetaType} [meta]
+ *  @returns {boolean}
  */
-export default function hasType (meta = {}) {
-  return (
-    Reflect.has(meta, 'type')
-  )
+export default function hasType (meta) {
+  if (meta) {
+    return (
+      Reflect.has(meta, 'type')
+    )
+  }
+
+  return false
 }

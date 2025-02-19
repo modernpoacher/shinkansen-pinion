@@ -1,3 +1,7 @@
+/**
+ *  @typedef {PinionTypes.Components.Sprockets.Sprocket.CheckAnswers.CheckAnswersProps} CheckAnswersProps
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -6,11 +10,24 @@ import {
 
 import CheckAnswersSprocket from '#pinion/components/sprockets/check-answers'
 
-import STRING_STRING from '#stories/definitions/check-answers/string-string'
-import STRING_STRING_ENUM from '#stories/definitions/check-answers/string-string-enum'
-import STRING_STRING_ANY_OF from '#stories/definitions/check-answers/string-string-any-of'
-import STRING_STRING_ONE_OF from '#stories/definitions/check-answers/string-string-one-of'
-import STRING_STRING_ALL_OF from '#stories/definitions/check-answers/string-string-all-of'
+import {
+  STRING_STRING,
+  STRING_STRING_ENUM,
+  STRING_STRING_ANY_OF,
+  STRING_STRING_ONE_OF,
+  STRING_STRING_ALL_OF
+} from './definitions.mjs'
+
+/**
+ *  @type {Array<(Story: () => React.JSX.Element) => React.JSX.Element>}
+ */
+const decorators = [
+  (Story) => (
+    <MemoryRouter>
+      <Story />
+    </MemoryRouter>
+  )
+]
 
 const STRING = {
   STRING_STRING: [STRING_STRING],
@@ -23,13 +40,7 @@ const STRING = {
 export default {
   title: 'Stories/Components/Sprockets/Check Answers/String',
   component: CheckAnswersSprocket,
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    )
-  ],
+  decorators,
   args: {
     title: 'Check Answers',
     checkAnswers: 'STRING_STRING'
@@ -52,11 +63,22 @@ export default {
   }
 }
 
+/**
+ *  @param {CheckAnswersProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Default ({ checkAnswers = [], ...args }) {
+  /**
+   *  @type {CheckAnswersProps}
+   */
+  const props = {
+    ...args,
+    checkAnswers: checkAnswers.flat()
+  }
+
   return (
     <CheckAnswersSprocket
-      {...args}
-      checkAnswers={checkAnswers.flat()}
+      {...props}
     />
   )
 }

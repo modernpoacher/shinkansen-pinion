@@ -1,3 +1,7 @@
+/**
+ *  @typedef {PinionTypes.Components.Sprockets.Sprocket.CheckAnswers.CheckAnswersProps} CheckAnswersProps
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -6,11 +10,24 @@ import {
 
 import CheckAnswersSprocket from '#pinion/components/sprockets/check-answers'
 
-import NULL_NULL from '#stories/definitions/check-answers/null-null'
-import NULL_NULL_ENUM from '#stories/definitions/check-answers/null-null-enum'
-import NULL_NULL_ANY_OF from '#stories/definitions/check-answers/null-null-any-of'
-import NULL_NULL_ONE_OF from '#stories/definitions/check-answers/null-null-one-of'
-import NULL_NULL_ALL_OF from '#stories/definitions/check-answers/null-null-all-of'
+import {
+  NULL_NULL,
+  NULL_NULL_ENUM,
+  NULL_NULL_ANY_OF,
+  NULL_NULL_ONE_OF,
+  NULL_NULL_ALL_OF
+} from './definitions.mjs'
+
+/**
+ *  @type {Array<(Story: () => React.JSX.Element) => React.JSX.Element>}
+ */
+const decorators = [
+  (Story) => (
+    <MemoryRouter>
+      <Story />
+    </MemoryRouter>
+  )
+]
 
 const NULL = {
   NULL_NULL: [NULL_NULL],
@@ -23,13 +40,7 @@ const NULL = {
 export default {
   title: 'Stories/Components/Sprockets/Check Answers/Null',
   component: CheckAnswersSprocket,
-  decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    )
-  ],
+  decorators,
   args: {
     title: 'Check Answers',
     checkAnswers: 'NULL_NULL'
@@ -52,11 +63,22 @@ export default {
   }
 }
 
+/**
+ *  @param {CheckAnswersProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Default ({ checkAnswers = [], ...args }) {
+  /**
+   *  @type {CheckAnswersProps}
+   */
+  const props = {
+    ...args,
+    checkAnswers: checkAnswers.flat()
+  }
+
   return (
     <CheckAnswersSprocket
-      {...args}
-      checkAnswers={checkAnswers.flat()}
+      {...props}
     />
   )
 }

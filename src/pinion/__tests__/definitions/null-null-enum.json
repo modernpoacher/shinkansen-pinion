@@ -12,7 +12,7 @@
       ]
     },
     "selectedItems": [
-      "null"
+      0
     ],
     "items": [
       null
@@ -23,7 +23,7 @@
     "description": "A null schema",
     "enum": {
       "selectedItems": [
-        "null"
+        0
       ],
       "items": [
         null
