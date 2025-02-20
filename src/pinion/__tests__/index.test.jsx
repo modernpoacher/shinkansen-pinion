@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Component from 'shinkansen-pinion/pinion'
+import Component from '#pinion/pinion'
 
 import {
   STRING_STRING,
@@ -42,7 +42,7 @@ import {
   NULL_NULL_ALL_OF
 } from './definitions.mjs'
 
-describe('shinkansen-pinion/pinion', () => {
+describe('#pinion/pinion', () => {
   const MOCK_PINION = {
     meta: { type: 'MOCK', uri: '#/' },
     elements: { title: 'MOCK TITLE', field: { id: 'MOCK ID' } }
