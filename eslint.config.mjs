@@ -214,5 +214,14 @@ export default [
         PinionTypes: 'readonly'
       }
     }
-  })
+  }),
+  {
+    files: [
+      'src/common/**/*.d.{mts,cts}'
+    ],
+    rules: {
+      'no-redeclare': 'off',
+      '@typescript-eslint/unified-signatures': 'off'
+    }
+  }
 ]

@@ -1,1 +1,1 @@
-export default function transformOneOfValue (field: PinionTypes.ElementsOneOfType['oneOf']): string
+export default function transformOneOfValue (field: PinionTypes.OneOfType): string

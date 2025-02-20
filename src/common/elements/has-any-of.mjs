@@ -1,6 +1,4 @@
 /**
- *  @typedef {PinionTypes.ObjectType} ObjectType
- *
  *  @typedef {PinionTypes.ElementsType} ElementsType
  *  @typedef {PinionTypes.ElementsEnumType} ElementsEnumType
  *  @typedef {PinionTypes.ElementsAnyOfType} ElementsAnyOfType

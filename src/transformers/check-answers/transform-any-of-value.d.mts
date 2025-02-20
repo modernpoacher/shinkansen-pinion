@@ -1,1 +1,1 @@
-export default function transformAnyOfValue (field: PinionTypes.ElementsAnyOfType['anyOf']): string
+export default function transformAnyOfValue (field: PinionTypes.AnyOfType): string
