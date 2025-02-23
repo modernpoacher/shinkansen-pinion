@@ -48,7 +48,7 @@ declare global {
     }
 
     export interface MetaType {
-      type: string,
+      type: string
       uri: string
       isRequired?: boolean
       schema?: ObjectLiteralType | ObjectType
@@ -78,15 +78,15 @@ declare global {
       name?: string
       isRequired?: boolean
       items?: string[]
-      selectedItems?: number[],
+      selectedItems?: number[]
       value?: string | number | boolean | null | ObjectType | ArrayType
       defaultValue?: string | number | boolean | null | ObjectType | ArrayType
     }
 
     export interface ElementsType {
       title: string
-      description?: string,
-      field?: FieldType,
+      description?: string
+      field?: FieldType
       fields?: PinionType[] // eslint-disable-line no-use-before-define -- Standard type
     }
 
@@ -190,7 +190,7 @@ declare global {
       elements: ElementsType | ElementsEnumType | ElementsAnyOfType | ElementsOneOfType
     }
 
-    export interface ParamsType { components: Record<PropertyKey, unknown>, errors: FieldError[] }
+    export interface ParamsType { components: Record<PropertyKey, unknown>; errors: FieldError[] }
 
     export interface PinionProps {
       pinion: PinionType
