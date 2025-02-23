@@ -1,25 +1,25 @@
 import type React from 'react'
 
-type PinionType = PinionTypes.PinionType
-type ParamsType = PinionTypes.ParamsType
+export type PinionType = PinionTypes.PinionType
+export type ParamsType = PinionTypes.ParamsType
 
-type MetaType = PinionTypes.MetaType
-type MetaEnumType = PinionTypes.MetaEnumType
-type MetaAnyOfType = PinionTypes.MetaAnyOfType
-type MetaOneOfType = PinionTypes.MetaOneOfType
-type MetaFieldType = PinionTypes.MetaFieldType
+export type MetaType = PinionTypes.MetaType
+export type MetaEnumType = PinionTypes.MetaEnumType
+export type MetaAnyOfType = PinionTypes.MetaAnyOfType
+export type MetaOneOfType = PinionTypes.MetaOneOfType
+export type MetaFieldType = PinionTypes.MetaFieldType
 
-type ElementsEnumType = PinionTypes.ElementsEnumType
-type ElementsAnyOfType = PinionTypes.ElementsAnyOfType
-type ElementsOneOfType = PinionTypes.ElementsOneOfType
-type ElementsFieldType = PinionTypes.ElementsFieldType
+export type ElementsEnumType = PinionTypes.ElementsEnumType
+export type ElementsAnyOfType = PinionTypes.ElementsAnyOfType
+export type ElementsOneOfType = PinionTypes.ElementsOneOfType
+export type ElementsFieldType = PinionTypes.ElementsFieldType
 
-type OnChangeType = PinionTypes.OnChangeType
+export type OnChangeType = PinionTypes.OnChangeType
 
-type FieldProps = PinionTypes.FieldProps
-type GroupProps = PinionTypes.GroupProps
+export type FieldProps = PinionTypes.FieldProps
+export type GroupProps = PinionTypes.GroupProps
 
-type PinionProps = PinionTypes.PinionProps
+export type PinionProps = PinionTypes.PinionProps
 
 export function renderToRadiosForEnum (meta: MetaEnumType, elements:ElementsEnumType, params: ParamsType, onChange: OnChangeType): React.JSX.Element
 export function renderToRadiosForAnyOf (meta: MetaAnyOfType, elements: ElementsAnyOfType, params: ParamsType, onChange: OnChangeType): React.JSX.Element
