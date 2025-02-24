@@ -10,21 +10,21 @@ type TypeObjectAnswerType = PinionTypes.TypeObjectAnswerType
 type TypeBooleanAnswerType = PinionTypes.TypeBooleanAnswerType
 type TypeNullAnswerType = PinionTypes.TypeNullAnswerType
 
-export default function transformTypeObjectAnswer (
+export function transformTypeObjectAnswer (
   answer: AnswerType,
   resource: ResourceType,
   array: ArrayType,
   group: GroupType
 ): TypeObjectAnswerType[]
 
-export default function transformTypeArrayAnswer (
+export function transformTypeArrayAnswer (
   answer: AnswerType,
   resource: ResourceType,
   array: ArrayType,
   group: GroupType
 ): TypeArrayAnswerType[]
 
-export default function transformAnswer (
+export function transformAnswer (
   answer: AnswerType,
   resource: ResourceType,
   array: ArrayType,
