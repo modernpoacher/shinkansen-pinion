@@ -102,10 +102,10 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.85.1",
     "sass-loader": "^16.0.5",
-    "shinkansen-cogs": "1.8.11",
+    "shinkansen-cogs": "1.8.12",
     "shinkansen-rails": "1.0.293",
     "shinkansen-signals": "1.1.222",
-    "shinkansen-sprockets": "1.2.11",
+    "shinkansen-sprockets": "1.2.12",
     "sinon": "^19.0.2",
     "storybook": "7.6.20",
     "webpack": "^5.98.0",
@@ -131,7 +131,6 @@
       "import": "./src/components/*/index.mjs"
     },
     "#pinion/pinion": "./src/pinion/index.cjs",
-    "#pinion/pinion/*": "./src/pinion/*/index.cjs",
     "#pinion/transformers": "./src/transformers/index.mjs",
     "#pinion/transformers/*": "./src/transformers/*/index.mjs",
     "#pinion/transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
@@ -160,7 +159,6 @@
       "import": "./src/components/*/index.mjs"
     },
     "./pinion": "./src/pinion/index.cjs",
-    "./pinion/*": "./src/pinion/*/index.cjs",
     "./transformers": "./src/transformers/index.mjs",
     "./transformers/check-answers": "./src/transformers/check-answers/index.mjs",
     "./transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
