@@ -1,12 +1,12 @@
 import debug from 'debug'
 
 import {
-  Rails
-} from 'shinkansen-rails'
-
-import {
   Signals
 } from 'shinkansen-signals'
+
+import {
+  Rails
+} from 'shinkansen-rails'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
