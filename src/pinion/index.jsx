@@ -489,7 +489,7 @@ Group.propTypes = {
     uri: PropTypes.string.isRequired
   }).isRequired,
   elements: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     description: PropTypes.string,
     fields: PropTypes.array
   }).isRequired,
@@ -560,7 +560,7 @@ Field.propTypes = {
     uri: PropTypes.string.isRequired
   }).isRequired,
   elements: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     description: PropTypes.string,
     fields: PropTypes.array
   }).isRequired,
