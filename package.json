@@ -122,10 +122,16 @@
     "#pinion": "./src/index.mjs",
     "#pinion/common": "./src/common/index.mjs",
     "#pinion/common/*": "./src/common/*.mjs",
-    "#pinion/components": "./src/components/index.mjs",
-    "#pinion/components/*": "./src/components/*/index.mjs",
-    "#pinion/pinion": "./src/pinion/index.jsx",
-    "#pinion/pinion/*": "./src/pinion/*/index.jsx",
+    "#pinion/components": {
+      "require": "./src/components/index.cjs",
+      "import": "./src/components/index.mjs"
+    },
+    "#pinion/components/*": {
+      "require": "./src/components/*/index.cjs",
+      "import": "./src/components/*/index.mjs"
+    },
+    "#pinion/pinion": "./src/pinion/index.cjs",
+    "#pinion/pinion/*": "./src/pinion/*/index.cjs",
     "#pinion/transformers": "./src/transformers/index.mjs",
     "#pinion/transformers/*": "./src/transformers/*/index.mjs",
     "#pinion/transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
