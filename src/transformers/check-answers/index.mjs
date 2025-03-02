@@ -5,33 +5,39 @@ import getGroup from '#pinion/transformers/common/get-group'
 
 import transformTypeStringAnswer from '#pinion/transformers/check-answers/transform-type-string-answer'
 import transformTypeNumberAnswer from '#pinion/transformers/check-answers/transform-type-number-answer'
-import transformTypeArrayAnswers from '#pinion/transformers/check-answers/transform-type-array-answers'
-import transformTypeObjectAnswers from '#pinion/transformers/check-answers/transform-type-object-answers'
 import transformTypeBooleanAnswer from '#pinion/transformers/check-answers/transform-type-boolean-answer'
 import transformTypeNullAnswer from '#pinion/transformers/check-answers/transform-type-null-answer'
 
+import transformTypeArrayAnswers from '#pinion/transformers/check-answers/transform-type-array-answers'
+import transformTypeObjectAnswers from '#pinion/transformers/check-answers/transform-type-object-answers'
+
 const log = debug('shinkansen-pinion/transformers/check-answers')
+
+export {
+  transformTypeStringAnswer,
+  transformTypeNumberAnswer
+}
 
 /**
  *  @param {PinionTypes.AnswerType} answer
  *  @param {PinionTypes.ResourceType} resource
  *  @param {(
-*    PinionTypes.TypeStringAnswerType |
-*    PinionTypes.TypeNumberAnswerType |
-*    PinionTypes.TypeObjectAnswerType |
-*    PinionTypes.TypeArrayAnswerType |
-*    PinionTypes.TypeBooleanAnswerType |
-*    PinionTypes.TypeNullAnswerType
-*  )[]} array
+ *    PinionTypes.TypeStringAnswerType |
+ *    PinionTypes.TypeNumberAnswerType |
+ *    PinionTypes.TypeObjectAnswerType |
+ *    PinionTypes.TypeArrayAnswerType |
+ *    PinionTypes.TypeBooleanAnswerType |
+ *    PinionTypes.TypeNullAnswerType
+ *  )[]} array
  *  @param {PinionTypes.AnswerType[]} group
  *  @returns {(
-*    PinionTypes.TypeStringAnswerType |
-*    PinionTypes.TypeNumberAnswerType |
-*    PinionTypes.TypeObjectAnswerType |
-*    PinionTypes.TypeArrayAnswerType |
-*    PinionTypes.TypeBooleanAnswerType |
-*    PinionTypes.TypeNullAnswerType
-*  )[]}
+ *    PinionTypes.TypeStringAnswerType |
+ *    PinionTypes.TypeNumberAnswerType |
+ *    PinionTypes.TypeObjectAnswerType |
+ *    PinionTypes.TypeArrayAnswerType |
+ *    PinionTypes.TypeBooleanAnswerType |
+ *    PinionTypes.TypeNullAnswerType
+ *  )[]}
  */
 export function transformTypeArrayAnswer ({ elements: { fields = [] } }, resource, array = [], group = []) {
   log('transformTypeArrayAnswer')
@@ -63,22 +69,22 @@ export function transformTypeArrayAnswer ({ elements: { fields = [] } }, resourc
  *  @param {PinionTypes.AnswerType} answer
  *  @param {PinionTypes.ResourceType} resource
  *  @param {(
-*    PinionTypes.TypeStringAnswerType |
-*    PinionTypes.TypeNumberAnswerType |
-*    PinionTypes.TypeArrayAnswerType |
-*    PinionTypes.TypeObjectAnswerType |
-*    PinionTypes.TypeBooleanAnswerType |
-*    PinionTypes.TypeNullAnswerType
-*  )[]} array
+ *    PinionTypes.TypeStringAnswerType |
+ *    PinionTypes.TypeNumberAnswerType |
+ *    PinionTypes.TypeArrayAnswerType |
+ *    PinionTypes.TypeObjectAnswerType |
+ *    PinionTypes.TypeBooleanAnswerType |
+ *    PinionTypes.TypeNullAnswerType
+ *  )[]} array
  *  @param {PinionTypes.AnswerType[]} group
  *  @returns {(
-*    PinionTypes.TypeStringAnswerType |
-*    PinionTypes.TypeNumberAnswerType |
-*    PinionTypes.TypeArrayAnswerType |
-*    PinionTypes.TypeObjectAnswerType |
-*    PinionTypes.TypeBooleanAnswerType |
-*    PinionTypes.TypeNullAnswerType
-*  )[]}
+ *    PinionTypes.TypeStringAnswerType |
+ *    PinionTypes.TypeNumberAnswerType |
+ *    PinionTypes.TypeArrayAnswerType |
+ *    PinionTypes.TypeObjectAnswerType |
+ *    PinionTypes.TypeBooleanAnswerType |
+ *    PinionTypes.TypeNullAnswerType
+ *  )[]}
  */
 export function transformTypeObjectAnswer ({ elements: { fields = [] } }, resource, array = [], group = []) {
   log('transformTypeObjectAnswer')
@@ -106,6 +112,11 @@ export function transformTypeObjectAnswer ({ elements: { fields = [] } }, resour
   }, array)
 }
 
+export {
+  transformTypeBooleanAnswer,
+  transformTypeNullAnswer
+}
+
 /**
  *  @param {PinionTypes.AnswerType} answer
  *  @param {PinionTypes.ResourceType} resource
@@ -127,7 +138,7 @@ export function transformTypeObjectAnswer ({ elements: { fields = [] } }, resour
  *    PinionTypes.TypeNullAnswerType
  *  )[]}
  */
-export default function transformAnswer (answer, resource, array = [], group = []) {
+export function transformAnswer (answer, resource, array = [], group = []) {
   const {
     meta: {
       type
@@ -145,14 +156,14 @@ export default function transformAnswer (answer, resource, array = [], group = [
         array.concat(transformTypeNumberAnswer(answer, resource))
       )
 
-    case 'object':
-      return (
-        array.concat(transformTypeObjectAnswer(answer, resource, array, group))
-      )
-
     case 'array':
       return (
         array.concat(transformTypeArrayAnswer(answer, resource, array, group))
+      )
+
+    case 'object':
+      return (
+        array.concat(transformTypeObjectAnswer(answer, resource, array, group))
       )
 
     case 'boolean':
