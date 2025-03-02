@@ -6,7 +6,7 @@ import Select from 'shinkansen-pinion/components/cogs/select'
 
 describe('shinkansen-pinion/components/cogs/select', () => {
   it('is a function', () => {
-    return expect(Select)
+    expect(Select)
       .to.be.a('function')
   })
 })

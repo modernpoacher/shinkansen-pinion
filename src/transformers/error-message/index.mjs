@@ -10,7 +10,7 @@ const log = debug('shinkansen-pinion/transformers/error-message')
 export function hasError (errors = [], uri = null) {
   log('hasError')
 
-  return errors.some(({ uri: URI }) => '#' + URI === uri)
+  return errors.some(({ uri: URI }) => URI === uri)
 }
 
 /**
@@ -21,5 +21,5 @@ export function hasError (errors = [], uri = null) {
 export function getError (errors = [], uri = null) {
   log('getError')
 
-  return errors.find(({ uri: URI }) => '#' + URI === uri)
+  return errors.find(({ uri: URI }) => URI === uri)
 }

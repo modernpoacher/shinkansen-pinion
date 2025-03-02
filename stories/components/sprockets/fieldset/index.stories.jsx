@@ -41,9 +41,12 @@ export default {
  */
 export function Default (props) {
   return (
-    <FieldsetSprocket
-      {...props}
-    />
+    <form>
+      <FieldsetSprocket
+        {...props}
+        errorMessage={undefined}
+      />
+    </form>
   )
 }
 
@@ -51,14 +54,21 @@ export function Default (props) {
  *  @param {FieldsetProps} props
  *  @returns {React.JSX.Element}
  */
-export function WithError (props) {
+export function WithError ({ errorMessage, ...props }) {
   return (
-    <FieldsetSprocket
-      {...props}
-    />
+    <form>
+      <FieldsetSprocket
+        {...props}
+        errorMessage={errorMessage}
+      />
+    </form>
   )
 }
 
 WithError.propTypes = {
-  errorMessage: PropTypes.shape({})
+  errorMessage: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    params: PropTypes.shape({}).isRequired,
+    uri: PropTypes.string.isRequired
+  })
 }

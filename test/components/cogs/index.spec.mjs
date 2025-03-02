@@ -11,21 +11,21 @@ import {
 describe('shinkansen-pinion/components/cogs', () => {
   describe('`RadioCog`', () => {
     it('is a function', () => {
-      return expect(RadioCog)
+      expect(RadioCog)
         .to.be.a('function')
     })
   })
 
   describe('`SelectCog`', () => {
     it('is a function', () => {
-      return expect(SelectCog)
+      expect(SelectCog)
         .to.be.a('function')
     })
   })
 
   describe('`TextCog`', () => {
     it('is a function', () => {
-      return expect(TextCog)
+      expect(TextCog)
         .to.be.a('function')
     })
   })

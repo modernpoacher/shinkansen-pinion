@@ -166,7 +166,7 @@ export default {
     },
     params: {
       options: ['DEFAULT', 'ERROR'],
-      mapping: { DEFAULT: {}, ERROR: { errorMessage: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] } },
+      mapping: { DEFAULT: {}, ERROR: { errors: [{ type: 'UNKNOWN', params: {}, uri: '#/0' }] } },
       control: {
         type: 'radio',
         labels: {
@@ -184,8 +184,10 @@ export default {
  */
 export function Default (props) {
   return (
-    <Pinion
-      {...props}
-    />
+    <form>
+      <Pinion
+        {...props}
+      />
+    </form>
   )
 }

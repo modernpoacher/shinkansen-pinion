@@ -246,21 +246,19 @@ export default {
  *  @param {ParamsType} params
  *  @returns {boolean}
  */
-const hasErrors = (params) => Reflect.has(params, 'errors')
+const hasErrors = (params) => 'errors' in params // Reflect.has(params, 'errors')
 function getErrors ({ meta: { schema: { properties = {} } = {} } = {} }) {
-  let errors = [{ type: 'UNKNOWN', params: {}, uri: '#/' }]
+  if ('string' in properties) return [{ type: 'UNKNOWN', params: {}, uri: '#/string' }]
 
-  if (Reflect.has(properties, 'string')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/string' }]
+  if ('number' in properties) return [{ type: 'UNKNOWN', params: {}, uri: '#/number' }]
 
-  if (Reflect.has(properties, 'number')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/number' }]
+  if ('array' in properties) return [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }]
 
-  if (Reflect.has(properties, 'array')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/array/0' }]
+  if ('boolean' in properties) return [{ type: 'UNKNOWN', params: {}, uri: '#/boolean' }]
 
-  if (Reflect.has(properties, 'boolean')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/boolean' }]
+  if ('null' in properties) return [{ type: 'UNKNOWN', params: {}, uri: '#/null' }]
 
-  if (Reflect.has(properties, 'null')) errors = [{ type: 'UNKNOWN', params: {}, uri: '#/null' }]
-
-  return errors
+  return []
 }
 
 const onChange = () => {}
@@ -274,14 +272,17 @@ export function Default (args) {
     pinion,
     params
   } = args
+
   const errors = hasErrors(params) ? getErrors(pinion) : []
-  const PARAMS = Object.assign(params, { errors })
+  const PARAMS = { ...params, errors } // PARAMS must be a new object!
 
   return (
-    <Pinion
-      pinion={pinion}
-      params={PARAMS}
-      onChange={onChange}
-    />
+    <form>
+      <Pinion
+        pinion={pinion}
+        params={PARAMS}
+        onChange={onChange}
+      />
+    </form>
   )
 }

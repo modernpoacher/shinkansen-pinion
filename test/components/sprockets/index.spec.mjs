@@ -11,21 +11,21 @@ import {
 describe('shinkansen-pinion/components/sprockets', () => {
   describe('`CheckAnswers`', () => {
     it('is a function', () => {
-      return expect(CheckAnswers)
+      expect(CheckAnswers)
         .to.be.a('function')
     })
   })
 
   describe('`ErrorSummary`', () => {
     it('is a function', () => {
-      return expect(ErrorSummary)
+      expect(ErrorSummary)
         .to.be.a('function')
     })
   })
 
   describe('`Fieldset`', () => {
     it('is a function', () => {
-      return expect(Fieldset)
+      expect(Fieldset)
         .to.be.a('function')
     })
   })

@@ -6,7 +6,7 @@ require('@babel/register')({
 
 const debug = require('debug')
 
-const log = debug('shinkansen-pinion/components/sprockets')
+const log = debug('shinkansen-pinion/components')
 
 log('`shinkansen` is awake')
 

@@ -26,6 +26,7 @@ declare global {
       name?: string
       items?: MemberArrayType | ArrayLiteralType
       selectedItems?: SelectedMemberArrayType | ArrayLiteralType
+      isRequired?: boolean
     }
 
     export interface AnyOfType {
@@ -33,6 +34,7 @@ declare global {
       name?: string
       items?: MemberArrayType
       selectedItems?: SelectedMemberArrayType
+      isRequired?: boolean
     }
 
     export interface OneOfType {
@@ -40,6 +42,7 @@ declare global {
       name?: string
       items?: MemberArrayType
       selectedItems?: SelectedMemberArrayType
+      isRequired?: boolean
     }
 
     export interface FieldType {
@@ -49,6 +52,7 @@ declare global {
       selectedItems?: SelectedMemberArrayType
       value?: MemberType | MemberArrayType
       defaultValue?: MemberType | MemberArrayType
+      isRequired?: boolean
     }
 
     export interface FieldError {
