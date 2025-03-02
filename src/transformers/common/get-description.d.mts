@@ -1,3 +1,6 @@
-type ElementsType = PinionTypes.ElementsType
+declare function getDescription (elements: { description: string }): string
+declare function getDescription (elements?: {
+  description?: string
+}): string | undefined
 
-export default function getDescription (elements?: ElementsType): string | undefined
+export default getDescription

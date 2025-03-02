@@ -1,14 +1,14 @@
 import debug from 'debug'
 
-import transformAnswerTitle from './transform-answer-title.mjs'
+import transformAnswerTitle from '#pinion/transformers/check-answers/transform-answer-title'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
 /**
- *  @param {PinionTypes.AnswerType} anser
- *  @returns {string | null}
+ *  @param {PinionTypes.AnswerType} answer
+ *  @returns {string | null | undefined}
  */
-export default function getAnswerTitle ({ elements = {} }) {
+export default function getAnswerTitle ({ elements }) {
   log('getAnswerTitle')
 
   return transformAnswerTitle(elements)

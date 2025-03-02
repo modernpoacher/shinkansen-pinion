@@ -1,11 +1,13 @@
 /**
- *  @param {PinionTypes.ElementsType} [elements]
- *  @returns {boolean}
+ *  @typedef {PinionTypes.EnumType} EnumType
+ *
+ *  @param {{ enum?: EnumType }} [elements]
+ *  @returns {elements is { enum: EnumType }}
  */
 export default function hasEnum (elements) {
   if (elements) {
     return (
-      Reflect.has(elements, 'enum')
+      'enum' in elements // Reflect.has(elements, 'enum')
     )
   }
 

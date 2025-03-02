@@ -1,4 +1,8 @@
-type ElementsType = PinionTypes.ElementsType
 type AnyOfType = PinionTypes.AnyOfType
 
-export default function getAnyOf (elements?: ElementsType): AnyOfType | undefined
+declare function getAnyOf (elements: { anyOf: AnyOfType }): AnyOfType
+declare function getAnyOf (elements?: {
+  anyOf?: AnyOfType
+}): AnyOfType | undefined
+
+export default getAnyOf

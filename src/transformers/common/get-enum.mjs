@@ -1,11 +1,17 @@
 /**
- *  @param {PinionTypes.ElementsType} [elements]
- *  @returns {PinionTypes.EnumType | undefined}
+ *  @typedef {PinionTypes.EnumType} EnumType
+ *
+ *  @overload
+ *  @param {{ enum: EnumType }} elements
+ *  @returns {EnumType}
+ *
+ *  @param {{ enum?: EnumType }} [elements]
+ *  @returns {EnumType | undefined}
  */
 export default function getEnum (elements) {
   if (elements) {
     return (
-      Reflect.get(elements, 'enum')
+      elements.enum // Reflect.get(elements, 'enum')
     )
   }
 }

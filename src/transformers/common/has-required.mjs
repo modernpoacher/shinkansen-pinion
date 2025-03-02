@@ -1,9 +1,9 @@
 /**
  *  @param {{ isRequired?: boolean }} [record]
- *  @returns {boolean}
+ *  @returns {record is { isRequired: boolean }}
  */
 export default function hasRequired (record = {}) {
   return (
-    Reflect.has(record, 'isRequired')
+    'isRequired' in record // Reflect.has(record, 'isRequired')
   )
 }

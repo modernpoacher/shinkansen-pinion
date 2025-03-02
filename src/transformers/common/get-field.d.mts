@@ -1,4 +1,8 @@
-type ElementsType = PinionTypes.ElementsType
 type FieldType = PinionTypes.FieldType
 
-export default function getField (elements?: ElementsType): FieldType | undefined
+declare function getField (elements: { field: FieldType }): FieldType
+declare function getField (elements?: {
+  field?: FieldType
+}): FieldType | undefined
+
+export default getField

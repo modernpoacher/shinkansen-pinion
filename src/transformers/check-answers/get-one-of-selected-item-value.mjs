@@ -1,13 +1,24 @@
+// @ts-nocheck
+
 import debug from 'debug'
 
-import toAnswerValue from './to-answer-value.mjs'
+import toAnswerValue from '#pinion/transformers/check-answers/to-answer-value'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
+/**
+ * @param {PinionTypes.MemberArrayType} [items]
+ * @param {PinionTypes.SelectedMemberArrayType} [selectedItems]
+ * @returns {string}
+ */
 export default function getOneOfSelectedItemValue (items = [], [selectedItem] = []) {
   log('getOneOfSelectedItemValue')
 
-  return (Reflect.has(items, selectedItem))
-    ? toAnswerValue(Reflect.get(items, selectedItem)) // || 'Not answered'
-    : '' // 'Not answered'
+  if (selectedItem in items) {
+    const item = items[selectedItem]
+
+    return toAnswerValue(item)
+  }
+
+  return '' // 'Not answered'
 }

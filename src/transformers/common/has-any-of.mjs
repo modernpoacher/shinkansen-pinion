@@ -1,11 +1,13 @@
 /**
- *  @param {PinionTypes.ElementsType} [elements]
- *  @returns {boolean}
+ *  @typedef {PinionTypes.AnyOfType} AnyOfType
+ *
+ *  @param {{ anyOf?: AnyOfType }} [elements]
+ *  @returns {elements is { anyOf: AnyOfType }}
  */
 export default function hasAnyOf (elements) {
   if (elements) {
     return (
-      Reflect.has(elements, 'anyOf')
+      'anyOf' in elements // Reflect.has(elements, 'anyOf')
     )
   }
 

@@ -1,3 +1,6 @@
-type ElementsType = PinionTypes.ElementsType
+declare function getTitle (elements: { title: string }): string
+declare function getTitle (elements?: {
+  title?: string
+}): string | undefined
 
-export default function getTitle (elements?: ElementsType): string | undefined
+export default getTitle

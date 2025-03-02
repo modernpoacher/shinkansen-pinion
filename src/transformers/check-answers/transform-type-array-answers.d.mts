@@ -1,1 +1,1 @@
-export default function transformTypeArrayAnswers (answers: PinionTypes.AnswerType[], resource: PinionTypes.ResourceType): PinionTypes.TypeArrayAnswerType
+export default function transformTypeArrayAnswers (answers?: PinionTypes.AnswerType[], resource?: PinionTypes.ResourceType): PinionTypes.TypeArrayAnswerType

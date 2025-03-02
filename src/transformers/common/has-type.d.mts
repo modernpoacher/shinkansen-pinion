@@ -1,3 +1,1 @@
-type MetaType = PinionTypes.MetaType
-
-export default function getType (meta: MetaType): boolean
+export default function getType (meta: { type?: string }): meta is { type: string }

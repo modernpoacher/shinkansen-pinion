@@ -1,7 +1,5 @@
-type ElementsType = PinionTypes.ElementsType
-type ElementsEnumType = PinionTypes.ElementsEnumType
-type ElementsAnyOfType = PinionTypes.ElementsAnyOfType
-type ElementsOneOfType = PinionTypes.ElementsOneOfType
-type ElementsFieldType = PinionTypes.ElementsFieldType
+type EnumType = PinionTypes.EnumType
 
-export default function hasEnum (elements?: ElementsType | ElementsEnumType | ElementsAnyOfType | ElementsOneOfType): elements is ElementsEnumType
+declare function hasEnum (elements?: { enum?: EnumType }): elements is { enum: EnumType }
+
+export default hasEnum

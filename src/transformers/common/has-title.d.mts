@@ -1,3 +1,1 @@
-type ElementsType = PinionTypes.ElementsType
-
-export default function hasTitle (elements?: ElementsType): boolean
+export default function hasTitle (elements?: { title?: string }): elements is { title: string }

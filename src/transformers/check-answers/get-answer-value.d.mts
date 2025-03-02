@@ -1,1 +1,1 @@
-export default function getAnswerValue (answer: PinionTypes.AnswerType): string | null
+export default function getAnswerValue (answer: PinionTypes.AnswerType): string | null | undefined

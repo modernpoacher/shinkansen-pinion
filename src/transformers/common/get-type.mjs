@@ -1,11 +1,15 @@
 /**
- *  @param {PinionTypes.MetaType} [meta]
+ *  @overload
+ *  @param {{ type: string }} meta
+ *  @returns {string}
+ *
+ *  @param {{ type?: string }} [meta]
  *  @returns {string | undefined}
  */
 export default function getType (meta) {
   if (meta) {
     return (
-      Reflect.get(meta, 'type')
+      meta.type // Reflect.get(meta, 'type')
     )
   }
 }

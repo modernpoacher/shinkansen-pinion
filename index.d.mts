@@ -17,28 +17,38 @@ declare global {
     export type ArrayLiteralType = never[]
     export type ArrayType = unknown[]
 
+    export type MemberArrayType = string[] | number[] | object[] | boolean[] | null[] | never[]
+    export type MemberType = string | number | object | boolean | null
+    export type SelectedMemberArrayType = MemberType[]
+
     export interface EnumType {
       id: string
       name?: string
-      isRequired?: boolean
-      items?: string[] | number[] | boolean[] | null[]
-      selectedItems?: number[]
+      items?: MemberArrayType | ArrayLiteralType
+      selectedItems?: SelectedMemberArrayType | ArrayLiteralType
     }
 
     export interface AnyOfType {
       id: string
       name?: string
-      isRequired?: boolean
-      items?: string[]
-      selectedItems?: number[]
+      items?: MemberArrayType
+      selectedItems?: SelectedMemberArrayType
     }
 
     export interface OneOfType {
       id: string
       name?: string
-      isRequired?: boolean
-      items?: string[]
-      selectedItems?: number[]
+      items?: MemberArrayType
+      selectedItems?: SelectedMemberArrayType
+    }
+
+    export interface FieldType {
+      id: string
+      name?: string
+      items?: MemberArrayType
+      selectedItems?: SelectedMemberArrayType
+      value?: MemberType | MemberArrayType
+      defaultValue?: MemberType | MemberArrayType
     }
 
     export interface FieldError {
@@ -72,16 +82,6 @@ declare global {
     }
 
     export type MetaFieldType = MetaType
-
-    export interface FieldType {
-      id: string
-      name?: string
-      isRequired?: boolean
-      items?: string[]
-      selectedItems?: number[]
-      value?: string | number | boolean | null | ObjectType | ArrayType
-      defaultValue?: string | number | boolean | null | ObjectType | ArrayType
-    }
 
     export interface ElementsType {
       title: string

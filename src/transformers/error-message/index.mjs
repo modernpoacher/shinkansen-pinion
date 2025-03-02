@@ -3,7 +3,7 @@ import debug from 'debug'
 const log = debug('shinkansen-pinion/transformers/error-message')
 
 /**
- *  @param {PinionTypes.FieldError[]} errors
+ *  @param {PinionTypes.FieldError[]} [errors]
  *  @param {string | null} [uri]
  *  @returns {boolean}
  */
@@ -14,7 +14,7 @@ export function hasError (errors = [], uri = null) {
 }
 
 /**
- *  @param {PinionTypes.FieldError[]} errors
+ *  @param {PinionTypes.FieldError[]} [errors]
  *  @param {string | null} [uri]
  *  @returns {PinionTypes.FieldError | undefined}
  */

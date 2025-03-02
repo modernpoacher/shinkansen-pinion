@@ -119,7 +119,10 @@
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
-    "#pinion": "./src/index.mjs",
+    "#pinion": {
+      "require": "./src/index.cjs",
+      "import": "./src/index.mjs"
+    },
     "#pinion/common": "./src/common/index.mjs",
     "#pinion/common/*": "./src/common/*.mjs",
     "#pinion/components": {
@@ -133,8 +136,11 @@
     "#pinion/pinion": "./src/pinion/index.cjs",
     "#pinion/transformers": "./src/transformers/index.mjs",
     "#pinion/transformers/*": "./src/transformers/*/index.mjs",
+    "#pinion/transformers/check-answers": "./src/transformers/check-answers/index.mjs",
     "#pinion/transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
+    "#pinion/transformers/common": "./src/transformers/common/index.mjs",
     "#pinion/transformers/common/*": "./src/transformers/common/*.mjs",
+    "#pinion/transformers/error-message": "./src/transformers/error-message/index.mjs",
     "#pinion/transformers/error-message/*": "./src/transformers/error-message/*.mjs",
     "#stories/components/*": "./stories/components/*/index.stories.jsx",
     "#stories/definitions/*": "./stories/definitions/*.json",

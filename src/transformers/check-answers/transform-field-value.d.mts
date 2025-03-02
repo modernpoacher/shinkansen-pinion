@@ -1,1 +1,1 @@
-export default function transformFieldValue (field: PinionTypes.FieldType): string
+export default function transformFieldValue (field?: { value?: string }): string

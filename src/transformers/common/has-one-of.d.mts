@@ -1,7 +1,3 @@
-type ElementsType = PinionTypes.ElementsType
-type ElementsEnumType = PinionTypes.ElementsEnumType
-type ElementsAnyOfType = PinionTypes.ElementsAnyOfType
-type ElementsOneOfType = PinionTypes.ElementsOneOfType
-type ElementsFieldType = PinionTypes.ElementsFieldType
+type OneOfType = PinionTypes.OneOfType
 
-export default function hasOneOf (elements?: ElementsType | ElementsEnumType | ElementsAnyOfType | ElementsOneOfType): elements is ElementsOneOfType
+export default function hasOneOf (elements?: { oneOf?: OneOfType }): elements is { oneOf: OneOfType }

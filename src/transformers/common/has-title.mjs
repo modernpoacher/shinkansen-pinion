@@ -1,9 +1,9 @@
 /**
  *  @param {{ title?: string }} [elements]
- *  @returns {boolean}
+ *  @returns {elements is { title: string }}
  */
 export default function hasTitle (elements = {}) {
   return (
-    Reflect.has(elements, 'title')
+    'title' in elements // Reflect.has(elements, 'title')
   )
 }

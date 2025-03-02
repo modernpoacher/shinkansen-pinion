@@ -1,3 +1,6 @@
-type MetaType = PinionTypes.MetaType
+declare function getType (meta: { type: string }): string
+declare function getType (meta?: {
+  type?: string
+}): string | undefined
 
-export default function getType (meta: MetaType): string | undefined
+export default getType

@@ -1,3 +1,7 @@
-type FieldType = PinionTypes.FieldType
+type MemberType = PinionTypes.MemberType
+type MemberArrayType = PinionTypes.MemberArrayType
 
-export default function hasValue (field?: FieldType): boolean
+declare function hasValue (field: { value: MemberType | MemberArrayType }): field is { value: MemberType | MemberArrayType }
+declare function hasValue (field?: { value?: MemberType | MemberArrayType }): field is { value: MemberType | MemberArrayType }
+
+export default hasValue

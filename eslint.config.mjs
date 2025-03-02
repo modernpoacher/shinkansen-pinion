@@ -130,11 +130,11 @@ export default [
       globals: {
         ...globals.browser
       }
-    },
+    }, // @ts-expect-error
     plugins: {
       ...reactPlugins,
       ...storybookPlugins
-    },
+    }, // @ts-expect-error
     rules: {
       ...reactRules
     },
@@ -160,11 +160,11 @@ export default [
         ...globals.browser,
         ...globals.jest
       }
-    },
+    }, // @ts-expect-error
     plugins: {
       ...reactPlugins,
       ...storybookPlugins
-    },
+    }, // @ts-expect-error
     rules: {
       ...reactRules
     },
@@ -215,7 +215,7 @@ export default [
   }),
   {
     files: [
-      'src/common/**/*.d.{mts,cts}'
+      'src/**/*.d.{mts,cts}'
     ],
     rules: {
       'no-redeclare': 'off',

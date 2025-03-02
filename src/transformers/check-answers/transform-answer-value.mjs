@@ -9,16 +9,32 @@ import getAnyOf from '#pinion/transformers/common/get-any-of'
 import hasField from '#pinion/transformers/common/has-field'
 import getField from '#pinion/transformers/common/get-field'
 
-import transformEnumValue from './transform-enum-value.mjs'
-import transformAnyOfValue from './transform-any-of-value.mjs'
-import transformOneOfValue from './transform-one-of-value.mjs'
-import transformFieldValue from './transform-field-value.mjs'
+import transformEnumValue from '#pinion/transformers/check-answers/transform-enum-value'
+import transformAnyOfValue from '#pinion/transformers/check-answers/transform-any-of-value'
+import transformOneOfValue from '#pinion/transformers/check-answers/transform-one-of-value'
+import transformFieldValue from '#pinion/transformers/check-answers/transform-field-value'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
 /**
- *  @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType | PinionTypes.ElementsFieldType} elements
+ *  @overload
+ *  @param {{ enum?: PinionTypes.EnumType }} elements
  *  @returns {string | null}
+ *
+ *  @overload
+ *  @param {{ anyOf?: PinionTypes.AnyOfType }} elements
+ *  @returns {string | null}
+ *
+ *  @overload
+ *  @param {{ oneOf?: PinionTypes.OneOfType }} elements
+ *  @returns {string | null}
+ *
+ *  @overload
+ *  @param {{ field?: PinionTypes.FieldType }} elements
+ *  @returns {string | null}
+ *
+ *  @param {Record<string, unknown>} [elements]
+ *  @returns {string | null | undefined}
  */
 export default function transformAnswerValue (elements) {
   log('transformAnswerValue')

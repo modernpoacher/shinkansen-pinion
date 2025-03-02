@@ -1,7 +1,9 @@
+// @ts-nocheck
+
 import debug from 'debug'
 
 import getResourceUrl from '#pinion/transformers/common/get-resource-url'
-import getVisuallyHiddenText from './get-visually-hidden-text.mjs'
+import getVisuallyHiddenText from '#pinion/transformers/check-answers/get-visually-hidden-text'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 

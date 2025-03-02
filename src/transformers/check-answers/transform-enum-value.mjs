@@ -1,16 +1,24 @@
+/**
+ *  @typedef {PinionTypes.MemberArrayType} MemberArrayType
+ *  @typedef {PinionTypes.SelectedMemberArrayType} SelectedMemberArrayType
+ */
+
 import debug from 'debug'
 
-import getEnumSelectedItemsValue from './get-enum-selected-items-value.mjs'
-import getEnumSelectedItemValue from './get-enum-selected-item-value.mjs'
+import getEnumSelectedItemsValue from '#pinion/transformers/check-answers/get-enum-selected-items-value'
+import getEnumSelectedItemValue from '#pinion/transformers/check-answers/get-enum-selected-item-value'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
+const info = debug('shinkansen-pinion/transformers/check-answers:info')
 
 /**
- *  @param {PinionTypes.ElementsEnumType['enum']} [enum]
+ *  @param {{ items?: MemberArrayType, selectedItems?: SelectedMemberArrayType }} [field]
  *  @returns {string | null}
  */
-export default function transformEnumValue ({ items, selectedItems } = {}) {
+export default function transformEnumValue ({ items = [], selectedItems = [] } = {}) {
   log('transformEnumValue')
+
+  info(items, selectedItems)
 
   if (selectedItems.length < 1) {
     return ''

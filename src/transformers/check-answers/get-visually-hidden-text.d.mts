@@ -1,1 +1,1 @@
-export default function getVisuallyHiddenText (answer: PinionTypes.AnswerType): string
+export default function getVisuallyHiddenText (answer?: { elements?: PinionTypes.ElementsType }): string

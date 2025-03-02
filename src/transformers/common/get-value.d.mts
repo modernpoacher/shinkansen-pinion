@@ -1,3 +1,6 @@
-type FieldType = PinionTypes.FieldType
+declare function getValue (field: { value: string }): string
+declare function getValue (field?: {
+  value?: string
+}): string | undefined
 
-export default function getValue (field?: FieldType): string | undefined
+export default getValue

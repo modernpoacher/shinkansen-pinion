@@ -1,16 +1,24 @@
+/**
+ *  @typedef {PinionTypes.MemberArrayType} MemberArrayType
+ *  @typedef {PinionTypes.SelectedMemberArrayType} SelectedMemberArrayType
+ */
+
 import debug from 'debug'
 
-import getOneOfSelectedItemsValue from './get-one-of-selected-items-value.mjs'
-import getOneOfSelectedItemValue from './get-one-of-selected-item-value.mjs'
+import getOneOfSelectedItemsValue from '#pinion/transformers/check-answers/get-one-of-selected-items-value'
+import getOneOfSelectedItemValue from '#pinion/transformers/check-answers/get-one-of-selected-item-value'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
+const info = debug('shinkansen-pinion/transformers/check-answers:info')
 
 /**
- *  @param {PinionTypes.ElementsOneOfType} [elements]
+ *  @param {{ items?: MemberArrayType, selectedItems?: SelectedMemberArrayType }} [field]
  *  @returns {string | null}
  */
-export default function transformOneOfValue ({ items, selectedItems } = {}) {
+export default function transformOneOfValue ({ items = [], selectedItems = [] } = {}) {
   log('transformOneOfValue')
+
+  info(items, selectedItems)
 
   if (selectedItems.length < 1) {
     return ''

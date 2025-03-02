@@ -1,4 +1,4 @@
-type ItemsType = PinionTypes.MetaType['items']
-type SelectedItemsType = PinionTypes.MetaType['selectedItems']
+type MemberArrayType = PinionTypes.MemberArrayType
+type SelectedMemberArrayType = PinionTypes.SelectedMemberArrayType
 
-export default function getOneOfSelectedItemValue (items: ItemsType, selectedItems: SelectedItemsType): string
+export default function getOneOfSelectedItemValue (items?: MemberArrayType, selectedItems?: SelectedMemberArrayType): string

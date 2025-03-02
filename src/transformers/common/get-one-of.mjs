@@ -1,11 +1,17 @@
 /**
- *  @param {PinionTypes.ElementsType} [elements]
- *  @returns {PinionTypes.OneOfType | undefined}
+ *  @typedef {PinionTypes.OneOfType} OneOfType
+ *
+ *  @overload
+ *  @param {{ oneOf: OneOfType }} elements
+ *  @returns {OneOfType}
+ *
+ *  @param {{ oneOf?: OneOfType }} [elements]
+ *  @returns {OneOfType | undefined}
  */
 export default function getOneOf (elements) {
   if (elements) {
     return (
-      Reflect.get(elements, 'oneOf')
+      elements.oneOf // Reflect.get(elements, 'oneOf')
     )
   }
 }

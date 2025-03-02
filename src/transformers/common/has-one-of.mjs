@@ -1,11 +1,13 @@
 /**
- *  @param {PinionTypes.ElementsType} [elements]
- *  @returns {boolean}
+ *  @typedef {PinionTypes.OneOfType} OneOfType
+ *
+ *  @param {{ oneOf?: OneOfType }} [elements]
+ *  @returns {elements is { oneOf: OneOfType }}
  */
 export default function hasOneOf (elements) {
   if (elements) {
     return (
-      Reflect.has(elements, 'oneOf')
+      'oneOf' in elements // Reflect.has(elements, 'oneOf')
     )
   }
 

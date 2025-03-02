@@ -1,11 +1,15 @@
 /**
- *  @param {PinionTypes.ElementsType} [elements]
+ *  @overload
+ *  @param {{ title: string }} elements
+ *  @returns {string}
+ *
+ *  @param {{ title?: string }} [elements]
  *  @returns {string | undefined}
  */
 export default function getTitle (elements) {
   if (elements) {
     return (
-      Reflect.get(elements, 'title')
+      elements.title // Reflect.get(elements, 'title')
     )
   }
 }

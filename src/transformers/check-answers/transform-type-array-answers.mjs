@@ -1,8 +1,10 @@
+// @ts-nocheck
+
 import debug from 'debug'
 
-import getAnswerTitle from './get-answer-title.mjs'
-import getAnswerValue from './get-answer-value-for-type-array.mjs'
-import getChangeAnswer from './get-change-answer.mjs'
+import getAnswerTitle from '#pinion/transformers/check-answers/get-answer-title'
+import getAnswerValue from '#pinion/transformers/check-answers/get-answer-value-for-type-array'
+import getChangeAnswer from '#pinion/transformers/check-answers/get-change-answer'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 

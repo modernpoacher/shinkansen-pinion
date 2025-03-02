@@ -1,11 +1,13 @@
 /**
- *  @param {PinionTypes.ElementsType} [elements]
- *  @returns {boolean}
+ *  @typedef {PinionTypes.FieldType} FieldType
+ *
+ *  @param {{ field?: FieldType }} [elements]
+ *  @returns {elements is { field: FieldType }}
  */
 export default function hasField (elements) {
   if (elements) {
     return (
-      Reflect.has(elements, 'field')
+      'field' in elements // Reflect.has(elements, 'field')
     )
   }
 

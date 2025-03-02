@@ -1,11 +1,17 @@
 /**
- *  @param {PinionTypes.ElementsType} [elements]
- *  @returns {PinionTypes.AnyOfType | undefined}
+ *  @typedef {PinionTypes.AnyOfType} AnyOfType
+ *
+ *  @overload
+ *  @param {{ anyOf: AnyOfType }} elements
+ *  @returns {AnyOfType}
+ *
+ *  @param {{ anyOf?: AnyOfType }} [elements]
+ *  @returns {AnyOfType | undefined}
  */
 export default function getAnyOf (elements) {
   if (elements) {
     return (
-      Reflect.get(elements, 'anyOf')
+      elements.anyOf // Reflect.get(elements, 'anyOf')
     )
   }
 }

@@ -3,13 +3,13 @@ import debug from 'debug'
 import hasElementsTitle from '#pinion/transformers/common/has-elements-title'
 import getGroup from '#pinion/transformers/common/get-group'
 
-import transformTypeStringAnswer from './transform-type-string-answer.mjs'
-import transformTypeNumberAnswer from './transform-type-number-answer.mjs'
-import transformTypeBooleanAnswer from './transform-type-boolean-answer.mjs'
-import transformTypeNullAnswer from './transform-type-null-answer.mjs'
+import transformTypeStringAnswer from '#pinion/transformers/check-answers/transform-type-string-answer'
+import transformTypeNumberAnswer from '#pinion/transformers/check-answers/transform-type-number-answer'
+import transformTypeBooleanAnswer from '#pinion/transformers/check-answers/transform-type-boolean-answer'
+import transformTypeNullAnswer from '#pinion/transformers/check-answers/transform-type-null-answer'
 
-import transformTypeObjectAnswers from './transform-type-object-answers.mjs'
-import transformTypeArrayAnswers from './transform-type-array-answers.mjs'
+import transformTypeObjectAnswers from '#pinion/transformers/check-answers/transform-type-object-answers'
+import transformTypeArrayAnswers from '#pinion/transformers/check-answers/transform-type-array-answers'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
