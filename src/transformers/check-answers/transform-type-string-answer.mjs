@@ -7,6 +7,7 @@ import getAnswerValue from '#pinion/transformers/check-answers/get-answer-value'
 import getChangeAnswer from '#pinion/transformers/check-answers/get-change-answer'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
+const info = debug('shinkansen-pinion/transformers/check-answers:info')
 
 /**
  *  @param {PinionTypes.AnswerType} answer
@@ -15,6 +16,8 @@ const log = debug('shinkansen-pinion/transformers/check-answers')
  */
 export default function transformTypeStringAnswer (answer, resource) {
   log('transformTypeStringAnswer')
+
+  info(answer)
 
   return {
     type: 'STRING',

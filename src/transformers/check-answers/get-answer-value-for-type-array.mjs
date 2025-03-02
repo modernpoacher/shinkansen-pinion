@@ -7,6 +7,7 @@ import debug from 'debug'
 import transformAnswerValue from '#pinion/transformers/check-answers/transform-answer-value'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
+const info = debug('shinkansen-pinion/transformers/check-answers:info')
 
 /**
  *  @param {GroupType} group
@@ -14,6 +15,8 @@ const log = debug('shinkansen-pinion/transformers/check-answers')
  */
 export default function getAnswerValueForTypeArray (group = []) {
   log('getAnswerValueForTypeArray')
+
+  info(group)
 
   return (
     group

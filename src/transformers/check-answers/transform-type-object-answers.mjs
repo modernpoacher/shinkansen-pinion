@@ -7,6 +7,7 @@ import getAnswerValue from '#pinion/transformers/check-answers/get-answer-value-
 import getChangeAnswer from '#pinion/transformers/check-answers/get-change-answer'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
+const info = debug('shinkansen-pinion/transformers/check-answers:info')
 
 /**
  *  @param {PinionTypes.AnswerType[]} [answers]
@@ -19,6 +20,8 @@ export default function transformTypeObjectAnswers (answers = [], resource = {})
   const [
     answer
   ] = answers
+
+  info(answer, answers)
 
   return {
     type: 'OBJECT',

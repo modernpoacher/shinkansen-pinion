@@ -3,6 +3,7 @@
 import debug from 'debug'
 
 const log = debug('shinkansen-pinion/transformers/check-answers')
+const info = debug('shinkansen-pinion/transformers/check-answers:info')
 
 /**
  * @param {PinionTypes.MemberArrayType} [items]
@@ -11,6 +12,8 @@ const log = debug('shinkansen-pinion/transformers/check-answers')
  */
 export default function getEnumSelectedItemValue (items = [], [selectedItem] = []) {
   log('getEnumSelectedItemValue')
+
+  info(items, selectedItem)
 
   if (selectedItem in items) {
     const item = items[selectedItem]

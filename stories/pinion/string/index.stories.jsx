@@ -78,8 +78,6 @@ export default {
  *  @returns {React.JSX.Element}
  */
 export function Default (props) {
-  console.log(props)
-
   return (
     <form>
       <Pinion

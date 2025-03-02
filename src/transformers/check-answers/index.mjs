@@ -5,60 +5,12 @@ import getGroup from '#pinion/transformers/common/get-group'
 
 import transformTypeStringAnswer from '#pinion/transformers/check-answers/transform-type-string-answer'
 import transformTypeNumberAnswer from '#pinion/transformers/check-answers/transform-type-number-answer'
+import transformTypeArrayAnswers from '#pinion/transformers/check-answers/transform-type-array-answers'
+import transformTypeObjectAnswers from '#pinion/transformers/check-answers/transform-type-object-answers'
 import transformTypeBooleanAnswer from '#pinion/transformers/check-answers/transform-type-boolean-answer'
 import transformTypeNullAnswer from '#pinion/transformers/check-answers/transform-type-null-answer'
 
-import transformTypeObjectAnswers from '#pinion/transformers/check-answers/transform-type-object-answers'
-import transformTypeArrayAnswers from '#pinion/transformers/check-answers/transform-type-array-answers'
-
 const log = debug('shinkansen-pinion/transformers/check-answers')
-
-/**
- *  @param {PinionTypes.AnswerType} answer
- *  @param {PinionTypes.ResourceType} resource
- *  @param {(
-*    PinionTypes.TypeStringAnswerType |
-*    PinionTypes.TypeNumberAnswerType |
-*    PinionTypes.TypeObjectAnswerType |
-*    PinionTypes.TypeArrayAnswerType |
-*    PinionTypes.TypeBooleanAnswerType |
-*    PinionTypes.TypeNullAnswerType
-*  )[]} array
- *  @param {PinionTypes.AnswerType[]} group
- *  @returns {(
-*    PinionTypes.TypeStringAnswerType |
-*    PinionTypes.TypeNumberAnswerType |
-*    PinionTypes.TypeObjectAnswerType |
-*    PinionTypes.TypeArrayAnswerType |
-*    PinionTypes.TypeBooleanAnswerType |
-*    PinionTypes.TypeNullAnswerType
-*  )[]}
- */
-export function transformTypeObjectAnswer ({ elements: { fields = [] } }, resource, array = [], group = []) {
-  log('transformTypeObjectAnswer')
-
-  return fields.reduce((accumulator, answer, i, a) => {
-    if (hasElementsTitle(answer)) {
-      /*
-       *  `answer` has a title. Put any title-less siblings into `group`
-       */
-      group = getGroup(i, a)
-
-      if (group.length) {
-        /*
-         *  Transform `answer` and siblings
-         */
-        return accumulator.concat(transformTypeObjectAnswers([answer, ...group], resource))
-      }
-    }
-
-    return (
-      !group.includes(answer)
-        ? accumulator.concat(transformAnswer(answer, resource, array, group))
-        : accumulator
-    )
-  }, array)
-}
 
 /**
  *  @param {PinionTypes.AnswerType} answer
@@ -96,6 +48,53 @@ export function transformTypeArrayAnswer ({ elements: { fields = [] } }, resourc
          *  Transform `answer` and siblings
          */
         return accumulator.concat(transformTypeArrayAnswers([answer, ...group], resource))
+      }
+    }
+
+    return (
+      !group.includes(answer)
+        ? accumulator.concat(transformAnswer(answer, resource, array, group))
+        : accumulator
+    )
+  }, array)
+}
+
+/**
+ *  @param {PinionTypes.AnswerType} answer
+ *  @param {PinionTypes.ResourceType} resource
+ *  @param {(
+*    PinionTypes.TypeStringAnswerType |
+*    PinionTypes.TypeNumberAnswerType |
+*    PinionTypes.TypeArrayAnswerType |
+*    PinionTypes.TypeObjectAnswerType |
+*    PinionTypes.TypeBooleanAnswerType |
+*    PinionTypes.TypeNullAnswerType
+*  )[]} array
+ *  @param {PinionTypes.AnswerType[]} group
+ *  @returns {(
+*    PinionTypes.TypeStringAnswerType |
+*    PinionTypes.TypeNumberAnswerType |
+*    PinionTypes.TypeArrayAnswerType |
+*    PinionTypes.TypeObjectAnswerType |
+*    PinionTypes.TypeBooleanAnswerType |
+*    PinionTypes.TypeNullAnswerType
+*  )[]}
+ */
+export function transformTypeObjectAnswer ({ elements: { fields = [] } }, resource, array = [], group = []) {
+  log('transformTypeObjectAnswer')
+
+  return fields.reduce((accumulator, answer, i, a) => {
+    if (hasElementsTitle(answer)) {
+      /*
+       *  `answer` has a title. Put any title-less siblings into `group`
+       */
+      group = getGroup(i, a)
+
+      if (group.length) {
+        /*
+         *  Transform `answer` and siblings
+         */
+        return accumulator.concat(transformTypeObjectAnswers([answer, ...group], resource))
       }
     }
 
