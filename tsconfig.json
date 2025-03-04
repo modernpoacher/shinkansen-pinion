@@ -4,12 +4,10 @@
     "target": "ESNext",
     "allowJs": true,
     "checkJs": true,
-    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "strict": true,
-    "isolatedModules": true,
-    "jsx": "react",
     "resolveJsonModule": true,
+    "jsx": "react",
     "baseUrl": ".",
     "paths": {
       "#pinion": [
@@ -19,25 +17,43 @@
       "#pinion/common": [
         "src/common/index.mjs"
       ],
-      "#pinion/common/*": [
-        "src/common/*.mjs"
+      "#pinion/common/elements": [
+        "src/common/elements/index.mjs"
+      ],
+      "#pinion/common/elements/*": [
+        "src/common/elements/*.mjs"
+      ],
+      "#pinion/common/meta": [
+        "src/common/meta/index.mjs"
+      ],
+      "#pinion/common/meta/*": [
+        "src/common/meta/*.mjs"
       ],
       "#pinion/components": [
         "src/components/index.cjs",
         "src/components/index.mjs"
       ],
-      "#pinion/components/*": [
-        "src/components/*/index.cjs",
-        "src/components/*/index.mjs"
+      "#pinion/components/cogs": [
+        "src/components/cogs/index.cjs",
+        "src/components/cogs/index.mjs"
+      ],
+      "#pinion/components/cogs/*": [
+        "src/components/cogs/*/index.cjs",
+        "src/components/cogs/*/index.mjs"
+      ],
+      "#pinion/components/sprockets": [
+        "src/components/sprockets/index.cjs",
+        "src/components/sprockets/index.mjs"
+      ],
+      "#pinion/components/sprockets/*": [
+        "src/components/sprockets/*/index.cjs",
+        "src/components/sprockets/*/index.mjs"
       ],
       "#pinion/pinion": [
         "src/pinion/index.cjs"
       ],
       "#pinion/transformers": [
         "src/transformers/index.mjs"
-      ],
-      "#pinion/transformers/*": [
-        "src/transformers/*/index.mjs"
       ],
       "#pinion/transformers/check-answers": [
         "src/transformers/check-answers/index.mjs"

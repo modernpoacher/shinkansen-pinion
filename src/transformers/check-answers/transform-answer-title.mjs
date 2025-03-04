@@ -6,8 +6,8 @@ import getTitle from '#pinion/transformers/common/get-title'
 const log = debug('shinkansen-pinion/transformers/check-answers')
 
 /**
- * @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType} [elements]
- * @returns {string | null | undefined}
+ *  @param {PinionTypes.ElementsType | PinionTypes.ElementsEnumType | PinionTypes.ElementsAnyOfType | PinionTypes.ElementsOneOfType} [elements]
+ *  @returns {string | null | undefined}
  */
 export default function transformAnswerTitle (elements) {
   log('transformAnswerTitle')

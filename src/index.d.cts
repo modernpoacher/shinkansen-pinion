@@ -12,7 +12,7 @@ export type ElementsAnyOfType = PinionTypes.ElementsAnyOfType
 export type ElementsOneOfType = PinionTypes.ElementsOneOfType
 export type ElementsFieldType = PinionTypes.ElementsFieldType
 
-export type OnChangeType = PinionTypes.OnChangeType
+export type OnEventType = PinionTypes.OnEventType
 
 export type FieldProps = PinionTypes.FieldProps
 export type GroupProps = PinionTypes.GroupProps

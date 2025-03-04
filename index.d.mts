@@ -187,7 +187,7 @@ declare global {
       }
     }
 
-    export type OnChangeType = () => void
+    export type OnEventType = () => void
 
     export interface PinionType {
       meta: MetaType | MetaEnumType | MetaAnyOfType | MetaOneOfType
@@ -199,21 +199,21 @@ declare global {
     export interface PinionProps {
       pinion: PinionType
       params: ParamsType
-      onChange: OnChangeType
+      onChange: OnEventType
     }
 
     export interface FieldProps {
       meta: MetaEnumType | MetaAnyOfType | MetaOneOfType | MetaFieldType
       elements: ElementsEnumType | ElementsAnyOfType | ElementsOneOfType | ElementsFieldType
       params: ParamsType
-      onChange: OnChangeType
+      onChange: OnEventType
     }
 
     export interface GroupProps {
       meta: MetaEnumType | MetaAnyOfType | MetaOneOfType | MetaFieldType
       elements: ElementsEnumType | ElementsAnyOfType | ElementsOneOfType | ElementsFieldType
       params: ParamsType
-      onChange: OnChangeType
+      onChange: OnEventType
     }
 
     export namespace Components {
