@@ -6,9 +6,9 @@ import {
   CheckAnswers,
   ErrorSummary,
   Fieldset
-} from 'shinkansen-pinion/components/sprockets'
+} from '#pinion/components/sprockets'
 
-describe('shinkansen-pinion/components/sprockets', () => {
+describe('#pinion/components/sprockets', () => {
   describe('`CheckAnswers`', () => {
     it('is a function', () => {
       expect(CheckAnswers)

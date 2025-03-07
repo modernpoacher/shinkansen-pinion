@@ -18,7 +18,7 @@
  *  @typedef {PinionTypes.ElementsOneOfType} ElementsOneOfType
  *  @typedef {PinionTypes.ElementsFieldType} ElementsFieldType
  *
- *  @typedef {PinionTypes.OnChangeType} OnChangeType
+ *  @typedef {PinionTypes.OnEventType} OnEventType
  *  @typedef {PinionTypes.PinionType} PinionType
  *  @typedef {PinionTypes.ParamsType} ParamsType
  *  @typedef {PinionTypes.GroupProps} GroupProps
@@ -52,9 +52,9 @@ import {
   getError
 } from '#pinion/transformers/error-message'
 
-import {
-  DEFAULT_HANDLE_CHANGE
-} from '#pinion/common'
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @type {ParamsType}
@@ -77,24 +77,40 @@ const getKey = (value, index) => `${value}-${index}`
 
 /**
  *  @param {FieldType} field
- *  @returns {string | number | boolean | ObjectType | ArrayType | null | undefined}
+ *  @returns {string | number | boolean | object | null | undefined}
  */
-const getDefaultValue = (field) => Reflect.has(field, 'defaultValue') ? Reflect.get(field, 'defaultValue') : ''
+function getDefaultValue (field) {
+  if ('defaultValue' in field) {
+    return (
+      field.defaultValue
+    )
+  }
+}
 
 /**
  *  @param {FieldType} field
- *  @returns {string | number | boolean | ObjectType | ArrayType | null | undefined}
+ *  @returns {string | number | boolean | object | null | undefined}
  */
-const getValue = (field) => Reflect.has(field, 'value') ? Reflect.get(field, 'value') : getDefaultValue(field)
+function getValue (field) {
+  if ('value' in field) {
+    return (
+      field.value
+    )
+  }
+
+  return (
+    getDefaultValue(field)
+  )
+}
 
 /**
  *  @param {MetaEnumType} meta
  *  @param {ElementsEnumType} elements
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element}
  */
-export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToRadiosForEnum')
 
   return (
@@ -126,10 +142,10 @@ export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, 
  *  @param {MetaAnyOfType} meta
  *  @param {ElementsAnyOfType} elements
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element}
  */
-export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToRadiosForAnyOf')
 
   return (
@@ -182,10 +198,10 @@ export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri },
  *  @param {MetaOneOfType} meta
  *  @param {ElementsOneOfType} elements
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element}
  */
-export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToRadiosForOneOf')
 
   return (
@@ -238,10 +254,10 @@ export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri },
  *  @param {MetaEnumType} meta
  *  @param {ElementsEnumType} elements
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element}
  */
-export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToSelectForEnum')
 
   return (
@@ -270,10 +286,10 @@ export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, 
  *  @param {MetaAnyOfType} meta
  *  @param {ElementsAnyOfType} elements
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element}
  */
-export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToSelectForAnyOf')
 
   return (
@@ -302,10 +318,10 @@ export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri },
  *  @param {MetaOneOfType} meta
  *  @param {ElementsOneOfType} elements
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element}
  */
-export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToSelectForOneOf')
 
   return (
@@ -334,10 +350,10 @@ export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri },
  *  @param {MetaFieldType} meta
  *  @param {ElementsFieldType} elements
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element | null}
  */
-export function renderToField (meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderToField (meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToField')
 
   const {
@@ -383,7 +399,7 @@ export function renderToField (meta, elements, params = DEFAULT_PARAMS, onChange
  *  @param {GroupProps & { component?: ObjectLiteralType | ObjectType }} group
  *  @returns {React.JSX.Element | null}
  */
-export function ComponentGroup ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+export function ComponentGroup ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_EVENT }) {
   log('ComponentGroup', component, meta, elements, params, onChange)
 
   return null
@@ -401,7 +417,7 @@ ComponentGroup.propTypes = {
  *  @param {FieldProps & { component?: ObjectLiteralType | ObjectType }} field
  *  @returns {React.JSX.Element | null}
  */
-export function ComponentField ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+export function ComponentField ({ component, meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_EVENT }) {
   log('ComponentField', component, meta, elements, params, onChange)
 
   return null
@@ -417,25 +433,25 @@ ComponentField.propTypes = {
 
 /**
  *  @overload
- *  @param {{ meta: MetaEnumType, elements: ElementsEnumType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @param {{ meta: MetaEnumType, elements: ElementsEnumType, params: ParamsType, onChange: OnEventType }} fieldProps
  *  @returns {React.JSX.Element | null}
  *
  *  @overload
- *  @param {{ meta: MetaAnyOfType, elements: ElementsAnyOfType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @param {{ meta: MetaAnyOfType, elements: ElementsAnyOfType, params: ParamsType, onChange: OnEventType }} fieldProps
  *  @returns {React.JSX.Element | null}
  *
  *  @overload
- *  @param {{ meta: MetaOneOfType, elements: ElementsOneOfType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @param {{ meta: MetaOneOfType, elements: ElementsOneOfType, params: ParamsType, onChange: OnEventType }} fieldProps
  *  @returns {React.JSX.Element | null}
  *
  *  @overload
- *  @param {{ meta: MetaFieldType, elements: ElementsFieldType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @param {{ meta: MetaFieldType, elements: ElementsFieldType, params: ParamsType, onChange: OnEventType }} fieldProps
  *  @returns {React.JSX.Element | null}
  *
  *  @param {GroupProps} groupProps
  *  @returns {React.JSX.Element | null}
  */
-export function Group ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+export function Group ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_EVENT }) {
   log('Group')
 
   const {
@@ -499,25 +515,25 @@ Group.propTypes = {
 
 /**
  *  @overload
- *  @param {{ meta: MetaEnumType, elements: ElementsEnumType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @param {{ meta: MetaEnumType, elements: ElementsEnumType, params: ParamsType, onChange: OnEventType }} fieldProps
  *  @returns {React.JSX.Element | null}
  *
  *  @overload
- *  @param {{ meta: MetaAnyOfType, elements: ElementsAnyOfType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @param {{ meta: MetaAnyOfType, elements: ElementsAnyOfType, params: ParamsType, onChange: OnEventType }} fieldProps
  *  @returns {React.JSX.Element | null}
  *
  *  @overload
- *  @param {{ meta: MetaOneOfType, elements: ElementsOneOfType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @param {{ meta: MetaOneOfType, elements: ElementsOneOfType, params: ParamsType, onChange: OnEventType }} fieldProps
  *  @returns {React.JSX.Element | null}
  *
  *  @overload
- *  @param {{ meta: MetaFieldType, elements: ElementsFieldType, params: ParamsType, onChange: OnChangeType }} fieldProps
+ *  @param {{ meta: MetaFieldType, elements: ElementsFieldType, params: ParamsType, onChange: OnEventType }} fieldProps
  *  @returns {React.JSX.Element | null}
  *
  *  @param {FieldProps} fieldProps
  *  @returns {React.JSX.Element | null}
  */
-export function Field ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+export function Field ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_EVENT }) {
   log('Field')
 
   if (hasMetaEnum(meta)) {
@@ -571,10 +587,10 @@ Field.propTypes = {
 /**
  *  @param {PinionType} pinion
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element}
  */
-export function renderGroup ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderGroup ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderGroup')
 
   if (hasComponent(meta)) {
@@ -604,10 +620,10 @@ export function renderGroup ({ meta, elements }, params = DEFAULT_PARAMS, onChan
 /**
  *  @param {PinionType} pinion
  *  @param {ParamsType} params
- *  @param {OnChangeType} onChange
+ *  @param {OnEventType} onChange
  *  @returns {React.JSX.Element}
  */
-export function renderField ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE) {
+export function renderField ({ meta, elements }, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderField')
 
   if (hasComponent(meta)) {
@@ -638,7 +654,7 @@ export function renderField ({ meta, elements }, params = DEFAULT_PARAMS, onChan
  *  @param {PinionProps} pinionProps
  *  @returns {React.JSX.Element}
  */
-export default function Pinion ({ pinion, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_CHANGE }) {
+export default function Pinion ({ pinion, params = DEFAULT_PARAMS, onChange = DEFAULT_HANDLE_EVENT }) {
   log('Pinion')
 
   const {

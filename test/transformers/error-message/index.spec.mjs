@@ -2,11 +2,23 @@ import {
   expect
 } from 'chai'
 
-import * as errorMessage from 'shinkansen-pinion/transformers/error-message'
+import {
+  hasError,
+  getError
+} from '#pinion/transformers/error-message'
 
-describe('shinkansen-pinion/transformers/error-message', () => {
-  it('is a module', () => {
-    expect(errorMessage)
-      .to.be.a('module')
+describe('#pinion/transformers/error-message', () => {
+  describe('`hasError`', () => {
+    it('is a function', () => {
+      expect(hasError)
+        .to.be.a('function')
+    })
+  })
+
+  describe('`getError`', () => {
+    it('is a function', () => {
+      expect(getError)
+        .to.be.a('function')
+    })
   })
 })

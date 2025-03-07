@@ -1,1 +1,2 @@
-export function DEFAULT_HANDLE_CHANGE (): void
+export * as meta from '#pinion/common/meta'
+export * as elements from '#pinion/common/elements'

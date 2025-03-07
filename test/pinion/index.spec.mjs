@@ -2,9 +2,9 @@ import {
   expect
 } from 'chai'
 
-import Pinion from 'shinkansen-pinion/pinion'
+import Pinion from '#pinion/pinion'
 
-describe('shinkansen-pinion/pinion', () => {
+describe('#pinion/pinion', () => {
   describe('`Pinion`', () => {
     it('is a function', () => {
       expect(Pinion)

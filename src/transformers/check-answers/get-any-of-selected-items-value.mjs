@@ -8,9 +8,9 @@ const log = debug('shinkansen-pinion/transformers/check-answers')
 const info = debug('shinkansen-pinion/transformers/check-answers:info')
 
 /**
- * @param {PinionTypes.MemberArrayType} [items]
- * @param {PinionTypes.SelectedMemberArrayType} [selectedItems]
- * @returns {string}
+ *  @param {PinionTypes.MemberArrayType} [items]
+ *  @param {PinionTypes.SelectedMemberArrayType} [selectedItems]
+ *  @returns {string}
  */
 export default function getAnyOfSelectedItemsValue (items = [], selectedItems = []) {
   log('getAnyOfSelectedItemsValue')
