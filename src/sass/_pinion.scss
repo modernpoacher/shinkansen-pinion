@@ -1,0 +1,27 @@
+@use "design-system/typography/text";
+@use "cogs";
+@use "sprockets";
+
+@mixin pinion {
+  .cog {
+    @include cogs.cogs;
+  }
+
+  .sprocket {
+    @include sprockets.sprockets;
+
+    .cog:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  > .sprocket.fieldset > fieldset > legend {
+    @include text.heading-l;
+
+    // stylelint-disable-next-line no-duplicate-selectors
+    & {
+      padding: 0;
+      margin: 0 0 1em 0; // EM
+    }
+  }
+}

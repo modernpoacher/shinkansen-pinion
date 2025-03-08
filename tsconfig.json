@@ -11,8 +11,8 @@
     "baseUrl": ".",
     "paths": {
       "#pinion": [
-        "src/index.cjs",
-        "src/index.mjs"
+        "src/js/index.cjs",
+        "src/js/index.mjs"
       ],
       "#pinion/common": [
         "src/common/index.mjs"
@@ -50,7 +50,7 @@
         "src/components/sprockets/*/index.mjs"
       ],
       "#pinion/pinion": [
-        "src/pinion/index.cjs"
+        "src/js/pinion/index.cjs"
       ],
       "#pinion/transformers": [
         "src/transformers/index.mjs"
@@ -83,6 +83,7 @@
     "node_modules/shinkansen-sprockets/src/**/*"
   ],
   "exclude": [
-    "**/__tests__/**/*"
+    "**/__tests__/**/*",
+    ".storybook/**/*"
   ]
 }

@@ -1,0 +1,13 @@
+@use "design-system/layouts";
+@use "pinion";
+
+#storybook-root {
+  @include layouts.design-system;
+
+  // stylelint-disable-next-line no-duplicate-selectors
+  & {
+    margin: 0 auto;
+  }
+
+  @include pinion.pinion;
+}

@@ -10,7 +10,7 @@
     "Karakuri",
     "React"
   ],
-  "main": "./src/index.mjs",
+  "main": "./src/js/index.mjs",
   "type": "module",
   "types": "./index.d.mts",
   "author": {
@@ -27,22 +27,28 @@
     "url": "git+ssh://git@github.com/modernpoacher/shinkansen-pinion.git"
   },
   "scripts": {
-    "build": "cross-env DEBUG=shinkansen-pinion* webpack",
+    "build": "cross-env DEBUG=shinkansen-pinion* webpack -c .storybook/webpack.config.mjs",
     "build-storybook": "storybook build",
-    "build:watch": "cross-env DEBUG=shinkansen-pinion* webpack --watch",
-    "lint": "eslint",
-    "lint:fix": "npm run lint -- --fix",
+    "build:watch": "npm run build -- -w",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:fix": "npm run lint:js:fix && npm run lint:sass:fix",
+    "lint:js": "eslint",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:sass": "stylelint src/sass .storybook/*.scss",
+    "lint:sass:fix": "npm run lint:sass -- --fix",
     "nvm": "bash nvm.sh",
+    "prebuild": "npm run nvm",
     "prelint": "npm run nvm",
     "prepare": "husky",
     "prepublishOnly": "cross-env NODE_ENV=production npm run build",
-    "prestorybook": "npm run build && npm run transform",
+    "prestorybook": "npm run build && npm run prettier && npm run transform",
     "pretest": "npm run nvm",
+    "prettier": "prettier src/sass .storybook --write",
     "storybook": "storybook dev -p 6009",
     "test": "npm run test:mocha && npm run test:jest",
     "test:jest": "cross-env NODE_ENV=test jest",
     "test:mocha": "cross-env NODE_ENV=test mocha test --recursive",
-    "transform": "cross-env DEBUG=shinkansen-pinion* ./transform.sh"
+    "transform": "cross-env DEBUG=shinkansen-pinion* .storybook/transform.sh"
   },
   "dependencies": {
     "debug": "^4.4.0"
@@ -54,7 +60,7 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@babel/register": "^7.25.9",
-    "@modernpoacher/design-system": "1.2.0",
+    "@modernpoacher/design-system": "2.0.0",
     "@sequencemedia/eslint-config-standard": "^0.2.42",
     "@sequencemedia/eslint-config-typescript": "^0.1.58",
     "@storybook/addon-actions": "^8.6.4",
@@ -76,7 +82,6 @@
     "@typescript-eslint/parser": "^8.26.0",
     "autoprefixer": "^10.4.20",
     "chai": "^5.2.0",
-    "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.41.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.22.0",
@@ -96,6 +101,7 @@
     "postcss-map": "^0.11.0",
     "postcss-normalize": "^13.0.1",
     "postcss-scss": "^4.0.9",
+    "prettier": "^3.5.3",
     "prop-types": "^15.8.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -104,60 +110,63 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.85.1",
     "sass-loader": "^16.0.5",
-    "shinkansen-cogs": "1.9.2",
+    "shinkansen-cogs": "2.0.0",
     "shinkansen-rails": "1.1.0",
     "shinkansen-signals": "1.2.0",
-    "shinkansen-sprockets": "1.3.1",
+    "shinkansen-sprockets": "2.0.0",
     "sinon": "^19.0.2",
     "storybook": "^8.6.4",
+    "stylelint": "^16.15.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-scss": "^6.11.1",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1"
   },
   "peerDependencies": {
-    "shinkansen-cogs": "1.9.x",
+    "shinkansen-cogs": "2.0.x",
     "shinkansen-rails": "1.1.x",
     "shinkansen-signals": "1.2.x",
-    "shinkansen-sprockets": "1.3.x"
+    "shinkansen-sprockets": "2.0.x"
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
     "#pinion": {
-      "require": "./src/index.cjs",
-      "import": "./src/index.mjs"
+      "require": "./src/js/index.cjs",
+      "import": "./src/js/index.mjs"
     },
-    "#pinion/common": "./src/common/index.mjs",
-    "#pinion/common/elements": "./src/common/elements/index.mjs",
-    "#pinion/common/elements/*": "./src/common/elements/*.mjs",
-    "#pinion/common/meta": "./src/common/meta/index.mjs",
-    "#pinion/common/meta/*": "./src/common/meta/*.mjs",
+    "#pinion/common": "./src/js/common/index.mjs",
+    "#pinion/common/elements": "./src/js/common/elements/index.mjs",
+    "#pinion/common/elements/*": "./src/js/common/elements/*.mjs",
+    "#pinion/common/meta": "./src/js/common/meta/index.mjs",
+    "#pinion/common/meta/*": "./src/js/common/meta/*.mjs",
     "#pinion/components": {
-      "require": "./src/components/index.cjs",
-      "import": "./src/components/index.mjs"
+      "require": "./src/js/components/index.cjs",
+      "import": "./src/js/components/index.mjs"
     },
     "#pinion/components/cogs": {
-      "require": "./src/components/cogs/index.cjs",
-      "import": "./src/components/cogs/index.mjs"
+      "require": "./src/js/components/cogs/index.cjs",
+      "import": "./src/js/components/cogs/index.mjs"
     },
     "#pinion/components/cogs/*": {
-      "require": "./src/components/cogs/*/index.cjs",
-      "import": "./src/components/cogs/*/index.mjs"
+      "require": "./src/js/components/cogs/*/index.cjs",
+      "import": "./src/js/components/cogs/*/index.mjs"
     },
     "#pinion/components/sprockets": {
-      "require": "./src/components/sprockets/index.cjs",
-      "import": "./src/components/sprockets/index.mjs"
+      "require": "./src/js/components/sprockets/index.cjs",
+      "import": "./src/js/components/sprockets/index.mjs"
     },
     "#pinion/components/sprockets/*": {
-      "require": "./src/components/sprockets/*/index.cjs",
-      "import": "./src/components/sprockets/*/index.mjs"
+      "require": "./src/js/components/sprockets/*/index.cjs",
+      "import": "./src/js/components/sprockets/*/index.mjs"
     },
-    "#pinion/pinion": "./src/pinion/index.cjs",
-    "#pinion/transformers": "./src/transformers/index.mjs",
-    "#pinion/transformers/check-answers": "./src/transformers/check-answers/index.mjs",
-    "#pinion/transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
-    "#pinion/transformers/common": "./src/transformers/common/index.mjs",
-    "#pinion/transformers/common/*": "./src/transformers/common/*.mjs",
-    "#pinion/transformers/error-message": "./src/transformers/error-message/index.mjs",
-    "#pinion/transformers/error-message/*": "./src/transformers/error-message/*.mjs",
+    "#pinion/pinion": "./src/js/pinion/index.cjs",
+    "#pinion/transformers": "./src/js/transformers/index.mjs",
+    "#pinion/transformers/check-answers": "./src/js/transformers/check-answers/index.mjs",
+    "#pinion/transformers/check-answers/*": "./src/js/transformers/check-answers/*.mjs",
+    "#pinion/transformers/common": "./src/js/transformers/common/index.mjs",
+    "#pinion/transformers/common/*": "./src/js/transformers/common/*.mjs",
+    "#pinion/transformers/error-message": "./src/js/transformers/error-message/index.mjs",
+    "#pinion/transformers/error-message/*": "./src/js/transformers/error-message/*.mjs",
     "#stories/components/*": "./stories/components/*/index.stories.jsx",
     "#stories/definitions/*": "./stories/definitions/*.json",
     "#stories/errors": "./stories/errors.mjs",
@@ -167,41 +176,41 @@
   },
   "exports": {
     ".": {
-      "require": "./src/index.cjs",
-      "import": "./src/index.mjs"
+      "require": "./src/js/index.cjs",
+      "import": "./src/js/index.mjs"
     },
-    "./common": "./src/common/index.mjs",
-    "./common/elements": "./src/common/elements/index.mjs",
-    "./common/elements/*": "./src/common/elements/*.mjs",
-    "./common/meta": "./src/common/meta/index.mjs",
-    "./common/meta/*": "./src/common/meta/*.mjs",
+    "./common": "./src/js/common/index.mjs",
+    "./common/elements": "./src/js/common/elements/index.mjs",
+    "./common/elements/*": "./src/js/common/elements/*.mjs",
+    "./common/meta": "./src/js/common/meta/index.mjs",
+    "./common/meta/*": "./src/js/common/meta/*.mjs",
     "./components": {
-      "require": "./src/components/index.cjs",
-      "import": "./src/components/index.mjs"
+      "require": "./src/js/components/index.cjs",
+      "import": "./src/js/components/index.mjs"
     },
     "./components/cogs": {
-      "require": "./src/components/cogs/index.cjs",
-      "import": "./src/components/cogs/index.mjs"
+      "require": "./src/js/components/cogs/index.cjs",
+      "import": "./src/js/components/cogs/index.mjs"
     },
     "./components/cogs/*": {
-      "require": "./src/components/cogs/*/index.cjs",
-      "import": "./src/components/cogs/*/index.mjs"
+      "require": "./src/js/components/cogs/*/index.cjs",
+      "import": "./src/js/components/cogs/*/index.mjs"
     },
     "./components/sprockets": {
-      "require": "./src/components/sprockets/index.cjs",
-      "import": "./src/components/sprockets/index.mjs"
+      "require": "./src/js/components/sprockets/index.cjs",
+      "import": "./src/js/components/sprockets/index.mjs"
     },
     "./components/sprockets/*": {
-      "require": "./src/components/sprockets/*/index.cjs",
-      "import": "./src/components/sprockets/*/index.mjs"
+      "require": "./src/js/components/sprockets/*/index.cjs",
+      "import": "./src/js/components/sprockets/*/index.mjs"
     },
-    "./pinion": "./src/pinion/index.cjs",
-    "./transformers": "./src/transformers/index.mjs",
-    "./transformers/check-answers": "./src/transformers/check-answers/index.mjs",
-    "./transformers/check-answers/*": "./src/transformers/check-answers/*.mjs",
-    "./transformers/common": "./src/transformers/common/index.mjs",
-    "./transformers/common/*": "./src/transformers/common/*.mjs",
-    "./transformers/error-message": "./src/transformers/error-message/index.mjs",
-    "./transformers/error-message/*": "./src/transformers/error-message/*.mjs"
+    "./pinion": "./src/js/pinion/index.cjs",
+    "./transformers": "./src/js/transformers/index.mjs",
+    "./transformers/check-answers": "./src/js/transformers/check-answers/index.mjs",
+    "./transformers/check-answers/*": "./src/js/transformers/check-answers/*.mjs",
+    "./transformers/common": "./src/js/transformers/common/index.mjs",
+    "./transformers/common/*": "./src/js/transformers/common/*.mjs",
+    "./transformers/error-message": "./src/js/transformers/error-message/index.mjs",
+    "./transformers/error-message/*": "./src/js/transformers/error-message/*.mjs"
   }
 }
