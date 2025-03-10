@@ -5,7 +5,7 @@
 export default function hasComponent (meta) {
   if (meta) {
     return (
-      Reflect.has(meta, 'component')
+      'component' in meta
     )
   }
 

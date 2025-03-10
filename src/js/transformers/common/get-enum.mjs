@@ -11,7 +11,7 @@
 export default function getEnum (elements) {
   if (elements) {
     return (
-      elements.enum // Reflect.get(elements, 'enum')
+      elements.enum
     )
   }
 }

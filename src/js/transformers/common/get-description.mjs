@@ -9,7 +9,7 @@
 export default function getDescription (elements) {
   if (elements) {
     return (
-      elements.description // Reflect.get(elements, 'description')
+      elements.description
     )
   }
 }

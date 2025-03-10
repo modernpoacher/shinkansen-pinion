@@ -5,7 +5,7 @@
 export default function getComponent (meta) {
   if (meta) {
     return (
-      Reflect.get(meta, 'component')
+      meta.component
     )
   }
 }

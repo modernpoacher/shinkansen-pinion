@@ -11,7 +11,7 @@
 export default function getField (elements) {
   if (elements) {
     return (
-      elements.field // Reflect.get(elements, 'field')
+      elements.field
     )
   }
 }

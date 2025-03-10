@@ -9,7 +9,7 @@
 export default function getType (meta) {
   if (meta) {
     return (
-      meta.type // Reflect.get(meta, 'type')
+      meta.type
     )
   }
 }

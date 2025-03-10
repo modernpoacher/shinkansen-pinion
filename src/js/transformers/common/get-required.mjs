@@ -8,6 +8,6 @@
  */
 export default function getRequired (record = {}) {
   return (
-    record.isRequired // Reflect.get(record, 'isRequired')
+    record.isRequired
   )
 }

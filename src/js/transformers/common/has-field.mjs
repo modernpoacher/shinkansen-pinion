@@ -7,7 +7,7 @@
 export default function hasField (elements) {
   if (elements) {
     return (
-      'field' in elements // Reflect.has(elements, 'field')
+      'field' in elements
     )
   }
 

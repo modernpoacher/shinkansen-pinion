@@ -4,6 +4,6 @@
  */
 export default function hasRequired (record = {}) {
   return (
-    'isRequired' in record // Reflect.has(record, 'isRequired')
+    'isRequired' in record
   )
 }

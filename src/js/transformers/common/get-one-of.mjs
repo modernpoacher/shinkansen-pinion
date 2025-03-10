@@ -11,7 +11,7 @@
 export default function getOneOf (elements) {
   if (elements) {
     return (
-      elements.oneOf // Reflect.get(elements, 'oneOf')
+      elements.oneOf
     )
   }
 }

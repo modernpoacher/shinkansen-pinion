@@ -5,7 +5,7 @@
 export default function hasType (meta) {
   if (meta) {
     return (
-      'type' in meta // Reflect.has(meta, 'type')
+      'type' in meta
     )
   }
 

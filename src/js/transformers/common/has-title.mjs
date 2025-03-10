@@ -4,6 +4,6 @@
  */
 export default function hasTitle (elements = {}) {
   return (
-    'title' in elements // Reflect.has(elements, 'title')
+    'title' in elements
   )
 }

@@ -7,6 +7,6 @@
  */
 export default function hasValue (field = {}) {
   return (
-    'value' in field // Reflect.has(field, 'value')
+    'value' in field
   )
 }

@@ -11,7 +11,7 @@
 export default function getAnyOf (elements) {
   if (elements) {
     return (
-      elements.anyOf // Reflect.get(elements, 'anyOf')
+      elements.anyOf
     )
   }
 }

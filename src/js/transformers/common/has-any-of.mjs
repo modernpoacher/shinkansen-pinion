@@ -7,7 +7,7 @@
 export default function hasAnyOf (elements) {
   if (elements) {
     return (
-      'anyOf' in elements // Reflect.has(elements, 'anyOf')
+      'anyOf' in elements
     )
   }
 

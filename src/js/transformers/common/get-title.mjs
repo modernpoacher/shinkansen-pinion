@@ -9,7 +9,7 @@
 export default function getTitle (elements) {
   if (elements) {
     return (
-      elements.title // Reflect.get(elements, 'title')
+      elements.title
     )
   }
 }

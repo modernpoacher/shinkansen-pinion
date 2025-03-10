@@ -13,6 +13,6 @@
  */
 export default function getValue (field = {}) {
   return (
-    field.value // Reflect.get(field, 'value')
+    field.value
   )
 }

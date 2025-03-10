@@ -7,7 +7,7 @@
 export default function hasEnum (elements) {
   if (elements) {
     return (
-      'enum' in elements // Reflect.has(elements, 'enum')
+      'enum' in elements
     )
   }
 
