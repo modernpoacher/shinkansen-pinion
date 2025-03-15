@@ -14,9 +14,13 @@ module.exports = {
     '^.+\\.jsx$': 'babel-jest',
     '^.+\\.mjs$': 'babel-jest'
   },
-  moduleFileExtensions: ['js', 'jsx', 'mjs'],
   transformIgnorePatterns: [
     '/node_modules\\/(?!shinkansen-sprockets)\\/',
     '/node_modules\\/(?!shinkansen-cogs)\\/'
+  ],
+  moduleFileExtensions: ['js', 'jsx', 'mjs'],
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: [
+    '<rootDir>/jest.after-each.mjs'
   ]
 }
