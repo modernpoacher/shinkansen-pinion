@@ -1,7 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import snapshotOf from 'react-component-snapshot'
 import renderer from 'react-test-renderer'
 
-import Component from '#pinion/pinion'
+import '@testing-library/jest-dom'
+
+import {
+  render
+} from '@testing-library/react'
+
+import Pinion from '#pinion/pinion'
 
 import {
   STRING_STRING,
@@ -42,6 +50,55 @@ import {
   NULL_NULL_ALL_OF
 } from './definitions.mjs'
 
+/**
+ *  @param {{
+ *    to: string | { pathname: string },
+ *    children: React.ReactNode | React.ReactNode[]
+ *  }} prop
+ *  @returns {React.JSX.Element}
+ */
+function MockLink ({ to, children }) {
+  if (typeof to === 'string') {
+    return (
+      <a href={to} className='mock-link'>
+        {children}
+      </a>
+    )
+  }
+
+  const {
+    pathname
+  } = to
+
+  return (
+    <a href={pathname} className='mock-link'>
+      {children}
+    </a>
+  )
+}
+
+MockLink.propTypes = {
+  to: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      pathname: PropTypes.string
+    })
+  ]),
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.node
+    )
+  ])
+}
+
+jest.mock('react-router', () => {
+  return {
+    __esModule: true,
+    Link: MockLink
+  }
+})
+
 describe('#pinion/pinion', () => {
   const MOCK_PINION = {
     meta: { type: 'MOCK', uri: '#/' },
@@ -55,489 +112,1745 @@ describe('#pinion/pinion', () => {
 
   const MOCK_ON_CHANGE = jest.fn()
 
-  describe('<Component />', () => {
+  describe('<Pinion />', () => {
     describe('With required props', () => {
       it('renders', () => {
-        const component = (
-          <Component
+        const {
+          container: {
+            firstElementChild: engine
+          }
+        } = render(
+          <Pinion
             pinion={MOCK_PINION}
             params={MOCK_PARAMS}
             onChange={MOCK_ON_CHANGE}
           />
         )
 
-        return expect(renderer.create(component).toJSON())
+        expect(engine)
+          .toBeInstanceOf(HTMLDivElement)
+      })
+
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: engine
+          }
+        } = render(
+          <Pinion
+            pinion={MOCK_PINION}
+            params={MOCK_PARAMS}
+            onChange={MOCK_ON_CHANGE}
+          />
+        )
+
+        expect(snapshotOf(engine))
+          .toMatchSnapshot()
+      })
+
+      xit('matches the snapshot', () => {
+        expect(renderer.create(
+          <Pinion
+            pinion={MOCK_PINION}
+            params={MOCK_PARAMS}
+            onChange={MOCK_ON_CHANGE}
+          />
+        ).toJSON())
           .toMatchSnapshot()
       })
     })
 
     describe('With additional props', () => {
-      it('renders `STRING_STRING`', () => {
-        const component = (
-          <Component
-            pinion={STRING_STRING}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `STRING_STRING`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={STRING_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `STRING_STRING_ENUM`', () => {
-        const component = (
-          <Component
-            pinion={STRING_STRING_ENUM}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `STRING_STRING_ENUM`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={STRING_STRING_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `STRING_STRING_ANY_OF`', () => {
-        const component = (
-          <Component
-            pinion={STRING_STRING_ANY_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `STRING_STRING_ANY_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={STRING_STRING_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `STRING_STRING_ONE_OF`', () => {
-        const component = (
-          <Component
-            pinion={STRING_STRING_ONE_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `STRING_STRING_ONE_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={STRING_STRING_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `STRING_STRING_ALL_OF`', () => {
-        const component = (
-          <Component
-            pinion={STRING_STRING_ALL_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `STRING_STRING_ALL_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={STRING_STRING_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={STRING_STRING_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NUMBER_NUMBER`', () => {
-        const component = (
-          <Component
-            pinion={NUMBER_NUMBER}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NUMBER_NUMBER`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NUMBER_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NUMBER_NUMBER_ENUM`', () => {
-        const component = (
-          <Component
-            pinion={NUMBER_NUMBER_ENUM}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NUMBER_NUMBER_ENUM`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NUMBER_NUMBER_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NUMBER_NUMBER_ANY_OF`', () => {
-        const component = (
-          <Component
-            pinion={NUMBER_NUMBER_ANY_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NUMBER_NUMBER_ANY_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NUMBER_NUMBER_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NUMBER_NUMBER_ONE_OF`', () => {
-        const component = (
-          <Component
-            pinion={NUMBER_NUMBER_ONE_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NUMBER_NUMBER_ONE_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NUMBER_NUMBER_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NUMBER_NUMBER_ALL_OF`', () => {
-        const component = (
-          <Component
-            pinion={NUMBER_NUMBER_ALL_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NUMBER_NUMBER_ALL_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NUMBER_NUMBER_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NUMBER_NUMBER_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `OBJECT_ARRAY_STRING`', () => {
-        const component = (
-          <Component
-            pinion={OBJECT_ARRAY_STRING}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `OBJECT_ARRAY_STRING`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={OBJECT_ARRAY_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={OBJECT_ARRAY_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={OBJECT_ARRAY_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `OBJECT_ARRAY_NUMBER`', () => {
-        const component = (
-          <Component
-            pinion={OBJECT_ARRAY_NUMBER}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `OBJECT_ARRAY_NUMBER`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={OBJECT_ARRAY_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={OBJECT_ARRAY_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={OBJECT_ARRAY_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `OBJECT_ARRAY_BOOLEAN`', () => {
-        const component = (
-          <Component
-            pinion={OBJECT_ARRAY_BOOLEAN}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `OBJECT_ARRAY_BOOLEAN`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={OBJECT_ARRAY_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={OBJECT_ARRAY_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={OBJECT_ARRAY_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `OBJECT_ARRAY_NULL`', () => {
-        const component = (
-          <Component
-            pinion={OBJECT_ARRAY_NULL}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `OBJECT_ARRAY_NULL`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={OBJECT_ARRAY_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={OBJECT_ARRAY_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={OBJECT_ARRAY_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_STRING`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_STRING}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_STRING`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_STRING_ENUM`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_STRING_ENUM}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_STRING_ENUM`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_STRING_ANY_OF`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_STRING_ANY_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_STRING_ANY_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_STRING_ONE_OF`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_STRING_ONE_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_STRING_ONE_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_STRING_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_NUMBER`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_NUMBER}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_NUMBER`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_NUMBER_ENUM`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_NUMBER_ENUM}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_NUMBER_ENUM`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_NUMBER_ANY_OF`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_NUMBER_ANY_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_NUMBER_ANY_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_NUMBER_ONE_OF`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_NUMBER_ONE_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_NUMBER_ONE_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_NUMBER_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_OBJECT`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_OBJECT}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_OBJECT`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_OBJECT}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_OBJECT}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_OBJECT}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_ARRAY`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_ARRAY}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_ARRAY`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_ARRAY}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_ARRAY}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_ARRAY}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_BOOLEAN`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_BOOLEAN}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_BOOLEAN`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `ARRAY_ARRAY_NULL`', () => {
-        const component = (
-          <Component
-            pinion={ARRAY_ARRAY_NULL}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `ARRAY_ARRAY_NULL`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={ARRAY_ARRAY_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={ARRAY_ARRAY_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `BOOLEAN_BOOLEAN`', () => {
-        const component = (
-          <Component
-            pinion={BOOLEAN_BOOLEAN}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `BOOLEAN_BOOLEAN`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `BOOLEAN_BOOLEAN_ENUM`', () => {
-        const component = (
-          <Component
-            pinion={BOOLEAN_BOOLEAN_ENUM}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `BOOLEAN_BOOLEAN_ENUM`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `BOOLEAN_BOOLEAN_ANY_OF`', () => {
-        const component = (
-          <Component
-            pinion={BOOLEAN_BOOLEAN_ANY_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `BOOLEAN_BOOLEAN_ANY_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `BOOLEAN_BOOLEAN_ONE_OF`', () => {
-        const component = (
-          <Component
-            pinion={BOOLEAN_BOOLEAN_ONE_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `BOOLEAN_BOOLEAN_ONE_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `BOOLEAN_BOOLEAN_ALL_OF`', () => {
-        const component = (
-          <Component
-            pinion={BOOLEAN_BOOLEAN_ALL_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `BOOLEAN_BOOLEAN_ALL_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={BOOLEAN_BOOLEAN_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NULL_NULL`', () => {
-        const component = (
-          <Component
-            pinion={NULL_NULL}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NULL_NULL`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NULL_NULL}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NULL_NULL_ENUM`', () => {
-        const component = (
-          <Component
-            pinion={NULL_NULL_ENUM}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NULL_NULL_ENUM`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NULL_NULL_ENUM}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NULL_NULL_ANY_OF`', () => {
-        const component = (
-          <Component
-            pinion={NULL_NULL_ANY_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NULL_NULL_ANY_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NULL_NULL_ANY_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NULL_NULL_ONE_OF`', () => {
-        const component = (
-          <Component
-            pinion={NULL_NULL_ONE_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NULL_NULL_ONE_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NULL_NULL_ONE_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
 
-      it('renders `NULL_NULL_ALL_OF`', () => {
-        const component = (
-          <Component
-            pinion={NULL_NULL_ALL_OF}
-            params={MOCK_PARAMS}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Prop `pinion` is `NULL_NULL_ALL_OF`', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          expect(engine)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: engine
+            }
+          } = render(
+            <Pinion
+              pinion={NULL_NULL_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(engine))
+            .toMatchSnapshot()
+        })
+
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Pinion
+              pinion={NULL_NULL_ALL_OF}
+              params={MOCK_PARAMS}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
+            .toMatchSnapshot()
+        })
       })
     })
   })
