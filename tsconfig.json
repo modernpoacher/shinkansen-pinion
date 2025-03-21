@@ -83,7 +83,7 @@
     "node_modules/shinkansen-sprockets/src/**/*"
   ],
   "exclude": [
-    "**/__tests__/**/*",
-    ".storybook/**/*"
+    ".storybook/**/*",
+    "**/__tests__/**/*"
   ]
 }
