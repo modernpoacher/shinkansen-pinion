@@ -1,6 +1,6 @@
 {
   "name": "shinkansen-pinion",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "Shinkansen Pinion",
   "keywords": [
     "Shinkansen",
@@ -116,7 +116,7 @@
     "shinkansen-cogs": "2.1.8",
     "shinkansen-rails": "1.1.8",
     "shinkansen-signals": "1.2.7",
-    "shinkansen-sprockets": "2.1.7",
+    "shinkansen-sprockets": "2.1.8",
     "sinon": "^19.0.4",
     "storybook": "^8.6.7",
     "stylelint": "^16.16.0",
