@@ -117,7 +117,7 @@
     "shinkansen-cogs": "2.1.39",
     "shinkansen-rails": "1.1.21",
     "shinkansen-signals": "1.2.20",
-    "shinkansen-sprockets": "2.1.39",
+    "shinkansen-sprockets": "2.1.40",
     "sinon": "^20.0.0",
     "storybook": "^8.6.12",
     "stylelint": "^16.18.0",
