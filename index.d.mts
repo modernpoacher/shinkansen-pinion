@@ -76,12 +76,12 @@ declare global {
     }
 
     export interface MetaAnyOfType extends Omit<MetaType, 'items'> {
-      items?: PinionType[] // eslint-disable-line no-use-before-define -- Standard type
+      items?: PinionType[]
       selectedItems?: number[]
     }
 
     export interface MetaOneOfType extends Omit<MetaType, 'items'> {
-      items?: PinionType[] // eslint-disable-line no-use-before-define -- Standard type
+      items?: PinionType[]
       selectedItems?: number[]
     }
 
@@ -91,7 +91,7 @@ declare global {
       title: string
       description?: string
       field?: FieldType
-      fields?: PinionType[] // eslint-disable-line no-use-before-define -- Standard type
+      fields?: PinionType[]
     }
 
     export interface ElementsEnumType extends ElementsType {
