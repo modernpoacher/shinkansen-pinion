@@ -109,7 +109,7 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.89.1",
     "sass-loader": "^16.0.5",
-    "shinkansen-cogs": "2.1.71",
+    "shinkansen-cogs": "2.1.72",
     "shinkansen-rails": "1.1.47",
     "shinkansen-signals": "1.2.46",
     "shinkansen-sprockets": "2.1.75",
@@ -126,6 +126,9 @@
     "shinkansen-rails": "1.1.x",
     "shinkansen-signals": "1.2.x",
     "shinkansen-sprockets": "2.1.x"
+  },
+  "overrides": {
+    "storybook": "$storybook"
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
@@ -211,8 +214,5 @@
     "./transformers/common/*": "./src/js/transformers/common/*.mjs",
     "./transformers/error-message": "./src/js/transformers/error-message/index.mjs",
     "./transformers/error-message/*": "./src/js/transformers/error-message/*.mjs"
-  },
-  "overrides": {
-    "storybook": "$storybook"
   }
 }
