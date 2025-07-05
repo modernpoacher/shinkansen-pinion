@@ -12,14 +12,14 @@ describe('#pinion', () => {
   describe('`components`', () => {
     it('is a module', () => {
       expect(components)
-        .to.be.a('module')
+        .to.be.an('object')
     })
   })
 
   describe('`transformers`', () => {
     it('is a module', () => {
       expect(transformers)
-        .to.be.a('module')
+        .to.be.an('object')
     })
   })
 
