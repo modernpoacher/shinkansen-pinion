@@ -9,14 +9,14 @@ import {
 
 describe('#pinion/components', () => {
   describe('`Cogs`', () => {
-    it('is a module', () => {
+    it('is an object', () => {
       expect(Cogs)
         .to.be.an('object')
     })
   })
 
   describe('`Sprockets`', () => {
-    it('is a module', () => {
+    it('is an object', () => {
       expect(Sprockets)
         .to.be.an('object')
     })

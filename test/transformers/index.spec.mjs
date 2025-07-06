@@ -10,21 +10,21 @@ import {
 
 describe('#pinion/transformers', () => {
   describe('`checkAnswers`', () => {
-    it('is a module', () => {
+    it('is an object', () => {
       expect(checkAnswers)
         .to.be.an('object')
     })
   })
 
   describe('`common`', () => {
-    it('is a module', () => {
+    it('is an object', () => {
       expect(common)
         .to.be.an('object')
     })
   })
 
   describe('`errorMessage`', () => {
-    it('is a module', () => {
+    it('is an object', () => {
       expect(errorMessage)
         .to.be.an('object')
     })

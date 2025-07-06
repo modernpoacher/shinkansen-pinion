@@ -10,14 +10,14 @@ import {
 
 describe('#pinion', () => {
   describe('`components`', () => {
-    it('is a module', () => {
+    it('is an object', () => {
       expect(components)
         .to.be.an('object')
     })
   })
 
   describe('`transformers`', () => {
-    it('is a module', () => {
+    it('is an object', () => {
       expect(transformers)
         .to.be.an('object')
     })
