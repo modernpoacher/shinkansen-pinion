@@ -109,7 +109,7 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.93.2",
     "sass-loader": "^16.0.5",
-    "shinkansen-cogs": "2.1.121",
+    "shinkansen-cogs": "2.1.122",
     "shinkansen-rails": "1.1.107",
     "shinkansen-signals": "1.2.106",
     "shinkansen-sprockets": "2.1.120",
