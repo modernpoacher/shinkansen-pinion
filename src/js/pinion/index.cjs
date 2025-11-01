@@ -11,7 +11,7 @@ const log = debug('shinkansen-pinion/pinion')
 log('`shinkansen` is awake')
 
 const {
-  default: Pinion // @ts-expect-error
+  default: Pinion
 } = require('./index.jsx')
 
 /**

@@ -47,7 +47,8 @@
     "test": "npm run test:mocha && npm run test:jest",
     "test:jest": "cross-env NODE_ENV=test jest",
     "test:mocha": "cross-env NODE_ENV=test mocha test --recursive",
-    "transform": "cross-env DEBUG=shinkansen-pinion* .storybook/transform.sh"
+    "transform": "cross-env DEBUG=shinkansen-pinion* .storybook/transform.sh",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "debug": "^4.4.3"
@@ -109,10 +110,10 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.93.2",
     "sass-loader": "^16.0.6",
-    "shinkansen-cogs": "2.1.146",
-    "shinkansen-rails": "1.1.124",
-    "shinkansen-signals": "1.2.123",
-    "shinkansen-sprockets": "2.1.143",
+    "shinkansen-cogs": "2.1.147",
+    "shinkansen-rails": "1.1.125",
+    "shinkansen-signals": "1.2.124",
+    "shinkansen-sprockets": "2.1.145",
     "sinon": "^21.0.0",
     "storybook": "^10.0.2",
     "stylelint": "^16.25.0",

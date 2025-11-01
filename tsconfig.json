@@ -7,6 +7,7 @@
     "noEmit": true,
     "strict": true,
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
@@ -77,13 +78,17 @@
   },
   "include": [
     ".",
-    "node_modules/shinkansen-cogs/src/**/*",
-    "node_modules/shinkansen-rails/src/**/*",
-    "node_modules/shinkansen-signals/src/**/*",
-    "node_modules/shinkansen-sprockets/src/**/*"
+    "node_modules/shinkansen-cogs",
+    "node_modules/shinkansen-rails",
+    "node_modules/shinkansen-signals",
+    "node_modules/shinkansen-sprockets"
   ],
   "exclude": [
-    ".storybook/**/*",
-    "**/__tests__/**/*"
+    ".circleci",
+    ".github",
+    ".husky",
+    ".storybook",
+    "**/__tests__",
+    "coverage"
   ]
 }

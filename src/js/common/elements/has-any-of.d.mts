@@ -4,7 +4,7 @@ type ElementsAnyOfType = PinionTypes.ElementsAnyOfType
 type ElementsOneOfType = PinionTypes.ElementsOneOfType
 type ElementsFieldType = PinionTypes.ElementsFieldType
 
-declare function hasAnyOf (elements: ElementsEnumType | ElementsAnyOfType | ElementsOneOfType | ElementsFieldType): boolean
-declare function hasAnyOf (elements: ElementsType): boolean
+declare function hasAnyOf (elements: ElementsEnumType | ElementsAnyOfType | ElementsOneOfType | ElementsFieldType): elements is ElementsAnyOfType
+declare function hasAnyOf (elements: ElementsType): elements is ElementsAnyOfType
 
 export default hasAnyOf

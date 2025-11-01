@@ -113,11 +113,13 @@ function getValue (field) {
 export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToRadiosForEnum')
 
+  const errorMessage = getError(errors, uri) ?? undefined
+
   return (
     <FieldsetSprocket
       title={title}
       description={description}
-      errorMessage={getError(errors, uri)}>
+      errorMessage={errorMessage}>
       {items.map((value, index) => {
         const key = getKey(uri, index)
 
@@ -148,11 +150,13 @@ export function renderToRadiosForEnum ({ items = [], selectedItems = [], uri }, 
 export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToRadiosForAnyOf')
 
+  const errorMessage = getError(errors, uri) ?? undefined
+
   return (
     <FieldsetSprocket
       title={title}
       description={description}
-      errorMessage={getError(errors, uri)}>
+      errorMessage={errorMessage}>
       {items.map((item, index) => {
         const {
           elements: {
@@ -204,11 +208,13 @@ export function renderToRadiosForAnyOf ({ items = [], selectedItems = [], uri },
 export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToRadiosForOneOf')
 
+  const errorMessage = getError(errors, uri) ?? undefined
+
   return (
     <FieldsetSprocket
       title={title}
       description={description}
-      errorMessage={getError(errors, uri)}>
+      errorMessage={errorMessage}>
       {items.map((item, index) => {
         const {
           elements: {
@@ -260,11 +266,13 @@ export function renderToRadiosForOneOf ({ items = [], selectedItems = [], uri },
 export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, { title, description, enum: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToSelectForEnum')
 
+  const errorMessage = getError(errors, uri) ?? undefined
+
   return (
     <SelectCog
       title={title}
       description={description}
-      errorMessage={getError(errors, uri)}
+      errorMessage={errorMessage}
       name={name}
       onChange={onChange}
       required={isRequired}>
@@ -292,11 +300,13 @@ export function renderToSelectForEnum ({ items = [], selectedItems = [], uri }, 
 export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri }, { title, description, anyOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToSelectForAnyOf')
 
+  const errorMessage = getError(errors, uri) ?? undefined
+
   return (
     <SelectCog
       title={title}
       description={description}
-      errorMessage={getError(errors, uri)}
+      errorMessage={errorMessage}
       name={name}
       onChange={onChange}
       required={isRequired}>
@@ -324,11 +334,13 @@ export function renderToSelectForAnyOf ({ items = [], selectedItems = [], uri },
 export function renderToSelectForOneOf ({ items = [], selectedItems = [], uri }, { title, description, oneOf: { id, name = id, isRequired = false } }, { errors }, onChange = DEFAULT_HANDLE_EVENT) {
   log('renderToSelectForOneOf')
 
+  const errorMessage = getError(errors, uri) ?? undefined
+
   return (
     <SelectCog
       title={title}
       description={description}
-      errorMessage={getError(errors, uri)}
+      errorMessage={errorMessage}
       name={name}
       onChange={onChange}
       required={isRequired}>
@@ -379,13 +391,16 @@ export function renderToField (meta, elements, params = DEFAULT_PARAMS, onChange
       errors
     } = params
 
+    const value = getValue(field) ?? ''
+    const errorMessage = getError(errors, uri) ?? undefined
+
     return (
       <TextCog
         title={title}
         description={description}
         name={id}
-        value={getValue(field)}
-        errorMessage={getError(errors, uri)}
+        value={String(value)}
+        errorMessage={errorMessage}
         required={isRequired}
         onChange={onChange}
       />
@@ -472,11 +487,13 @@ export function Group ({ meta, elements, params = DEFAULT_PARAMS, onChange = DEF
       errors
     } = params
 
+    const errorMessage = getError(errors, uri) ?? undefined
+
     return (
       <FieldsetSprocket
         title={title}
         description={description}
-        errorMessage={getError(errors, uri)}>
+        errorMessage={errorMessage}>
         {fields.map((pinion) => {
           const {
             meta: {

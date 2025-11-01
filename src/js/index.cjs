@@ -10,7 +10,7 @@ const log = debug('shinkansen-pinion')
 
 log('`shinkansen` is awake')
 
-const components = require('./components/index.cjs') // @ts-expect-error MJS
+const components = require('./components/index.cjs')
 const transformers = require('./transformers/index.mjs')
 const Pinion = require('./pinion/index.cjs')
 
