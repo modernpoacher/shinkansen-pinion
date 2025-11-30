@@ -191,6 +191,9 @@ export default [
         ...globals.node,
         PinionTypes: 'readonly'
       }
+    },
+    rules: {
+      '@typescript-eslint/no-redundant-type-constituents': 'off'
     }
   }),
   typescript({
@@ -207,7 +210,8 @@ export default [
         ...globals.browser,
         PinionTypes: 'readonly'
       }
-    }
+    },
+    rules: { '@typescript-eslint/no-redundant-type-constituents': 'off' }
   }),
   {
     files: [
@@ -215,7 +219,8 @@ export default [
     ],
     rules: {
       'no-redeclare': 'off',
-      '@typescript-eslint/unified-signatures': 'off'
+      '@typescript-eslint/unified-signatures': 'off',
+      '@typescript-eslint/no-redundant-type-constituents': 'off'
     }
   }
 ]
