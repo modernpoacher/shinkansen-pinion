@@ -97,7 +97,7 @@
     "postcss-discard-comments": "^7.0.5",
     "postcss-discard-empty": "^7.0.1",
     "postcss-import": "^16.1.1",
-    "postcss-loader": "^8.2.0",
+    "postcss-loader": "^8.2.1",
     "postcss-map": "^0.11.0",
     "postcss-normalize": "^13.0.1",
     "postcss-scss": "^4.0.9",
