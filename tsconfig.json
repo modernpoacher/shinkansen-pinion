@@ -8,71 +8,74 @@
     "strict": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "types": [
+      "jest",
+      "node"
+    ],
     "jsx": "react",
-    "baseUrl": ".",
     "paths": {
       "#pinion": [
-        "src/js/index.cjs",
-        "src/js/index.mjs"
+        "./src/js/index.cjs",
+        "./src/js/index.mjs"
       ],
       "#pinion/common": [
-        "src/common/index.mjs"
+        "./src/common/index.mjs"
       ],
       "#pinion/common/elements": [
-        "src/common/elements/index.mjs"
+        "./src/common/elements/index.mjs"
       ],
       "#pinion/common/elements/*": [
-        "src/common/elements/*.mjs"
+        "./src/common/elements/*.mjs"
       ],
       "#pinion/common/meta": [
-        "src/common/meta/index.mjs"
+        "./src/common/meta/index.mjs"
       ],
       "#pinion/common/meta/*": [
-        "src/common/meta/*.mjs"
+        "./src/common/meta/*.mjs"
       ],
       "#pinion/components": [
-        "src/components/index.cjs",
-        "src/components/index.mjs"
+        "./src/components/index.cjs",
+        "./src/components/index.mjs"
       ],
       "#pinion/components/cogs": [
-        "src/components/cogs/index.cjs",
-        "src/components/cogs/index.mjs"
+        "./src/components/cogs/index.cjs",
+        "./src/components/cogs/index.mjs"
       ],
       "#pinion/components/cogs/*": [
-        "src/components/cogs/*/index.cjs",
-        "src/components/cogs/*/index.mjs"
+        "./src/components/cogs/*/index.cjs",
+        "./src/components/cogs/*/index.mjs"
       ],
       "#pinion/components/sprockets": [
-        "src/components/sprockets/index.cjs",
-        "src/components/sprockets/index.mjs"
+        "./src/components/sprockets/index.cjs",
+        "./src/components/sprockets/index.mjs"
       ],
       "#pinion/components/sprockets/*": [
-        "src/components/sprockets/*/index.cjs",
-        "src/components/sprockets/*/index.mjs"
+        "./src/components/sprockets/*/index.cjs",
+        "./src/components/sprockets/*/index.mjs"
       ],
       "#pinion/pinion": [
-        "src/js/pinion/index.cjs"
+        "./src/js/pinion/index.cjs"
       ],
       "#pinion/transformers": [
-        "src/transformers/index.mjs"
+        "./src/transformers/index.mjs"
       ],
       "#pinion/transformers/check-answers": [
-        "src/transformers/check-answers/index.mjs"
+        "./src/transformers/check-answers/index.mjs"
       ],
       "#pinion/transformers/check-answers/*": [
-        "src/transformers/check-answers/*.mjs"
+        "./src/transformers/check-answers/*.mjs"
       ],
       "#pinion/transformers/common": [
-        "src/transformers/common/index.mjs"
+        "./src/transformers/common/index.mjs"
       ],
       "#pinion/transformers/common/*": [
-        "src/transformers/common/*.mjs"
+        "./src/transformers/common/*.mjs"
       ],
       "#pinion/transformers/error-message": [
-        "src/transformers/error-message/index.mjs"
+        "./src/transformers/error-message/index.mjs"
       ],
       "#pinion/transformers/error-message/*": [
-        "src/transformers/error-message/*.mjs"
+        "./src/transformers/error-message/*.mjs"
       ]
     }
   },
