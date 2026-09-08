@@ -50,6 +50,12 @@
     "transform": "cross-env DEBUG=shinkansen-pinion* .storybook/transform.sh",
     "type-check": "tsc --noEmit"
   },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "core-js@3.50.0": true,
+    "esbuild@0.28.2": true,
+    "unrs-resolver@1.12.2": true
+  },
   "dependencies": {
     "debug": "^4.4.3"
   },
@@ -78,8 +84,8 @@
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
-    "@typescript-eslint/eslint-plugin": "^8.69.0",
-    "@typescript-eslint/parser": "^8.69.0",
+    "@typescript-eslint/eslint-plugin": "^8.70.0",
+    "@typescript-eslint/parser": "^8.70.0",
     "autoprefixer": "^10.5.5",
     "chai": "^6.2.2",
     "core-js": "^3.50.0",
@@ -111,10 +117,10 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.104.0",
     "sass-loader": "^17.0.1",
-    "shinkansen-cogs": "2.1.225",
+    "shinkansen-cogs": "2.1.226",
     "shinkansen-rails": "1.1.174",
     "shinkansen-signals": "1.2.169",
-    "shinkansen-sprockets": "2.1.229",
+    "shinkansen-sprockets": "2.1.230",
     "sinon": "^22.1.0",
     "storybook": "^10.6.0",
     "stylelint": "^17.15.0",
@@ -216,11 +222,5 @@
     "./transformers/common/*": "./src/js/transformers/common/*.mjs",
     "./transformers/error-message": "./src/js/transformers/error-message/index.mjs",
     "./transformers/error-message/*": "./src/js/transformers/error-message/*.mjs"
-  },
-  "allowScripts": {
-    "core-js@3.50.0": true,
-    "esbuild@0.28.2": true,
-    "unrs-resolver@1.12.2": true,
-    "@parcel/watcher@2.6.0": true
   }
 }
