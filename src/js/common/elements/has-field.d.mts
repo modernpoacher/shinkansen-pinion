@@ -5,6 +5,6 @@ type ElementsOneOfType = PinionTypes.ElementsOneOfType
 type ElementsFieldType = PinionTypes.ElementsFieldType
 
 declare function hasField (elements: ElementsEnumType | ElementsAnyOfType | ElementsOneOfType | ElementsFieldType): elements is ElementsFieldType
-declare function hasField (elements: ElementsType): elements is ElementsFieldType
+  declare function hasField (elements: ElementsType): elements is ElementsFieldType
 
-export default hasField
+    export default hasField

@@ -5,6 +5,6 @@ type MetaOneOfType = PinionTypes.MetaOneOfType
 type MetaFieldType = PinionTypes.MetaFieldType
 
 declare function hasField (meta: MetaEnumType | MetaAnyOfType | MetaOneOfType | MetaFieldType): meta is MetaFieldType
-declare function hasField (meta: MetaType): meta is MetaFieldType
+  declare function hasField (meta: MetaType): meta is MetaFieldType
 
-export default hasField
+    export default hasField
